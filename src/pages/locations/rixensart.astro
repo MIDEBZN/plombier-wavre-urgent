@@ -1,0 +1,284 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
+
+const neighborhoods = [
+  { name: "Genval (Lac, Maubroux & Papeteries)", desc: "Propriétés riveraines et résidences modernes : gestion de l'humidité, entretien de stations de relevage, détartrage intensif de sanitaires et rénovation haut de gamme." },
+  { name: "Rixensart Centre & Gare", desc: "Quartier commerçant et résidentiel : débouchage express d'éviers et WC, recherche de fuite après compteur, remplacement de chauffe-eau." },
+  { name: "Bourgeois & Hauts de Rixensart", desc: "Villas et pavillons familiaux : pose d'adoucisseurs BWT/Durlem pour eau très calcaire, équilibrage des circuits de radiateurs et entretien chaudière gaz." },
+  { name: "Rosières (1330)", desc: "Secteur proche de l'E411 et de la forêt : réseaux d'évacuation extérieurs, réparation de canalisations souterraines et curage haute pression." }
+];
+
+const directions = [
+  {
+    from: "Depuis le Lac de Genval (Avenue du Lac)",
+    route: "Emprunter l'Avenue de la Reine vers Genval Centre, puis continuer par la Chaussée de Rixensart et la N261 vers Wavre. Temps d'intervention : 10 à 12 minutes (environ 6.5 km)."
+  },
+  {
+    from: "Depuis la Gare de Rixensart (Place Communale)",
+    route: "Prendre la Rue de la Station puis la Rue de Wavre jusqu'à la Route Provinciale / Bierges vers le centre de Wavre. Temps d'intervention : 9 minutes (environ 5 km)."
+  },
+  {
+    from: "Depuis la sortie 4 de l'E411 (Rosières)",
+    route: "Prendre la N275 en direction de Rosières puis rejoindre la N4 vers Wavre. Accès immédiat en moins de 8 minutes."
+  }
+];
+
+const comparison = [
+  {
+    feature: "Délai d'arrivée à Rixensart & Genval",
+    us: "20 à 30 minutes garanties",
+    competitorA: "24h à 48h ouvrées (Heat-me)",
+    competitorB: "Délais variables sans engagement"
+  },
+  {
+    feature: "Spécialisation Eau Calcaire (>35 °fH)",
+    us: "Installateur certifié BWT et Durlem avec test",
+    competitorA: "Pose standard sans analyse d'eau",
+    competitorB: "Rarement équipé pour détartrage lourd"
+  },
+  {
+    feature: "Recherche de Fuite Non-Destructive",
+    us: "Caméra thermique Flir et gaz traceur",
+    competitorA: "Démolition souvent destructrice d'emblée",
+    competitorB: "Sous-traite les diagnostics acoustiques"
+  },
+  {
+    feature: "Service d'Astreinte Nuit et Dimanche",
+    us: "Plombier d'astreinte 24h/24 et 7j/7 actif",
+    competitorA: "Serveur vocal sans intervention de nuit",
+    competitorB: "Fermeture le week-end et jours fériés"
+  },
+  {
+    feature: "Agrément Cerga & Rapport Assurances",
+    us: "Agrément gaz H-39184 et dossier d'assurance complet",
+    competitorA: "Dossiers génériques sans photos horodatées",
+    competitorB: "Pas de certification officielle gaz"
+  }
+];
+
+const faqs = [
+  {
+    q: "Quelle est la dureté de l'eau à Rixensart et Genval (1330, 1332) ?",
+    a: "L'eau à Rixensart et Genval compte parmi les plus calcaires de la région, avec des taux mesurés dépassant régulièrement 35 degrés français. Sans adoucisseur d'eau volumétrique, la résistance de votre chauffe-eau s'entartre en moins de deux ans et la durée de vie de vos mitigeurs est réduite de moitié."
+  },
+  {
+    q: "Intervenez-vous pour des pompes de relevage autour du Lac de Genval ?",
+    a: "Oui. En raison du relief autour de la vallée de la Lasne et du lac, de nombreuses propriétés sont équipées de stations de relevage pour eaux usées ou pluviales. Nous assurons le dépannage, le déblocage de pompe et le curage des cuves."
+  },
+  {
+    q: "Proposez-vous des forfaits sans surprise pour un dépannage le dimanche à Rixensart ?",
+    a: "Absolument. Avant tout déplacement, notre dispatcheur vous communique le montant clair de l'intervention d'astreinte. Aucun supplément imprévu n'est ajouté sur place."
+  }
+];
+---
+
+<Layout
+  title="Plombier Rixensart & Genval (1330 - 1332) | Dépannage Urgence 24/7"
+  description="Plombier à Rixensart et Genval (1330, 1332) : fuite d'eau, débouchage haute pression, panne chaudière en 25 minutes. Certifié Cerga et devis gratuit au 010 39 50 10."
+>
+
+  <!-- Hero Header -->
+  <section class="bg-[#123470] text-white py-16 lg:py-20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
+      
+      <div class="flex items-center gap-2 text-xs font-bold text-white/70">
+        <a href="/" class="hover:text-white">Accueil</a>
+        <span>/</span>
+        <a href="/locations" class="hover:text-white">Zones</a>
+        <span>/</span>
+        <span class="text-[#fcd400]">Rixensart & Genval (1330 / 1332)</span>
+      </div>
+
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#fcd400] text-[#101d29] text-xs font-bold uppercase tracking-wider">
+        <Icon name="map-pin" class="w-4 h-4 text-[#00327d]" />
+        <span>Secteur Rixensart-Genval - Arrivée en 20-30 minutes</span>
+      </div>
+
+      <h1 class="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight max-w-4xl">
+        Plombier à Rixensart et Genval : Urgence Sanitaire et Chauffage 24/7
+      </h1>
+
+      <p class="text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed">
+        Une canalisation bouchée à Genval ? Une fuite encastrée à Rixensart ou un boiler entartré à Rosières ? Nos maîtres plombiers interviennent rapidement chez vous avec l'équipement adéquat.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+        <a
+          href="tel:010395010"
+          class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#fcd400] hover:bg-[#e9c400] text-[#101d29] font-display font-extrabold text-base shadow-lg transition-transform active:scale-95"
+        >
+          <Icon name="phone" class="w-5 h-5 text-[#00327d]" />
+          <span>Urgence Rixensart-Genval : 010 39 50 10</span>
+        </a>
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-display font-bold text-sm shadow-sm transition-all"
+        >
+          Demander un devis en ligne
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Neighborhood Details & Local Specifics -->
+  <section class="py-16 sm:py-24 bg-white border-b border-[#e4eaf1]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Quartiers & Spécificités
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Notre Expertise Plomberie à Rixensart, Genval et Rosières
+        </h2>
+        <p class="text-base text-[#434653] leading-relaxed">
+          De la zone résidentielle autour du Lac de Genval jusqu'aux hauteurs de Bourgeois, les habitations de l'entité requièrent des solutions soignées : traitement anti-tartre performant, débouchage délicat des conduites anciennes et robinetterie de prestige.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {neighborhoods.map((n) => (
+          <div class="bg-[#f7f9ff] p-6 rounded-2xl border border-[#e4eaf1] space-y-3">
+            <h3 class="font-display font-bold text-base text-[#00327d]">
+              {n.name}
+            </h3>
+            <p class="text-xs text-[#434653] leading-relaxed">
+              {n.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Driving Directions from Landmarks -->
+  <section class="py-16 sm:py-24 bg-[#f7f9ff]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#705d00] bg-[#fcd400]/20 px-3.5 py-1.5 rounded-full inline-block">
+          Temps de Route
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Comment Nous Rejoignons Votre Domicile à Rixensart et Genval
+        </h2>
+        <p class="text-base text-[#434653]">
+          Nos équipes partent de Wavre pour un accès ultra-rapide par les axes secondaires et la N261, sans blocage aux heures de pointe.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {directions.map((d) => (
+          <div class="bg-white p-6 rounded-2xl border border-[#e4eaf1] shadow-xs space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-[#edf4ff] text-[#0047ab] flex items-center justify-center">
+              <Icon name="navigation" class="w-5 h-5 text-[#0047ab]" />
+            </div>
+            <h3 class="font-display font-bold text-base text-[#101d29]">
+              {d.from}
+            </h3>
+            <p class="text-xs sm:text-sm text-[#434653] leading-relaxed">
+              {d.route}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Competitor Comparison Table -->
+  <section class="py-16 sm:py-24 bg-white border-t border-[#e4eaf1]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Comparateur
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Comparatif : Plombier Wavre Urgent vs Autres Acteurs Locaux
+        </h2>
+        <p class="text-base text-[#434653]">
+          Pourquoi les résidents de Rixensart et Genval nous choisissent pour leurs interventions sensibles.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse bg-white rounded-2xl overflow-hidden shadow-xs border border-[#e4eaf1]">
+          <thead>
+            <tr class="bg-[#123470] text-white text-xs sm:text-sm uppercase tracking-wider">
+              <th class="p-4 sm:p-5">Prestation & Garantie</th>
+              <th class="p-4 sm:p-5 bg-[#0047ab] text-[#fcd400]">Plombier Wavre Urgent</th>
+              <th class="p-4 sm:p-5">Plateformes Web Nationales</th>
+              <th class="p-4 sm:p-5">Plombiers Éloignés</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#e4eaf1] text-xs sm:text-sm text-[#434653]">
+            {comparison.map((row) => (
+              <tr class="hover:bg-[#f7f9ff]">
+                <td class="p-4 sm:p-5 font-bold text-[#101d29]">{row.feature}</td>
+                <td class="p-4 sm:p-5 bg-[#edf4ff] font-extrabold text-[#00327d]">{row.us}</td>
+                <td class="p-4 sm:p-5 text-[#ba1a1a]">{row.competitorA}</td>
+                <td class="p-4 sm:p-5">{row.competitorB}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQs Rixensart -->
+  <section class="py-16 sm:py-24 bg-[#f7f9ff] border-t border-[#e4eaf1]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="text-center space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Vos Interrogations
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Questions Fréquentes à Rixensart et Genval
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((f) => (
+          <div class="bg-white p-6 rounded-2xl border border-[#e4eaf1] shadow-xs space-y-2">
+            <h3 class="font-display font-bold text-base text-[#00327d]">
+              {f.q}
+            </h3>
+            <p class="text-sm text-[#434653] leading-relaxed">
+              {f.a}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Emergency Banner -->
+  <section class="bg-[#00327d] text-white py-12 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+      <div class="space-y-2">
+        <h2 class="font-display font-black text-2xl sm:text-3xl text-white">
+          Urgence plomberie à Rixensart, Genval ou Rosières ?
+        </h2>
+        <p class="text-white/80 text-sm max-w-xl">
+          Notre camion de dépannage est équipé pour régler votre fuite ou débouchage immédiatement.
+        </p>
+      </div>
+      <a
+        href="tel:010395010"
+        class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#fcd400] hover:bg-[#e9c400] text-[#101d29] font-display font-extrabold text-base shadow-lg transition-transform active:scale-95 shrink-0"
+      >
+        <Icon name="phone" class="w-5 h-5 text-[#00327d]" />
+        <span>010 39 50 10</span>
+      </a>
+    </div>
+  </section>
+
+</Layout>

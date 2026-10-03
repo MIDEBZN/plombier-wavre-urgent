@@ -4,15 +4,8 @@ import Icon from '../components/Icon.astro';
 
 const zones = [
   {
-    name: "Wavre Centre & Basse-Wavre",
-    postal: "1300",
-    delay: "15 à 25 minutes",
-    desc: "Cœur historique de Wavre, Place Cardinal Mercier, Rue du Pont, Basse-Wavre et alentours de la gare. Interventions d'urgence express pour particuliers, commerces et copropriétés.",
-    streets: ["Rue de Namur", "Rue du Commerce", "Chaussée de Bruxelles", "Avenue Reine Astrid", "Chemin de l'Étoile"],
-    services: ["Débouchage WC & canalisations", "Fuites d'eau après compteur", "Dépannage vannes de coupure"]
-  },
-  {
     name: "Limal",
+    slug: "limal",
     postal: "1300",
     delay: "20 à 30 minutes",
     desc: "Secteur résidentiel et vallonné de Limal. Remplacement régulier de boilers électriques entartrés, pose de réducteurs de pression et débouchage de sterputs de jardins ou allées.",
@@ -21,6 +14,7 @@ const zones = [
   },
   {
     name: "Bierges",
+    slug: "bierges",
     postal: "1301",
     delay: "15 à 25 minutes",
     desc: "Proximité immédiate des échangeurs E411 et de la N4. Dépannage rapide de fuites d'eau, réparation de chauffe-eau et installation d'adoucisseurs d'eau anti-calcaire.",
@@ -29,34 +23,46 @@ const zones = [
   },
   {
     name: "Ottignies - Louvain-la-Neuve",
-    postal: "1348 & 1340",
-    delay: "25 à 35 minutes",
-    desc: "Interventions rapides pour habitations familiales d'Ottignies et logements étudiants / kots à Louvain-la-Neuve. Débouchage express de douches et réparations sanitaires d'urgence.",
+    slug: "ottignies-louvain-la-neuve",
+    postal: "1340 & 1348",
+    delay: "20 à 30 minutes",
+    desc: "Interventions rapides pour habitations familiales d'Ottignies et logements étudiants ou kots à Louvain-la-Neuve. Débouchage express de douches et réparations sanitaires d'urgence.",
     streets: ["Boulevard de Lauzelle", "Place de l'Université", "Avenue des Combattants", "Avenue Provinciale"],
-    services: ["Débouchage évier et douche", "Remplacement robinetterie", "Recherche de fuite sans casser"]
+    services: ["Débouchage évier et douche kot", "Remplacement robinetterie", "Recherche de fuite sans casser"]
   },
   {
     name: "Rixensart & Genval",
+    slug: "rixensart",
     postal: "1330 & 1332",
-    delay: "25 à 35 minutes",
-    desc: "Intervention en Brabant Wallon pour villas et appartements. Mise en conformité de tuyauteries cuivre et multiskin, rénovation de salles de bain et filtration calcaire.",
-    streets: ["Avenue Franklin Roosevelt", "Avenue de Mérode", "Rue de l'Église", "Avenue des Cerisiers"],
-    services: ["Rénovation salle de bain", "Installation adoucisseur", "Réparation fuite sous évier"]
+    delay: "20 à 30 minutes",
+    desc: "Intervention en Brabant Wallon pour villas et résidences de standing. Dépannage pompes de relevage lac, élimination calcaire SWDE et rénovation soignée de salles de bain.",
+    streets: ["Avenue du Lac", "Avenue Franklin Roosevelt", "Rue de Wavre", "Avenue de Mérode"],
+    services: ["Dépannage pompe de relevage", "Installation adoucisseur d'eau", "Réparation fuite sous terrasse"]
   },
   {
-    name: "Grez-Doiceau & Chaumont-Gistoux",
-    postal: "1390 & 1325",
-    delay: "30 à 40 minutes",
-    desc: "Zone est de Wavre couverte par nos techniciens itinérants. Débouchage de fosses septiques, traitement de l'eau dure et dépannage chauffe-eau électrique.",
-    streets: ["Chaussée de Wavre", "Rue du Village", "Chaussée de Huy", "Rue de la Station"],
-    services: ["Vidange & débouchage fosse", "Dépannage chauffe-eau", "Mise en sécurité plomberie"]
+    name: "Grez-Doiceau",
+    slug: "grez-doiceau",
+    postal: "1390",
+    delay: "20 à 30 minutes",
+    desc: "Zone est de Wavre couverte en liaison directe par la N4. Curage haute pression des longues canalisations de jardin, débouchage de fosses septiques et dépannage chaudière.",
+    streets: ["Chaussée de Wavre", "Place Ernest Dubois", "Gare de Gastuche", "Rue de Nethen"],
+    services: ["Hydrocurage haute pression", "Assainissement & fosse septique", "Dépannage chaudière condensation"]
+  },
+  {
+    name: "Chaumont-Gistoux",
+    slug: "chaumont-gistoux",
+    postal: "1325",
+    delay: "20 à 30 minutes",
+    desc: "Secteur vallonné sujet aux surpressions de réseau (>6 bars). Remplacement de réducteurs de pression, débouchage d'égouts privatifs et détartrage de chauffe-eau.",
+    streets: ["Chaussée de Huy", "Rond-point Dion-Valmont", "Rue Colleau", "Rue de Bonlez"],
+    services: ["Pose réducteur de pression", "Débouchage express d'égout", "Entretien chauffe-eau & radiateurs"]
   }
 ];
 ---
 
 <Layout
-  title="Zones d'Intervention Plombier Wavre (1300) | Limal & Bierges"
-  description="Zones couvertes par notre plombier : Wavre 1300, Limal, Bierges 1301, Ottignies-Louvain-la-Neuve, Rixensart, Grez-Doiceau. Arrivée en 30 min chrono."
+  title="Zones d'Intervention Plombier Wavre (1300) | Limal, Bierges, Ottignies, Rixensart"
+  description="Zones couvertes par notre plombier : Wavre 1300, Limal, Bierges 1301, Ottignies-LLN, Rixensart, Grez-Doiceau, Chaumont-Gistoux. Arrivée en 30 min chrono."
 >
 
   <!-- Page Header -->
@@ -66,10 +72,10 @@ const zones = [
         Rayon d'Action & Déplacements
       </span>
       <h1 class="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight">
-        Zones d'Intervention Plomberie à Wavre & Alentours
+        Zones d'Intervention Plomberie à Wavre & Communes Voisines
       </h1>
       <p class="text-base sm:text-lg text-white/80 max-w-2xl mx-auto font-normal">
-        Nos artisans plombiers sont physiquement basés à Wavre (1300). Nous couvrons toute la commune et les localités voisines avec un temps de réponse garanti sous 30 minutes.
+        Nos artisans plombiers sont physiquement basés à Wavre (1300). Nous couvrons toute l'entité et les communes environnantes avec un temps de réponse garanti sous 30 minutes.
       </p>
     </div>
   </section>
@@ -80,7 +86,7 @@ const zones = [
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {zones.map((zone) => (
-          <div class="bg-white rounded-3xl p-7 border border-[#e4eaf1] shadow-xs flex flex-col justify-between hover:border-[#0047ab]/30 hover:shadow-lg transition-all">
+          <div class="bg-white rounded-3xl p-7 border border-[#e4eaf1] shadow-xs flex flex-col justify-between hover:border-[#0047ab]/30 hover:shadow-lg transition-all group">
             <div class="space-y-4">
               <div class="flex items-center justify-between">
                 <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-extrabold bg-[#edf4ff] text-[#00327d]">
@@ -92,8 +98,10 @@ const zones = [
                 </span>
               </div>
 
-              <h2 class="font-display font-bold text-xl text-[#101d29]">
-                {zone.name}
+              <h2 class="font-display font-bold text-xl text-[#101d29] group-hover:text-[#0047ab] transition-colors">
+                <a href={`/locations/${zone.slug}`}>
+                  {zone.name}
+                </a>
               </h2>
 
               <p class="text-xs sm:text-sm text-[#434653] leading-relaxed">
@@ -124,13 +132,20 @@ const zones = [
               </div>
             </div>
 
-            <div class="pt-6 mt-6 border-t border-[#e4eaf1]">
+            <div class="pt-6 mt-6 border-t border-[#e4eaf1] space-y-2.5">
+              <a
+                href={`/locations/${zone.slug}`}
+                class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-[#0047ab] text-white hover:bg-[#00327d] font-display font-bold text-xs transition-colors shadow-xs"
+              >
+                <span>Détails, itinéraires & comparatif</span>
+                <Icon name="arrow-right" class="w-3.5 h-3.5" />
+              </a>
               <a
                 href="tel:010395010"
-                class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-[#edf4ff] hover:bg-[#0047ab] text-[#00327d] hover:text-white font-display font-bold text-xs transition-colors"
+                class="w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-xl bg-[#edf4ff] hover:bg-[#dbeafe] text-[#00327d] font-display font-bold text-xs transition-colors"
               >
-                <Icon name="phone" class="w-4 h-4" />
-                <span>Urgence dans cette zone</span>
+                <Icon name="phone" class="w-3.5 h-3.5" />
+                <span>Appeler d'urgence</span>
               </a>
             </div>
           </div>
@@ -144,18 +159,18 @@ const zones = [
             Garantie Déplacement Local
           </span>
           <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-[#101d29]">
-            Vous résidez en dehors du centre de Wavre ?
+            Vous résidez dans une commune limitrophe de Wavre ?
           </h2>
           <p class="text-sm text-[#434653] leading-relaxed">
-            Même si votre rue n'apparaît pas dans la liste principale, nous intervenons dans un rayon de 25 kilomètres autour de Wavre sans appliquer de surcoût kilométrique abusif. Nos véhicules sont équipés de GPS temps réel pour trouver l'itinéraire le plus rapide en évitant les ralentissements de la N4 ou de la E411.
+            Nous intervenons dans toutes les communes limitrophes de Wavre sans appliquer de surcoût kilométrique abusif. Nos véhicules sont équipés de GPS temps réel pour trouver l'itinéraire le plus rapide en évitant les ralentissements de la N4 ou de la E411.
           </p>
           <div class="flex flex-wrap gap-2 pt-2">
             <span class="text-xs bg-[#f7f9ff] border border-[#e4eaf1] px-3 py-1.5 rounded-lg text-[#101d29] font-medium">Basse-Wavre</span>
-            <span class="text-xs bg-[#f7f9ff] border border-[#e4eaf1] px-3 py-1.5 rounded-lg text-[#101d29] font-medium">Profonval</span>
-            <span class="text-xs bg-[#f7f9ff] border border-[#e4eaf1] px-3 py-1.5 rounded-lg text-[#101d29] font-medium">Louvrange</span>
-            <span class="text-xs bg-[#f7f9ff] border border-[#e4eaf1] px-3 py-1.5 rounded-lg text-[#101d29] font-medium">La Wastinne</span>
+            <span class="text-xs bg-[#f7f9ff] border border-[#e4eaf1] px-3 py-1.5 rounded-lg text-[#101d29] font-medium">Limelette</span>
+            <span class="text-xs bg-[#f7f9ff] border border-[#e4eaf1] px-3 py-1.5 rounded-lg text-[#101d29] font-medium">Gastuche</span>
+            <span class="text-xs bg-[#f7f9ff] border border-[#e4eaf1] px-3 py-1.5 rounded-lg text-[#101d29] font-medium">Dion-Valmont</span>
+            <span class="text-xs bg-[#f7f9ff] border border-[#e4eaf1] px-3 py-1.5 rounded-lg text-[#101d29] font-medium">Rosières</span>
             <span class="text-xs bg-[#f7f9ff] border border-[#e4eaf1] px-3 py-1.5 rounded-lg text-[#101d29] font-medium">La Hulpe</span>
-            <span class="text-xs bg-[#f7f9ff] border border-[#e4eaf1] px-3 py-1.5 rounded-lg text-[#101d29] font-medium">Overijse (limite régionale)</span>
           </div>
         </div>
 
@@ -165,7 +180,7 @@ const zones = [
             Besoin d'un dépannage immédiat ?
           </h3>
           <p class="text-xs text-white/80">
-            Indiquez-nous votre adresse exacte à Wavre par téléphone pour un départ immédiat de notre artisan.
+            Indiquez-nous votre adresse exacte par téléphone pour un départ immédiat de notre artisan.
           </p>
           <a
             href="tel:010395010"

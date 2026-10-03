@@ -1,0 +1,284 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
+
+const neighborhoods = [
+  { name: "Grez Centre & Place Dubois", desc: "Cœur historique et commerçant : dépannage urgent de sanitaires, fuites d'eau après compteur et remplacement rapide de chauffe-eau électrique ou gaz." },
+  { name: "Gastuche & Vallée du Train", desc: "Proximité immédiate de Wavre : curage de colonnes d'évacuation, débouchage haute pression de sterputs et réparation de canalisations extérieures." },
+  { name: "Nethen & Archennes", desc: "Zones vertes et maisons de village : gestion des réseaux d'eaux usées, assainissement individuel, entretien de fosses septiques et détection de fuites." },
+  { name: "Bossut-Gottechain & Biez", desc: "Villas et fermettes : protection contre le calcaire inBW, détartrage de boilers stéatites et dépannage chaudière à condensation." }
+];
+
+const directions = [
+  {
+    from: "Depuis la Place Ernest Dubois (Grez-Doiceau Centre)",
+    route: "Suivre la Chaussée de Wavre (N4) en direction du centre de Wavre. Temps d'intervention : 8 à 10 minutes (environ 5.5 km)."
+  },
+  {
+    from: "Depuis la Gare de Gastuche",
+    route: "Prendre directement la Chaussée de Louvain / N4 vers le sud en direction de Wavre. Temps d'intervention : 6 à 8 minutes (environ 4 km)."
+  },
+  {
+    from: "Depuis Archennes et Nethen",
+    route: "Emprunter la N253 puis rejoindre la Chaussée de Wavre / N4. Accès fluide en moins de 12 à 14 minutes."
+  }
+];
+
+const comparison = [
+  {
+    feature: "Délai d'intervention à Grez-Doiceau (1390)",
+    us: "20 à 30 minutes garanties",
+    competitorA: "48h à 72h (Heat-me)",
+    competitorB: "Délais incertains pour zones rurales"
+  },
+  {
+    feature: "Hydrocurage Haute Pression Embarqué",
+    us: "150 bars pour longues canalisations de jardin",
+    competitorA: "Outils manuels inefficaces sur grands terrains",
+    competitorB: "Exige l'intervention d'un tiers coûteux"
+  },
+  {
+    feature: "Expertise Assainissement & Fosses Septiques",
+    us: "Diagnostic complet des fosses et micro-stations",
+    competitorA: "Refuse les installations hors tout-à-l'égout",
+    competitorB: "Conseils techniques limités"
+  },
+  {
+    feature: "Astreinte Urgence Soir & Week-end",
+    us: "Vraie astreinte 24h/24 et 7j/7 disponible",
+    competitorA: "Répondeur automatique le week-end",
+    competitorB: "Non joignable en dehors des heures de bureau"
+  },
+  {
+    feature: "Agrément Cerga & Assurances",
+    us: "Agrément gaz officiel H-39184 et devis avant travaux",
+    competitorA: "Sous-traitants sans label officiel",
+    competitorB: "Facturation souvent contestée par assurances"
+  }
+];
+
+const faqs = [
+  {
+    q: "Intervenez-vous sur les maisons non reliées aux égouts à Grez-Doiceau ?",
+    a: "Oui. Une partie des habitations de Grez-Doiceau, Bossut ou Nethen dispose d'un assainissement autonome (fosse septique, bac dégraisseur ou micro-station). Nous disposons de matériel adapté pour déboucher et curer ces installations spécifiques sans endommager les parois."
+  },
+  {
+    q: "Quelle est la dureté de l'eau à Grez-Doiceau (1390) ?",
+    a: "L'eau distribuée à Grez-Doiceau présente une dureté moyenne de 32 à 34 degrés français. Le calcaire y est très présent et favorise la dégradation prématurée des échangeurs thermiques de chaudières et des résistances de chauffe-eau."
+  },
+  {
+    q: "Y a-t-il des frais kilométriques supplémentaires pour Bossut ou Biez ?",
+    a: "Non. Toute l'entité communale de Grez-Doiceau (1390) bénéficie de notre grille tarifaire locale transparente, sans aucun surcoût de déplacement caché."
+  }
+];
+---
+
+<Layout
+  title="Plombier Grez-Doiceau (1390) | Dépannage Urgence & Débouchage 24/7"
+  description="Plombier à Grez-Doiceau (1390) et Gastuche : fuite d'eau, débouchage fosse et canalisation, dépannage chaudière en 25 min. Devis gratuit au 010 39 50 10."
+>
+
+  <!-- Hero Header -->
+  <section class="bg-[#123470] text-white py-16 lg:py-20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
+      
+      <div class="flex items-center gap-2 text-xs font-bold text-white/70">
+        <a href="/" class="hover:text-white">Accueil</a>
+        <span>/</span>
+        <a href="/locations" class="hover:text-white">Zones</a>
+        <span>/</span>
+        <span class="text-[#fcd400]">Grez-Doiceau (1390)</span>
+      </div>
+
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#fcd400] text-[#101d29] text-xs font-bold uppercase tracking-wider">
+        <Icon name="map-pin" class="w-4 h-4 text-[#00327d]" />
+        <span>Secteur Grez-Doiceau 1390 - Arrivée en 20-30 minutes</span>
+      </div>
+
+      <h1 class="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight max-w-4xl">
+        Plombier à Grez-Doiceau : Dépannage Sanitaire & Urgence Débouchage 24/7
+      </h1>
+
+      <p class="text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed">
+        Une canalisation bouchée à Gastuche ? Un problème de fosse à Nethen ou une fuite d'eau à Bossut-Gottechain ? Nos artisans plombiers de proximité interviennent en moins de 30 minutes sur toute la commune.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+        <a
+          href="tel:010395010"
+          class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#fcd400] hover:bg-[#e9c400] text-[#101d29] font-display font-extrabold text-base shadow-lg transition-transform active:scale-95"
+        >
+          <Icon name="phone" class="w-5 h-5 text-[#00327d]" />
+          <span>Urgence Grez-Doiceau : 010 39 50 10</span>
+        </a>
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-display font-bold text-sm shadow-sm transition-all"
+        >
+          Demander un devis détaillé
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Neighborhood Details & Local Specifics -->
+  <section class="py-16 sm:py-24 bg-white border-b border-[#e4eaf1]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Secteurs & Terrains
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Une Prise en Charge Adaptée aux Propriétés de Grez-Doiceau
+        </h2>
+        <p class="text-base text-[#434653] leading-relaxed">
+          Grez-Doiceau présente de nombreuses propriétés arborées et étendues qui nécessitent un équipement spécifique : buses d'hydrocurage pour longues distances, furets rotatifs renforcés et diagnostic caméra pour déceler racines et affaissements.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {neighborhoods.map((n) => (
+          <div class="bg-[#f7f9ff] p-6 rounded-2xl border border-[#e4eaf1] space-y-3">
+            <h3 class="font-display font-bold text-base text-[#00327d]">
+              {n.name}
+            </h3>
+            <p class="text-xs text-[#434653] leading-relaxed">
+              {n.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Driving Directions from Landmarks -->
+  <section class="py-16 sm:py-24 bg-[#f7f9ff]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#705d00] bg-[#fcd400]/20 px-3.5 py-1.5 rounded-full inline-block">
+          Trajets Optimisés
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Comment Nous Rejoignons Grez-Doiceau en Moins de 30 Minutes
+        </h2>
+        <p class="text-base text-[#434653]">
+          Depuis notre base wavrienne, la N4 offre une ligne directe vers le centre de Grez-Doiceau et les villages environnants.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {directions.map((d) => (
+          <div class="bg-white p-6 rounded-2xl border border-[#e4eaf1] shadow-xs space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-[#edf4ff] text-[#0047ab] flex items-center justify-center">
+              <Icon name="navigation" class="w-5 h-5 text-[#0047ab]" />
+            </div>
+            <h3 class="font-display font-bold text-base text-[#101d29]">
+              {d.from}
+            </h3>
+            <p class="text-xs sm:text-sm text-[#434653] leading-relaxed">
+              {d.route}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Competitor Comparison Table -->
+  <section class="py-16 sm:py-24 bg-white border-t border-[#e4eaf1]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Analyse Comparative
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Pourquoi Préférer Notre Service à Grez-Doiceau ?
+        </h2>
+        <p class="text-base text-[#434653]">
+          Une comparaison objective entre nos prestations et les pratiques des autres dépanneurs.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse bg-white rounded-2xl overflow-hidden shadow-xs border border-[#e4eaf1]">
+          <thead>
+            <tr class="bg-[#123470] text-white text-xs sm:text-sm uppercase tracking-wider">
+              <th class="p-4 sm:p-5">Points Clés</th>
+              <th class="p-4 sm:p-5 bg-[#0047ab] text-[#fcd400]">Plombier Wavre Urgent</th>
+              <th class="p-4 sm:p-5">Centrales Téléphoniques</th>
+              <th class="p-4 sm:p-5">Dépanneurs Non Équipés</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#e4eaf1] text-xs sm:text-sm text-[#434653]">
+            {comparison.map((row) => (
+              <tr class="hover:bg-[#f7f9ff]">
+                <td class="p-4 sm:p-5 font-bold text-[#101d29]">{row.feature}</td>
+                <td class="p-4 sm:p-5 bg-[#edf4ff] font-extrabold text-[#00327d]">{row.us}</td>
+                <td class="p-4 sm:p-5 text-[#ba1a1a]">{row.competitorA}</td>
+                <td class="p-4 sm:p-5">{row.competitorB}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQs Grez-Doiceau -->
+  <section class="py-16 sm:py-24 bg-[#f7f9ff] border-t border-[#e4eaf1]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="text-center space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Foire Aux Questions
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Questions Fréquentes à Grez-Doiceau
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((f) => (
+          <div class="bg-white p-6 rounded-2xl border border-[#e4eaf1] shadow-xs space-y-2">
+            <h3 class="font-display font-bold text-base text-[#00327d]">
+              {f.q}
+            </h3>
+            <p class="text-sm text-[#434653] leading-relaxed">
+              {f.a}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Emergency Banner -->
+  <section class="bg-[#00327d] text-white py-12 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+      <div class="space-y-2">
+        <h2 class="font-display font-black text-2xl sm:text-3xl text-white">
+          Besoin d'un plombier urgent à Grez-Doiceau ou Gastuche ?
+        </h2>
+        <p class="text-white/80 text-sm max-w-xl">
+          Notre dépanneur est en route. Tarifs annoncés au téléphone et travail soigné garanti.
+        </p>
+      </div>
+      <a
+        href="tel:010395010"
+        class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#fcd400] hover:bg-[#e9c400] text-[#101d29] font-display font-extrabold text-base shadow-lg transition-transform active:scale-95 shrink-0"
+      >
+        <Icon name="phone" class="w-5 h-5 text-[#00327d]" />
+        <span>010 39 50 10</span>
+      </a>
+    </div>
+  </section>
+
+</Layout>

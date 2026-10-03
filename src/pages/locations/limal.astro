@@ -1,0 +1,282 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
+
+const neighborhoods = [
+  { name: "Limal Centre & Église", desc: "Secteur ancien aux canalisations mixtes en grès et fonte. Débouchage express et mise aux normes." },
+  { name: "Avenue de la Station & Gare", desc: "Logements mitoyens et commerces. Réparation de fuites après compteur et dépannage WC." },
+  { name: "Quartier de l'Hacienda & Bois", desc: "Zone vallonnée de villas. Dépannage réducteurs de pression et entretien boilers stéatites." },
+  { name: "Hauteurs de Rixensart / Limal", desc: "Propriétés résidentielles sujettes aux dépôts massifs de calcaire et problèmes de sterputs." }
+];
+
+const directions = [
+  {
+    from: "Depuis la Gare de Wavre",
+    route: "Emprunter la Rue Provinciale puis la N238 vers Limal. Temps de trajet : 8 à 12 minutes (environ 4.5 km)."
+  },
+  {
+    from: "Depuis le parc Walibi Belgium",
+    route: "Prendre le Boulevard de l'Europe, rejoindre la Chaussée de Namur puis tourner vers l'Avenue de la Station. Temps de trajet : 10 minutes."
+  },
+  {
+    from: "Depuis l'échangeur E411 (Sortie 6 Wavre)",
+    route: "Prendre direction Ottignies / Limal via la N238, bifurcation immédiate vers le centre de Limal. Temps de trajet : 7 minutes."
+  }
+];
+
+const comparison = [
+  {
+    feature: "Temps d'arrivée à Limal (1300)",
+    us: "20 à 30 minutes garanties",
+    competitorA: "48h à 72h (Heat-me)",
+    competitorB: "Variable ou indisponible (artisans isolés)"
+  },
+  {
+    feature: "Disponibilité Nuit et Dimanche",
+    us: "Vraie astreinte 24h/24 et 7j/7",
+    competitorA: "Plateforme téléphonique sans équipe de nuit",
+    competitorB: "Fermé le week-end et jours fériés"
+  },
+  {
+    feature: "Transparence des Tarifs",
+    us: "Devis clair annoncé avant travaux",
+    competitorA: "Frais cachés de mise en relation",
+    competitorB: "Tarifs horaires à la tête du client"
+  },
+  {
+    feature: "Spécialisation Calcaire Limal",
+    us: "Diagnostic dureté d'eau offert (>32 °fH)",
+    competitorA: "Approche généraliste sans test",
+    competitorB: "Rarement équipé pour détartrage lourd"
+  },
+  {
+    feature: "Agrément Cerga & Assurances",
+    us: "Certifié Cerga Gaz et partenaires assurances",
+    competitorA: "Sous-traitance non certifiée",
+    competitorB: "Facturation sans agrément officiel"
+  }
+];
+
+const faqs = [
+  {
+    q: "Quelle est la dureté de l'eau à Limal (1300) ?",
+    a: "L'eau à Limal est distribuée par inBW et présente une dureté d'environ 33 degrés français. Cette forte concentration en calcaire accélère l'entartrage des chauffe-eau et bouche les mousseurs de robinet."
+  },
+  {
+    q: "Facturez-vous des frais de déplacement supplémentaires pour Limal ?",
+    a: "Non. Limal fait partie intégrante de la commune de Wavre (code postal 1300). Vous bénéficiez du même forfait local sans aucun supplément kilométrique."
+  },
+  {
+    q: "Quel matériel utilisez-vous pour un débouchage à Limal ?",
+    a: "Nous intervenons avec une hydrocureuse haute pression 150 bars embarquée dans le véhicule et une caméra d'inspection pour les réseaux d'égouttage des propriétés vallonnées."
+  }
+];
+---
+
+<Layout
+  title="Plombier Limal (1300) | Dépannage d'Urgence & Débouchage 24/7"
+  description="Plombier à Limal (1300) : intervention en 25 minutes pour fuite d'eau, débouchage WC, boiler en panne. Devis gratuit et agréé assurances. Tél : 010 39 50 10."
+>
+
+  <!-- Hero Header -->
+  <section class="bg-[#123470] text-white py-16 lg:py-20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
+      
+      <div class="flex items-center gap-2 text-xs font-bold text-white/70">
+        <a href="/" class="hover:text-white">Accueil</a>
+        <span>/</span>
+        <a href="/locations" class="hover:text-white">Zones</a>
+        <span>/</span>
+        <span class="text-[#fcd400]">Limal (1300)</span>
+      </div>
+
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#fcd400] text-[#101d29] text-xs font-bold uppercase tracking-wider">
+        <Icon name="map-pin" class="w-4 h-4 text-[#00327d]" />
+        <span>Secteur Limal 1300 - Arrivée en 25 minutes</span>
+      </div>
+
+      <h1 class="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight max-w-4xl">
+        Plombier à Limal (1300) : Dépannage d'Urgence et Sanitaire 24/7
+      </h1>
+
+      <p class="text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed">
+        Une fuite d'eau rue de Rixensart ? Un WC bouché avenue de la Station ? Nos artisans plombiers basés sur l'entité de Wavre interviennent en moins de 30 minutes chez vous à Limal.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+        <a
+          href="tel:010395010"
+          class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#fcd400] hover:bg-[#e9c400] text-[#101d29] font-display font-extrabold text-base shadow-lg transition-transform active:scale-95"
+        >
+          <Icon name="phone" class="w-5 h-5 text-[#00327d]" />
+          <span>Appel Urgence Limal : 010 39 50 10</span>
+        </a>
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-display font-bold text-sm shadow-sm transition-all"
+        >
+          Demander un devis pour Limal
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Neighborhood Details & Local Specifics -->
+  <section class="py-16 sm:py-24 bg-white border-b border-[#e4eaf1]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Spécificités Locales
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          La Plomberie à Limal : Relief, Réseaux et Calcaire
+        </h2>
+        <p class="text-base text-[#434653] leading-relaxed">
+          Le village de Limal se caractérise par une topographie vallonnée entraînant de fortes variations de pression d'eau entre les fonds de vallée (proche de la Dyle) et les hauteurs résidentielles. Cette configuration exige des compétences pointues en régulation de pression et protection anti-bélier.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {neighborhoods.map((n) => (
+          <div class="bg-[#f7f9ff] p-6 rounded-2xl border border-[#e4eaf1] space-y-3">
+            <h3 class="font-display font-bold text-base text-[#00327d]">
+              {n.name}
+            </h3>
+            <p class="text-xs text-[#434653] leading-relaxed">
+              {n.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Driving Directions from Landmarks -->
+  <section class="py-16 sm:py-24 bg-[#f7f9ff]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#705d00] bg-[#fcd400]/20 px-3.5 py-1.5 rounded-full inline-block">
+          Itinéraires Rapides
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Comment Nous Arrivons Chez Vous à Limal en Moins de 30 Minutes
+        </h2>
+        <p class="text-base text-[#434653]">
+          Grâce à notre proximité immédiate avec les grands axes wavriens, nos camionnettes évitent les embouteillages de centre-ville.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {directions.map((d) => (
+          <div class="bg-white p-6 rounded-2xl border border-[#e4eaf1] shadow-xs space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-[#edf4ff] text-[#0047ab] flex items-center justify-center">
+              <Icon name="navigation" class="w-5 h-5 text-[#0047ab]" />
+            </div>
+            <h3 class="font-display font-bold text-base text-[#101d29]">
+              {d.from}
+            </h3>
+            <p class="text-xs sm:text-sm text-[#434653] leading-relaxed">
+              {d.route}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Competitor Comparison Table -->
+  <section class="py-16 sm:py-24 bg-white border-t border-[#e4eaf1]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Comparatif Objectif
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Pourquoi Choisir Notre Équipe Plutôt qu'un Concurrent à Limal ?
+        </h2>
+        <p class="text-base text-[#434653]">
+          Voici un comparatif concret entre nos engagements et ceux des plateformes web ou artisans généralistes.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse bg-white rounded-2xl overflow-hidden shadow-xs border border-[#e4eaf1]">
+          <thead>
+            <tr class="bg-[#123470] text-white text-xs sm:text-sm uppercase tracking-wider">
+              <th class="p-4 sm:p-5">Critère de Sélection</th>
+              <th class="p-4 sm:p-5 bg-[#0047ab] text-[#fcd400]">Plombier Wavre Urgent</th>
+              <th class="p-4 sm:p-5">Plateformes Web Nationales</th>
+              <th class="p-4 sm:p-5">Dépanneurs Isolés</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#e4eaf1] text-xs sm:text-sm text-[#434653]">
+            {comparison.map((row) => (
+              <tr class="hover:bg-[#f7f9ff]">
+                <td class="p-4 sm:p-5 font-bold text-[#101d29]">{row.feature}</td>
+                <td class="p-4 sm:p-5 bg-[#edf4ff] font-extrabold text-[#00327d]">{row.us}</td>
+                <td class="p-4 sm:p-5 text-[#ba1a1a]">{row.competitorA}</td>
+                <td class="p-4 sm:p-5">{row.competitorB}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQs Limal -->
+  <section class="py-16 sm:py-24 bg-[#f7f9ff] border-t border-[#e4eaf1]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="text-center space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Questions Locales
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Questions Fréquentes sur Nos Interventions à Limal
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((f) => (
+          <div class="bg-white p-6 rounded-2xl border border-[#e4eaf1] shadow-xs space-y-2">
+            <h3 class="font-display font-bold text-base text-[#00327d]">
+              {f.q}
+            </h3>
+            <p class="text-sm text-[#434653] leading-relaxed">
+              {f.a}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Action Callout -->
+      <div class="bg-[#0047ab] rounded-2xl p-8 text-center text-white space-y-4 shadow-xl">
+        <h3 class="font-display font-extrabold text-2xl text-white">
+          Vous résidez à Limal (1300) et avez besoin d'un plombier ?
+        </h3>
+        <p class="text-sm text-white/80 max-w-xl mx-auto">
+          Contactez directement notre artisan de permanence. Arrivée garantie en moins de 30 minutes.
+        </p>
+        <div class="pt-2">
+          <a
+            href="tel:010395010"
+            class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#fcd400] text-[#101d29] font-display font-extrabold text-base hover:bg-[#e9c400] shadow-md transition-all active:scale-95"
+          >
+            <Icon name="phone" class="w-5 h-5 text-[#00327d]" />
+            <span>010 39 50 10 (Départ immédiat)</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
