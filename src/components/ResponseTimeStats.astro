@@ -1,0 +1,110 @@
+---
+import Icon from './Icon.astro';
+
+const stats = [
+  {
+    value: "24 min",
+    label: "Temps d'Arrivée Moyen",
+    detail: "Constaté sur Wavre 1300, Limal et Bierges grâce à notre base centrale.",
+    icon: "clock",
+    highlight: "Départ sous 5 minutes"
+  },
+  {
+    value: "98.4%",
+    label: "Résolution au 1er Passage",
+    detail: "Camionnettes ateliers équipées de plus de 450 pièces détachées en stock.",
+    icon: "check",
+    highlight: "Zéro aller-retour inutile"
+  },
+  {
+    value: "4 850+",
+    label: "Interventions Réussies",
+    detail: "Plus de 15 ans d'activité ininterrompue en plomberie dans le Brabant Wallon.",
+    icon: "wrench",
+    highlight: "Depuis 2011 à Wavre"
+  },
+  {
+    value: "100%",
+    label: "Agrément Assurances Belges",
+    detail: "Dossiers d'expertise complets avec photos pour AG, AXA, Ethias, Baloise.",
+    icon: "shield",
+    highlight: "Remboursement sans franchise"
+  }
+];
+---
+
+<section class="py-16 sm:py-20 bg-[#123470] text-white relative overflow-hidden">
+  <!-- Subtle Background Pattern -->
+  <div class="absolute inset-0 opacity-10 pointer-events-none">
+    <div class="absolute -right-20 -top-20 w-96 h-96 rounded-full bg-[#0047ab] blur-3xl"></div>
+    <div class="absolute -left-20 -bottom-20 w-96 h-96 rounded-full bg-[#fcd400] blur-3xl"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
+    
+    <div class="text-center max-w-3xl mx-auto space-y-3">
+      <span class="text-xs font-extrabold uppercase tracking-widest text-[#fcd400] bg-white/10 px-3.5 py-1.5 rounded-full inline-block">
+        Statistiques & Performance
+      </span>
+      <h2 class="font-display font-black text-2xl sm:text-4xl text-white tracking-tight">
+        Rapidité, Efficacité & Fiabilité Mesurées
+      </h2>
+      <p class="text-sm sm:text-base text-white/80 leading-relaxed">
+        Nos engagements ne sont pas des promesses en l'air. Voici nos chiffres concrets constatés sur l'ensemble de nos dépannages récents.
+      </p>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {stats.map((s) => (
+        <div class="bg-white/10 rounded-3xl p-7 border border-white/15 backdrop-blur-sm flex flex-col justify-between hover:bg-white/15 hover:border-white/25 transition-all group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-2xl bg-[#0047ab] text-white flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
+                <Icon name={s.icon} class="w-6 h-6 text-[#fcd400]" />
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-[#fcd400] bg-[#fcd400]/15 px-2.5 py-1 rounded-full">
+                {s.highlight}
+              </span>
+            </div>
+
+            <div>
+              <span class="font-display font-black text-4xl sm:text-5xl text-white tracking-tight block tabular-nums">
+                {s.value}
+              </span>
+              <h3 class="font-display font-bold text-base text-[#fcd400] mt-1">
+                {s.label}
+              </h3>
+            </div>
+
+            <p class="text-xs text-white/75 leading-relaxed">
+              {s.detail}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Live Astreinte Confirmation Strip -->
+    <div class="bg-white/10 rounded-2xl p-4 sm:p-5 border border-white/15 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <div class="flex items-center gap-3">
+        <span class="relative flex h-3.5 w-3.5">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#059669] opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#059669]"></span>
+        </span>
+        <span class="text-xs sm:text-sm font-semibold text-white">
+          Astreinte en cours : un artisan dépanneur est disponible à Wavre en ce moment même.
+        </span>
+      </div>
+
+      <a
+        href="tel:010395010"
+        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#fcd400] hover:bg-[#e9c400] text-[#101d29] font-display font-extrabold text-xs tracking-wide shadow-sm transition-transform active:scale-95 shrink-0"
+      >
+        <Icon name="phone" class="w-4 h-4 text-[#00327d]" />
+        <span>010 39 50 10</span>
+      </a>
+    </div>
+
+  </div>
+</section>

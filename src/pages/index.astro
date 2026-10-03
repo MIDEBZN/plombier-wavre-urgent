@@ -1,6 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
+import ResponseTimeStats from '../components/ResponseTimeStats.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import ServiceAreaMap from '../components/ServiceAreaMap.astro';
+import CustomerTestimonials from '../components/CustomerTestimonials.astro';
 
 const services = [
   {
@@ -77,24 +81,6 @@ const pricingItems = [
     price: "240 €",
     detail: "Détection acoustique et caméra thermique avec rédaction du rapport technique officiel pour votre assurance habitation.",
     popular: false
-  }
-];
-
-const reviews = [
-  {
-    author: "Marc V. (Bierges)",
-    text: "Canalisation principale totalement refoulée un dimanche matin. L'artisan est arrivé en 25 minutes avec la caméra et a réglé le problème proprement. Tarif annoncé avant intervention.",
-    service: "Débouchage d'urgence"
-  },
-  {
-    author: "Sophie D. (Wavre Centre)",
-    text: "Fuite importante après compteur sous l'évier. Très professionnel, rassurant et travail impeccable. Fourniture immédiate de la facture détaillée pour mon assurance.",
-    service: "Réparation fuite d'eau"
-  },
-  {
-    author: "Laurent B. (Limal)",
-    text: "Remplacement d'un vieux chauffe-eau percé en moins de 24h. Devis respecté au centime près et installation d'un adoucisseur d'eau BWT très efficace.",
-    service: "Installation boiler & adoucisseur"
   }
 ];
 
@@ -265,6 +251,9 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Trust Badges Section -->
+  <TrustBadges />
+
   <!-- Services Grid Section -->
   <section class="py-16 sm:py-24 bg-white border-y border-[#e4eaf1]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -324,6 +313,9 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Response Time & Reliability Stats Section -->
+  <ResponseTimeStats />
+
   <!-- Transparent Pricing Section -->
   <section class="py-16 sm:py-24 bg-[#f7f9ff]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -378,126 +370,11 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Local Coverage Section -->
-  <section class="py-16 sm:py-24 bg-[#123470] text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <div class="lg:col-span-6 space-y-6">
-          <span class="text-xs font-extrabold uppercase tracking-widest text-[#fcd400] bg-white/10 px-3 py-1.5 rounded-full inline-block">
-            Proximité Brabant Wallon
-          </span>
-          <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight">
-            Intervention Rapide dans Tous les Quartiers de Wavre
-          </h2>
-          <p class="text-base text-white/80 leading-relaxed font-normal">
-            Nos camionnettes d'intervention sillonnent constamment le secteur pour garantir une arrivée en 30 minutes maximum. Nous connaissons chaque quartier et la configuration des réseaux de distribution d'eau locaux.
-          </p>
+  <!-- Service Area Map Section -->
+  <ServiceAreaMap />
 
-          <div class="grid grid-cols-2 gap-4 pt-2">
-            <div class="bg-white/10 p-4 rounded-xl border border-white/10">
-              <span class="font-display font-bold text-base text-[#fcd400] block">Wavre Centre (1300)</span>
-              <span class="text-xs text-white/70">Place Cardinal Mercier, Gare, Basse-Wavre</span>
-            </div>
-            <div class="bg-white/10 p-4 rounded-xl border border-white/10">
-              <span class="font-display font-bold text-base text-[#fcd400] block">Bierges (1301)</span>
-              <span class="text-xs text-white/70">Accès immédiat E411 et N4</span>
-            </div>
-            <div class="bg-white/10 p-4 rounded-xl border border-white/10">
-              <span class="font-display font-bold text-base text-[#fcd400] block">Limal (1300)</span>
-              <span class="text-xs text-white/70">Secteur résidentiel et vallonné</span>
-            </div>
-            <div class="bg-white/10 p-4 rounded-xl border border-white/10">
-              <span class="font-display font-bold text-base text-[#fcd400] block">Ottignies-LLN (1348)</span>
-              <span class="text-xs text-white/70">Zone universitaire et banlieue</span>
-            </div>
-          </div>
-
-          <div class="pt-4">
-            <a
-              href="/locations"
-              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#fcd400] text-[#101d29] font-display font-bold text-sm hover:bg-[#e9c400] shadow-sm transition-all"
-            >
-              <span>Vérifier votre commune d'intervention</span>
-              <Icon name="arrow-right" class="w-4 h-4 text-[#00327d]" />
-            </a>
-          </div>
-        </div>
-
-        <div class="lg:col-span-6">
-          <div class="bg-white/5 border border-white/10 rounded-3xl p-8 space-y-6">
-            <h3 class="font-display font-bold text-xl text-white">
-              Pourquoi notre ancrage local fait la différence ?
-            </h3>
-            <ul class="space-y-4 text-sm text-white/80">
-              <li class="flex items-start gap-3">
-                <Icon name="check" class="w-5 h-5 text-[#fcd400] shrink-0 mt-0.5" />
-                <span><strong>Zéro frais kilométrique abusif :</strong> nous sommes domiciliés à Wavre même, pas à Bruxelles ou en France comme certains intermédiaires.</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <Icon name="check" class="w-5 h-5 text-[#fcd400] shrink-0 mt-0.5" />
-                <span><strong>Pièces de rechange en stock immédiat :</strong> vannes, raccords multiskin, mécanismes Geberit et groupes de sécurité disponibles dans le véhicule.</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <Icon name="check" class="w-5 h-5 text-[#fcd400] shrink-0 mt-0.5" />
-                <span><strong>Agrément Cerga Gaz et conformité wallonne :</strong> techniciens habilités pour toute mise en sécurité de chauffe-eau ou chaudière gaz.</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section class="py-16 sm:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
-          Retours d'Expérience
-        </span>
-        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
-          Ce Que Disent les Habitants de Wavre
-        </h2>
-        <div class="flex items-center justify-center gap-1 text-[#fcd400]">
-          <Icon name="star" class="w-5 h-5 text-[#705d00]" />
-          <Icon name="star" class="w-5 h-5 text-[#705d00]" />
-          <Icon name="star" class="w-5 h-5 text-[#705d00]" />
-          <Icon name="star" class="w-5 h-5 text-[#705d00]" />
-          <Icon name="star" class="w-5 h-5 text-[#705d00]" />
-          <span class="ml-2 text-sm font-bold text-[#101d29]">4.9 / 5 (Plus de 140 avis clients)</span>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {reviews.map((r) => (
-          <div class="bg-[#f7f9ff] rounded-2xl p-7 border border-[#e4eaf1] flex flex-col justify-between shadow-xs">
-            <div class="space-y-4">
-              <div class="flex items-center gap-1 text-[#705d00]">
-                <Icon name="star" class="w-4 h-4" />
-                <Icon name="star" class="w-4 h-4" />
-                <Icon name="star" class="w-4 h-4" />
-                <Icon name="star" class="w-4 h-4" />
-                <Icon name="star" class="w-4 h-4" />
-              </div>
-              <p class="text-sm text-[#434653] italic leading-relaxed">
-                "{r.text}"
-              </p>
-            </div>
-            <div class="pt-4 mt-4 border-t border-[#e4eaf1]">
-              <span class="font-display font-bold text-sm text-[#101d29] block">{r.author}</span>
-              <span class="text-xs text-[#0047ab] font-medium">{r.service}</span>
-            </div>
-          </div>
-        ))}
-      </div>
-
-    </div>
-  </section>
+  <!-- Customer Testimonials & Review Badges Section -->
+  <CustomerTestimonials />
 
   <!-- FAQ Section -->
   <section class="py-16 sm:py-24 bg-[#f7f9ff] border-t border-[#e4eaf1]">

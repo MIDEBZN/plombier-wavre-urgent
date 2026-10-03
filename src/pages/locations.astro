@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
+import ServiceAreaMap from '../components/ServiceAreaMap.astro';
+import ResponseTimeStats from '../components/ResponseTimeStats.astro';
 
 const zones = [
   {
@@ -194,5 +196,11 @@ const zones = [
 
     </div>
   </section>
+
+  <!-- Service Area Interactive Map -->
+  <ServiceAreaMap />
+
+  <!-- Response Time Metrics -->
+  <ResponseTimeStats />
 
 </Layout>

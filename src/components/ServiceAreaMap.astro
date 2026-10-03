@@ -1,0 +1,184 @@
+---
+import Icon from './Icon.astro';
+
+const communes = [
+  {
+    name: "Wavre Centre (1300)",
+    slug: "wavre",
+    postal: "1300",
+    delay: "15 à 25 min",
+    distance: "Atelier central",
+    desc: "Place Cardinal Mercier, Rue du Pont, Basse-Wavre, gare et commerces.",
+    link: "/locations"
+  },
+  {
+    name: "Limal",
+    slug: "limal",
+    postal: "1300",
+    delay: "20 à 25 min",
+    distance: "3.8 km",
+    desc: "Secteur résidentiel et vallonné, Avenue de la Station, Route de Rixensart.",
+    link: "/locations/limal"
+  },
+  {
+    name: "Bierges",
+    slug: "bierges",
+    postal: "1301",
+    delay: "15 à 20 min",
+    distance: "2.4 km",
+    desc: "Route Provinciale, Fond Marie, accès immédiat sortie 5 de l'E411.",
+    link: "/locations/bierges"
+  },
+  {
+    name: "Ottignies - Louvain-la-Neuve",
+    slug: "ottignies-louvain-la-neuve",
+    postal: "1340 & 1348",
+    delay: "20 à 30 min",
+    distance: "6.2 km",
+    desc: "Centre piétonnier LLN, kots étudiants, Limelette, Mousty et Ottignies Gare.",
+    link: "/locations/ottignies-louvain-la-neuve"
+  },
+  {
+    name: "Rixensart & Genval",
+    slug: "rixensart",
+    postal: "1330 & 1332",
+    delay: "20 à 30 min",
+    distance: "6.5 km",
+    desc: "Lac de Genval, Papeteries, Bourgeois, Rosières et grandes propriétés.",
+    link: "/locations/rixensart"
+  },
+  {
+    name: "Grez-Doiceau",
+    slug: "grez-doiceau",
+    postal: "1390",
+    delay: "20 à 25 min",
+    distance: "5.5 km",
+    desc: "Gastuche, Place Dubois, Nethen, Archennes et assainissement individuel.",
+    link: "/locations/grez-doiceau"
+  },
+  {
+    name: "Chaumont-Gistoux",
+    slug: "chaumont-gistoux",
+    postal: "1325",
+    delay: "20 à 25 min",
+    distance: "5.8 km",
+    desc: "Dion-Valmont, surpressions réseau >6 bars, Chaussée de Huy et Bonlez.",
+    link: "/locations/chaumont-gistoux"
+  }
+];
+---
+
+<section id="carte-services" class="py-16 sm:py-24 bg-[#f7f9ff] border-t border-[#e4eaf1]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-4 py-1.5 rounded-full inline-block">
+        Rayon d'Intervention Garanti
+      </span>
+      <h2 class="font-display font-black text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+        Carte de Nos Secteurs de Dépannage à Wavre et Alentours
+      </h2>
+      <p class="text-sm sm:text-base text-[#434653] leading-relaxed">
+        Basés Chaussée de Bruxelles à Wavre, nos véhicules d'astreinte rayonnent dans un périmètre immédiat garantissant une arrivée en moins de 30 minutes sans frais kilométriques imprévus.
+      </p>
+    </div>
+
+    <!-- Map & Agglomeration Visual Schematic -->
+    <div class="bg-white rounded-3xl p-6 sm:p-10 border border-[#e4eaf1] shadow-lg grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      
+      <!-- Visual Map Graphic -->
+      <div class="lg:col-span-6 bg-[#edf4ff] rounded-2xl p-6 border border-[#0047ab]/20 relative overflow-hidden flex flex-col justify-between min-h-[380px]">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-[#00327d] bg-white px-3 py-1 rounded-full shadow-xs">
+            Plan des Secteurs Brabant Wallon
+          </span>
+          <span class="text-xs font-bold text-[#059669] flex items-center gap-1.5 bg-white px-3 py-1 rounded-full shadow-xs">
+            <span class="w-2 h-2 rounded-full bg-[#059669] animate-pulse"></span>
+            <span>Camionnettes Géolocalisées</span>
+          </span>
+        </div>
+
+        <!-- Central Hub Node (Wavre) with Surrounding Pins -->
+        <div class="py-8 relative flex items-center justify-center">
+          <!-- Concentric radar circles -->
+          <div class="absolute w-72 h-72 rounded-full border border-[#0047ab]/15 animate-ping opacity-30"></div>
+          <div class="absolute w-56 h-56 rounded-full border border-[#0047ab]/25"></div>
+          <div class="absolute w-36 h-36 rounded-full bg-[#0047ab]/10 border border-[#0047ab]/30"></div>
+
+          <!-- Central Hub Pin -->
+          <div class="relative z-10 text-center space-y-1">
+            <div class="w-16 h-16 rounded-full bg-[#00327d] text-white flex items-center justify-center mx-auto shadow-xl ring-4 ring-[#fcd400]">
+              <Icon name="map-pin" class="w-8 h-8 text-[#fcd400]" />
+            </div>
+            <span class="font-display font-black text-sm text-[#00327d] block bg-white px-3 py-0.5 rounded-full shadow-xs">
+              Atelier Wavre (1300)
+            </span>
+          </div>
+        </div>
+
+        <!-- Distance & GPS Notice -->
+        <div class="bg-white p-3.5 rounded-xl border border-[#e4eaf1] flex items-center justify-between text-xs text-[#434653]">
+          <div class="flex items-center gap-2">
+            <Icon name="navigation" class="w-4 h-4 text-[#0047ab]" />
+            <span>Itinéraires GPS optimisés en temps réel</span>
+          </div>
+          <span class="font-extrabold text-[#00327d]">Arrivée &lt; 30 min</span>
+        </div>
+      </div>
+
+      <!-- Communes Selector List -->
+      <div class="lg:col-span-6 space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-[#705d00] block mb-2">
+          Sélectionnez votre commune pour voir les détails d'accès :
+        </span>
+
+        <div class="space-y-2.5 max-h-[420px] overflow-y-auto pr-1">
+          {communes.map((c) => (
+            <a
+              href={c.link}
+              class="block bg-[#f7f9ff] hover:bg-[#edf4ff] p-4 rounded-2xl border border-[#e4eaf1] hover:border-[#0047ab]/40 transition-all group"
+            >
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-8 h-8 rounded-lg bg-[#0047ab] text-white flex items-center justify-center shrink-0">
+                    <Icon name="map-pin" class="w-4 h-4 text-[#fcd400]" />
+                  </div>
+                  <div>
+                    <h3 class="font-display font-bold text-sm text-[#101d29] group-hover:text-[#0047ab] transition-colors">
+                      {c.name}
+                    </h3>
+                    <span class="text-[11px] text-[#434653] block leading-snug">
+                      {c.desc}
+                    </span>
+                  </div>
+                </div>
+
+                <div class="text-right shrink-0 pl-3">
+                  <span class="text-xs font-black text-[#059669] block">
+                    {c.delay}
+                  </span>
+                  <span class="text-[10px] text-[#434653] block">
+                    {c.distance}
+                  </span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <div class="pt-2">
+          <a
+            href="/locations"
+            class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-[#0047ab] hover:bg-[#00327d] text-white font-display font-bold text-xs shadow-xs transition-colors"
+          >
+            <span>Consulter toutes les communes & itinéraires complets</span>
+            <Icon name="arrow-right" class="w-3.5 h-3.5" />
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

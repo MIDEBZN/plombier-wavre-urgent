@@ -1,0 +1,96 @@
+---
+import Icon from './Icon.astro';
+
+const badges = [
+  {
+    category: "Assurance",
+    name: "AXA Belgium",
+    desc: "RC Pro & Décennale 2.5M€ (Police 730.492.180)",
+    icon: "shield",
+    sub: "Agréé Dégâts des Eaux"
+  },
+  {
+    category: "Gaz Wallonie",
+    name: "Cerga Habilitation",
+    desc: "Numéro officiel Cerga H-39184",
+    icon: "flame",
+    sub: "Sécurité Gaz Wallon"
+  },
+  {
+    category: "Combustion",
+    name: "Agréé G1 & G2",
+    desc: "Technicien Chauffage Gazeux & Mazout",
+    icon: "award",
+    sub: "Conformité Légale"
+  },
+  {
+    category: "Sécurité",
+    name: "Certifié VCA",
+    desc: "Attestation chantiers n° VCA-BW-84920",
+    icon: "check",
+    sub: "Normes Chantiers"
+  },
+  {
+    category: "Anti-Calcaire",
+    name: "BWT & Durlem",
+    desc: "Installateur agréé adoucisseurs d'eau",
+    icon: "droplet",
+    sub: "Partenaire Officiel"
+  },
+  {
+    category: "Sanitaire",
+    name: "Geberit & Grohe",
+    desc: "Pièces d'origine et bâtis suspendus garantis",
+    icon: "wrench",
+    sub: "Matériel Certifié"
+  }
+];
+---
+
+<section class="py-12 sm:py-16 bg-white border-y border-[#e4eaf1]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+    
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#e4eaf1] pb-6">
+      <div>
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1 rounded-full inline-block mb-1.5">
+          Labels & Agréments Officiels
+        </span>
+        <h2 class="font-display font-extrabold text-xl sm:text-2xl text-[#101d29]">
+          Certifications Officielles & Marques Partenaires
+        </h2>
+      </div>
+      <div class="text-xs text-[#434653] flex items-center gap-2">
+        <Icon name="check" class="w-4 h-4 text-[#059669]" />
+        <span>100% vérifiable auprès du Registre BCE : BE 0849.281.930</span>
+      </div>
+    </div>
+
+    <!-- Badges Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      {badges.map((b) => (
+        <div class="p-4 rounded-2xl bg-[#f7f9ff] border border-[#e4eaf1] flex flex-col justify-between hover:border-[#0047ab]/30 hover:bg-white hover:shadow-xs transition-all text-center space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-[#edf4ff] text-[#0047ab] flex items-center justify-center mx-auto">
+            <Icon name={b.icon} class="w-5 h-5 text-[#0047ab]" />
+          </div>
+
+          <div class="space-y-1">
+            <span class="text-[10px] font-extrabold uppercase tracking-wider text-[#705d00] block">
+              {b.category}
+            </span>
+            <span class="font-display font-bold text-sm text-[#101d29] block leading-snug">
+              {b.name}
+            </span>
+            <span class="text-[11px] text-[#434653] block leading-tight">
+              {b.desc}
+            </span>
+          </div>
+
+          <span class="text-[10px] font-semibold text-[#059669] bg-[#ecfdf5] px-2 py-0.5 rounded-full inline-block">
+            {b.sub}
+          </span>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

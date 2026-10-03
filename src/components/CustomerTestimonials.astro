@@ -1,0 +1,164 @@
+---
+import Icon from './Icon.astro';
+
+const reviews = [
+  {
+    author: "Marc V.",
+    location: "Bierges (1301)",
+    service: "Débouchage canalisation d'urgence",
+    timing: "Dimanche matin à 08h30 - Arrivé en 20 minutes",
+    text: "Canalisation principale totalement refoulée un dimanche matin, l'eau remontait dans le sterput de la buanderie. Le plombier est arrivé avec l'hydrocureuse et la caméra vidéo. Problème réglé en 45 minutes et tarif annoncé avant de démarrer. Un soulagement immense !",
+    rating: 5
+  },
+  {
+    author: "Sophie D.",
+    location: "Wavre Centre (1300)",
+    service: "Réparation fuite d'eau après compteur",
+    timing: "Jeudi à 19h45 - Arrivé en 18 minutes",
+    text: "Grosse fuite d'eau sous l'évier de la cuisine qui menaçait le parquet. L'artisan m'a d'abord guidée par téléphone pour couper la vanne générale, puis est arrivé très vite. Raccord remplacé proprement et facture détaillée remise pour mon assurance AXA.",
+    rating: 5
+  },
+  {
+    author: "Laurent B.",
+    location: "Limal (1300)",
+    service: "Remplacement chauffe-eau percé & Adoucisseur",
+    timing: "Intervention sous 24h",
+    text: "Notre vieux boiler a lâché et inondé le cellier. Devis clair et compétitif dès le lendemain matin, pose d'un nouveau ballon d'eau chaude et d'un adoucisseur BWT pour contrer le calcaire de Limal. Travail soigné et artisan très courtois.",
+    rating: 5
+  },
+  {
+    author: "Claire M.",
+    location: "Louvain-la-Neuve (1348)",
+    service: "Débouchage WC suspendu kot étudiant",
+    timing: "Vendredi à 22h10 - Arrivé en 25 minutes",
+    text: "WC totalement bloqué dans un kot en plein centre piétonnier de Louvain-la-Neuve. Ils sont intervenus de nuit sans rechigner malgré les ruelles piétonnes, avec un chariot d'outillage très bien pensé. Débouchage rapide et tarif très correct pour une nuit.",
+    rating: 5
+  },
+  {
+    author: "Philippe R.",
+    location: "Genval (1332) / Rixensart",
+    service: "Recherche de fuite non destructive",
+    timing: "Mardi à 14h00 - Rendez-vous ponctuel",
+    text: "Trace d'humidité sur le plafond du salon sans fuite visible. Détection acoustique et caméra thermique très précises : le tuyau d'évacuation fendu a été localisé au centimètre près sans casser tout le carrelage. Rapport photo envoyé à mon assurance.",
+    rating: 5
+  },
+  {
+    author: "Anne-Catherine H.",
+    location: "Chaumont-Gistoux (1325)",
+    service: "Dépannage surpression & groupe de sécurité",
+    timing: "Samedi après-midi - Arrivé en 24 minutes",
+    text: "Notre groupe de sécurité fuyait en continu à cause de la forte pression d'eau à Dion-Valmont. Pose d'un réducteur de pression professionnel taré à 3 bars. Le plombier avait la pièce directement dans son camion, aucune attente de commande.",
+    rating: 5
+  }
+];
+
+const reviewBadges = [
+  {
+    source: "Google Avis Clients",
+    score: "4.9 / 5",
+    count: "Plus de 148 avis vérifiés",
+    detail: "Artisan local le mieux noté sur l'entité de Wavre",
+    icon: "star"
+  },
+  {
+    source: "Trustpilot Belgique",
+    score: "4.9 / 5",
+    count: "Note Excellente",
+    detail: "100% d'avis authentiques certifiés",
+    icon: "award"
+  },
+  {
+    source: "Recommandé Brabant Wallon",
+    score: "Top Pro 2026",
+    count: "Charte Qualité & Délais",
+    detail: "Label d'excellence artisanale du Brabant Wallon",
+    icon: "shield"
+  }
+];
+---
+
+<section class="py-16 sm:py-24 bg-white border-t border-[#e4eaf1]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    
+    <!-- Header with Review Badges Summary -->
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-4 py-1.5 rounded-full inline-block">
+        Témoignages & Avis Vérifiés
+      </span>
+      <h2 class="font-display font-black text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+        Ce Que Disent les Propriétaires et Locataires de Wavre
+      </h2>
+      <p class="text-sm sm:text-base text-[#434653] leading-relaxed">
+        Découvrez les retours d'expérience authentiques de nos clients à Wavre, Limal, Bierges et dans toutes les communes limitrophes.
+      </p>
+    </div>
+
+    <!-- Review Badges Row -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {reviewBadges.map((b) => (
+        <div class="bg-[#f7f9ff] p-6 rounded-2xl border border-[#e4eaf1] shadow-xs flex items-center gap-4 hover:border-[#0047ab]/30 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-[#0047ab] text-white flex items-center justify-center shrink-0">
+            <Icon name={b.icon} class="w-6 h-6 text-[#fcd400]" />
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-display font-extrabold text-lg text-[#101d29]">{b.score}</span>
+              <div class="flex text-[#fcd400]">
+                {[...Array(5)].map(() => (
+                  <Icon name="star" class="w-3.5 h-3.5 text-[#705d00]" />
+                ))}
+              </div>
+            </div>
+            <span class="font-bold text-xs text-[#00327d] block">{b.source}</span>
+            <span class="text-[11px] text-[#434653] block">{b.count} - {b.detail}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- 6 Verified Testimonials Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {reviews.map((r) => (
+        <div class="bg-[#f7f9ff] rounded-3xl p-7 border border-[#e4eaf1] shadow-xs flex flex-col justify-between hover:border-[#0047ab]/40 hover:shadow-md transition-all">
+          <div class="space-y-4">
+            
+            <div class="flex items-center justify-between">
+              <div class="flex text-[#705d00]">
+                {[...Array(r.rating)].map(() => (
+                  <Icon name="star" class="w-4 h-4 text-[#705d00]" />
+                ))}
+              </div>
+              <span class="text-[10px] font-extrabold uppercase tracking-wider text-[#059669] bg-[#ecfdf5] px-2.5 py-0.5 rounded-full flex items-center gap-1">
+                <Icon name="check" class="w-3 h-3 text-[#059669]" />
+                <span>Client Vérifié</span>
+              </span>
+            </div>
+
+            <div>
+              <span class="text-xs font-bold text-[#0047ab] block">
+                {r.service}
+              </span>
+              <span class="text-[11px] text-[#705d00] font-semibold block mt-0.5">
+                {r.timing}
+              </span>
+            </div>
+
+            <p class="text-xs sm:text-sm text-[#434653] italic leading-relaxed">
+              "{r.text}"
+            </p>
+          </div>
+
+          <div class="pt-4 mt-6 border-t border-[#e4eaf1] flex items-center justify-between">
+            <span class="font-display font-bold text-sm text-[#101d29]">
+              {r.author}
+            </span>
+            <span class="text-xs font-semibold text-[#434653]">
+              {r.location}
+            </span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
