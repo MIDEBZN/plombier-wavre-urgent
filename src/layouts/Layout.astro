@@ -16,10 +16,14 @@ interface Props {
 const {
   title,
   description,
-  canonical = Astro.url.href,
+  canonical,
   schemaType = "Plumber"
 } = Astro.props;
 
+const siteUrl = "https://www.plombierwavreurgent.be";
+const rawPath = Astro.url.pathname;
+const cleanPath = rawPath === "/" ? "" : rawPath.replace(/\/+$/, "");
+const canonicalUrl = canonical || (cleanPath ? `${siteUrl}${cleanPath}` : `${siteUrl}/`);
 const currentPath = Astro.url.pathname;
 
 const navItems = [
@@ -31,92 +35,188 @@ const navItems = [
   { href: "/contact", label: "Contact & Devis" },
 ];
 
+const pathSegments = cleanPath.split("/").filter(Boolean);
+
+const breadcrumbElements: any[] = [
+  {
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Accueil",
+    "item": `${siteUrl}/`
+  }
+];
+
+if (pathSegments.length >= 1) {
+  const sectionSlug = pathSegments[0];
+  const sectionNames: Record<string, string> = {
+    services: "Services",
+    locations: "Zones d'intervention",
+    blog: "Guides & Tarifs",
+    about: "A propos",
+    contact: "Contact & Devis"
+  };
+  breadcrumbElements.push({
+    "@type": "ListItem",
+    "position": 2,
+    "name": sectionNames[sectionSlug] || sectionSlug,
+    "item": `${siteUrl}/${sectionSlug}`
+  });
+}
+
+if (pathSegments.length >= 2) {
+  breadcrumbElements.push({
+    "@type": "ListItem",
+    "position": 3,
+    "name": title.split("|")[0].trim(),
+    "item": canonicalUrl
+  });
+}
+
+const structuredDataGraph: any[] = [
+  {
+    "@type": ["Plumber", "EmergencyService", "LocalBusiness"],
+    "@id": "https://www.plombierwavreurgent.be/#plumber",
+    "name": "Plombier Wavre Urgent",
+    "legalName": "Ecly Plombier Wavre Urgent",
+    "image": "https://www.plombierwavreurgent.be/logo.png",
+    "logo": "https://www.plombierwavreurgent.be/logo.png",
+    "url": "https://www.plombierwavreurgent.be",
+    "telephone": "+32489865765",
+    "email": "contact@plombierwavreurgent.be",
+    "description": "Artisan plombier à Wavre (1300) agréé et disponible 24h/24 et 7j/7 pour dépannage d'urgence en 30 minutes, débouchage canalisation, détection de fuite non destructive, entretien chaudière et adoucisseur d'eau.",
+    "priceRange": "€€",
+    "currenciesAccepted": "EUR",
+    "paymentAccepted": "Cash, Carte bancaire, Bancontact, Payconiq, Virement bancaire",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rue Charles Jaumotte 76",
+      "addressLocality": "Wavre",
+      "postalCode": "1300",
+      "addressRegion": "Brabant Wallon",
+      "addressCountry": "BE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 50.697397,
+      "longitude": 4.577067
+    },
+    "hasMap": "https://maps.app.goo.gl/oCBeEPNkZFPVsKrB9",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "148"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Wavre", "postalCode": "1300" },
+      { "@type": "City", "name": "Limal", "postalCode": "1300" },
+      { "@type": "City", "name": "Bierges", "postalCode": "1301" },
+      { "@type": "City", "name": "Ottignies-Louvain-la-Neuve", "postalCode": "1340" },
+      { "@type": "City", "name": "Louvain-la-Neuve", "postalCode": "1348" },
+      { "@type": "City", "name": "Rixensart", "postalCode": "1330" },
+      { "@type": "City", "name": "Genval", "postalCode": "1332" },
+      { "@type": "City", "name": "Grez-Doiceau", "postalCode": "1390" },
+      { "@type": "City", "name": "Chaumont-Gistoux", "postalCode": "1325" },
+      { "@type": "City", "name": "La Hulpe", "postalCode": "1310" },
+      { "@type": "City", "name": "Waterloo", "postalCode": "1410" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Catalogue des Services de Plomberie et Depannage Wavre",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Depannage plomberie d'urgence 24h/24",
+            "description": "Intervention d'urgence en moins de 30 minutes a Wavre pour fuite d'eau, rupture de canalisation, panne chauffe-eau ou robinetterie.",
+            "url": "https://www.plombierwavreurgent.be/services/depannage-urgence",
+            "provider": { "@id": "https://www.plombierwavreurgent.be/#plumber" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Debouchage canalisation et WC haute pression",
+            "description": "Debouchage mecanique au furet electrique et curage haute pression 200 bars pour WC, evier, sterput, colonne et egout a Wavre.",
+            "url": "https://www.plombierwavreurgent.be/services/debouchage",
+            "provider": { "@id": "https://www.plombierwavreurgent.be/#plumber" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Recherche de fuite non destructive",
+            "description": "Localisation ultra-precise de fuites invisibles par camera thermique, gaz traceur et correlation acoustique avec rapport certifie assurance.",
+            "url": "https://www.plombierwavreurgent.be/services/detection-de-fuites",
+            "provider": { "@id": "https://www.plombierwavreurgent.be/#plumber" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Chauffage, entretien et depannage chaudieres",
+            "description": "Entretien annuel agree Cerga G1/G2, depannage d'urgence chaudiere gaz et mazout, detartrage et remplacement de boiler a Wavre.",
+            "url": "https://www.plombierwavreurgent.be/services/chauffage-chaudieres",
+            "provider": { "@id": "https://www.plombierwavreurgent.be/#plumber" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Traitement de l'eau et adoucisseur anti-calcaire",
+            "description": "Installation, mise en service et entretien d'adoucisseurs d'eau compacts BWT, Durlem et EcoWater adaptes a la durete d'eau de Wavre (38 °fH).",
+            "url": "https://www.plombierwavreurgent.be/services/traitement-de-leau",
+            "provider": { "@id": "https://www.plombierwavreurgent.be/#plumber" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Installations sanitaires et renovation salle de bain",
+            "description": "Pose de WC suspendus Geberit, douches a l'italienne, remplacement de robinetterie Grohe et tuyauterie multicouche garantie 2 ans.",
+            "url": "https://www.plombierwavreurgent.be/services/installations-sanitaires",
+            "provider": { "@id": "https://www.plombierwavreurgent.be/#plumber" }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "@type": "WebSite",
+    "@id": "https://www.plombierwavreurgent.be/#website",
+    "url": "https://www.plombierwavreurgent.be",
+    "name": "Plombier Wavre Urgent",
+    "inLanguage": "fr-BE",
+    "publisher": { "@id": "https://www.plombierwavreurgent.be/#plumber" }
+  }
+];
+
+if (pathSegments.length > 0) {
+  structuredDataGraph.push({
+    "@type": "BreadcrumbList",
+    "@id": `${canonicalUrl}#breadcrumb`,
+    "itemListElement": breadcrumbElements
+  });
+}
+
 const structuredData = {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": ["Plumber", "EmergencyService", "LocalBusiness"],
-      "@id": "https://plombier-wavre-urgent.be/#business",
-      "name": "Plombier Wavre Urgent",
-      "image": "https://plombier-wavre-urgent.be/images/og-plombier-wavre.jpg",
-      "telephone": "+32489865765",
-      "email": "contact@plombierwavreurgent.be",
-      "url": "https://plombier-wavre-urgent.be",
-      "priceRange": "€€",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Rue Charles Jaumotte 76",
-        "addressLocality": "Wavre",
-        "postalCode": "1300",
-        "addressRegion": "Brabant Wallon",
-        "addressCountry": "BE"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 50.7174,
-        "longitude": 4.6092
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-          "opens": "00:00",
-          "closes": "23:59"
-        }
-      ],
-      "areaServed": [
-        { "@type": "City", "name": "Wavre", "postalCode": "1300" },
-        { "@type": "City", "name": "Limal", "postalCode": "1300" },
-        { "@type": "City", "name": "Bierges", "postalCode": "1301" },
-        { "@type": "City", "name": "Ottignies-Louvain-la-Neuve", "postalCode": "1348" },
-        { "@type": "City", "name": "Rixensart", "postalCode": "1330" },
-        { "@type": "City", "name": "Grez-Doiceau", "postalCode": "1390" },
-        { "@type": "City", "name": "Chaumont-Gistoux", "postalCode": "1325" },
-        { "@type": "City", "name": "La Hulpe", "postalCode": "1310" }
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Services de plomberie et dépannage Wavre",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Dépannage plomberie urgence 24h/24"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Débouchage canalisation et WC haute pression"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Recherche de fuite non destructive agréée assurances"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Réparation et remplacement de boiler ou chauffe-eau"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Installation et entretien adoucisseur d'eau anti-calcaire"
-            }
-          }
-        ]
-      }
-    }
-  ]
+  "@graph": structuredDataGraph
 };
 ---
 
@@ -127,7 +227,7 @@ const structuredData = {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
+    <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -138,7 +238,7 @@ const structuredData = {
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonical} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:locale" content="fr_BE" />
     <meta property="og:site_name" content="Plombier Wavre Urgent" />
     <meta property="og:image" content="https://www.plombierwavreurgent.be/logo.png" />
