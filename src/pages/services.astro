@@ -5,6 +5,7 @@ import Icon from '../components/Icon.astro';
 const serviceDetails = [
   {
     id: "urgence",
+    slug: "depannage-urgence",
     title: "Dépannage Plomberie d'Urgence 24/7",
     subtitle: "Fuites d'eau, inondations, vannes d'arrêt bloquées et tuyaux percés",
     keywords: ["plombier wavre urgence", "plombier wavre 24 24", "depannage sanitaire urgent wavre"],
@@ -19,6 +20,7 @@ const serviceDetails = [
   },
   {
     id: "debouchage",
+    slug: "debouchage",
     title: "Débouchage & Curage Haute Pression",
     subtitle: "WC bouché, éviers, douches, colonnes générales et sterputs extérieurs",
     keywords: ["debouchage urgence wavre", "curage canalisation haute pression wavre", "inspection camera canalisation wavre"],
@@ -33,6 +35,7 @@ const serviceDetails = [
   },
   {
     id: "recherche-fuite",
+    slug: "detection-de-fuites",
     title: "Recherche de Fuite d'Eau Non Destructive",
     subtitle: "Infiltrations, murs humides, fuites encastrées et après compteur",
     keywords: ["recherche de fuite non destructive wavre", "fuite d eau apres compteur wavre", "degat des eaux assurance wavre"],
@@ -47,8 +50,9 @@ const serviceDetails = [
   },
   {
     id: "boiler",
-    title: "Dépannage, Détartrage & Remplacement Boiler",
-    subtitle: "Chauffe-eau électrique, cumulus et boilers sanitaires gaz",
+    slug: "chauffage-chaudieres",
+    title: "Chauffage, Boilers & Chaudières",
+    subtitle: "Installation, entretien annuel et réparation urgente de chaudières et chauffe-eau",
     keywords: ["remplacement chauffe eau electrique wavre", "detartrage boiler gaz electrique wavre", "boiler electrique qui coule wavre"],
     description: "L'eau de Wavre est particulièrement calcaire (souvent plus de 32 degrés français). Ce calcaire se dépose sur la résistance thermoplongeuse de votre boiler, réduisant son rendement énergétique et causant des pannes répétées. Nous réalisons le détartrage préventif, le remplacement des anodes magnésium et l'installation de ballons neufs haute performance sous 24h.",
     features: [
@@ -61,6 +65,7 @@ const serviceDetails = [
   },
   {
     id: "adoucisseur",
+    slug: "traitement-de-leau",
     title: "Installation & Entretien d'Adoucisseurs d'Eau",
     subtitle: "Protection définitive contre le calcaire pour toute votre maison",
     keywords: ["installation adoucisseur d eau wavre", "traitement calcaire eau dure wavre", "entretien adoucisseur d eau brabant wallon"],
@@ -75,6 +80,7 @@ const serviceDetails = [
   },
   {
     id: "sanitaire",
+    slug: "installations-sanitaires",
     title: "Installation Sanitaire & Rénovation de Salle de Bain",
     subtitle: "WC suspendus Geberit, robinetterie Grohe et douches à l'italienne",
     keywords: ["pose wc suspendu geberit wavre", "renovation salle de bain complete wavre", "remplacement robinetterie mitigeur wavre"],
@@ -164,17 +170,24 @@ const serviceDetails = [
               </p>
             </div>
 
-            <div class="space-y-3 pt-4 border-t border-[#0047ab]/10">
+            <div class="space-y-2.5 pt-4 border-t border-[#0047ab]/10">
+              <a
+                href={`/services/${service.slug}`}
+                class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#0047ab] hover:bg-[#00327d] text-white font-display font-bold text-xs shadow-xs transition-colors"
+              >
+                <span>Consulter la page détaillée du service</span>
+                <Icon name="arrow-right" class="w-3.5 h-3.5" />
+              </a>
               <a
                 href="tel:010395010"
-                class="w-full inline-flex items-center justify-center gap-2.5 py-3.5 px-4 rounded-xl bg-[#fcd400] hover:bg-[#e9c400] text-[#101d29] font-display font-bold text-sm shadow-sm transition-all"
+                class="w-full inline-flex items-center justify-center gap-2.5 py-2.5 px-4 rounded-xl bg-[#fcd400] hover:bg-[#e9c400] text-[#101d29] font-display font-bold text-xs shadow-sm transition-all"
               >
-                <Icon name="phone" class="w-4 h-4 text-[#00327d]" />
+                <Icon name="phone" class="w-3.5 h-3.5 text-[#00327d]" />
                 <span>Appeler pour cette prestation</span>
               </a>
               <a
                 href="/contact"
-                class="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-white hover:bg-[#f7f9ff] text-[#00327d] border border-[#0047ab]/30 font-semibold text-xs transition-colors"
+                class="w-full inline-flex items-center justify-center gap-2 py-2 px-4 rounded-xl bg-white hover:bg-[#f7f9ff] text-[#00327d] border border-[#0047ab]/30 font-semibold text-xs transition-colors"
               >
                 Demander un devis détaillé
               </a>

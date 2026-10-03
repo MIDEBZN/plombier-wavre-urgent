@@ -1,0 +1,325 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
+
+const includes = [
+  "Rénovation complète et clé en main de salles de bain (plomberie, sanitaires, étanchéité)",
+  "Pose et raccordement de bâtis-supports WC suspendus Geberit Duofix et Grohe Rapid SL",
+  "Installation de cuvettes sans bride (rimless) hygiéniques et plaques de commande double touche",
+  "Création de douches à l'italienne avec étanchéité sous carrelage certifiée et receveurs extra-plats",
+  "Pose de baignoires îlots ou encastrées avec tabliers d'habillage étanches",
+  "Remplacement de mitigeurs thermostatiques et robinetterie de prestige (Grohe, Hansgrohe)",
+  "Remplacement des anciennes tuyauteries en plomb par du cuivre brasé ou du multiskin",
+  "Pose de meubles vasques, miroirs rétroéclairés et colonnes de rangement sanitaires"
+];
+
+const problems = [
+  {
+    title: "Chasse d'eau qui coule en continu dans la cuvette",
+    desc: "Flotteur entartré ou joint de cloche dégradé gaspillant jusqu'à 150 litres d'eau potable par jour."
+  },
+  {
+    title: "Mitigeur thermostatique bloqué ou qui ne règle plus la température",
+    desc: "Cartouche thermostatique encrassée par le calcaire dur de Wavre ne fournissant plus que de l'eau brûlante ou glacée."
+  },
+  {
+    title: "Infiltration d'eau au pourtour du bac de douche",
+    desc: "Joints d'étanchéité silicones moisis ou décollés provoquant des taches d'humidité sur le mur contigu ou l'étage inférieur."
+  },
+  {
+    title: "Baignoire difficile d'accès à transformer en douche sécurisée",
+    desc: "Projet de modernisation pour seniors ou personnes à mobilité réduite avec pose de barres d'appui et receveur antidérapant."
+  },
+  {
+    title: "Présence de vieilles tuyauteries en plomb",
+    desc: "Canalisations anciennes risquant le saturnisme et la dégradation de la qualité de votre eau de boisson."
+  },
+  {
+    title: "Mécanisme encastré inaccessible en panne",
+    desc: "WC suspendu dont le bouton poussoir est cassé ou qui ne se remplit plus, réparable facilement par la trappe d'accès."
+  }
+];
+
+const steps = [
+  {
+    num: "1",
+    title: "Visite Technique & Devis",
+    desc: "Nous nous déplaçons chez vous à Wavre pour prendre les cotes, analyser les arrivées et évacuations, et comprendre vos attentes."
+  },
+  {
+    num: "2",
+    title: "Choix des Équipements",
+    desc: "Sélection de marques professionnelles réputées pour leur longévité (Geberit, Grohe, Villeroy & Boch, Duravit)."
+  },
+  {
+    num: "3",
+    title: "Travaux & Mise en Œuvre",
+    desc: "Dépose soignée de l'existant, modification des tuyauteries, pose de l'étanchéité et raccordement méticuleux de chaque appareil."
+  },
+  {
+    num: "4",
+    title: "Mise en Eau & Réception",
+    desc: "Vérification sous pression de chaque raccord, contrôle d'écoulement et nettoyage complet du chantier avant livraison."
+  }
+];
+
+const faqs = [
+  {
+    q: "Peut-on réparer un WC suspendu Geberit sans casser le carrelage ?",
+    a: "Oui, absolument. Tous les éléments d'usure d'un WC suspendu Geberit (robinet flotteur, mécanisme de cloche, joint d'étanchéité) sont accessibles directement en démontant la plaque de déclenchement murale sans aucun dommage pour le carrelage."
+  },
+  {
+    q: "Combien de temps dure la rénovation complète d'une salle de bain ?",
+    a: "En moyenne, une réfection complète de salle de bain (plomberie, receveur, meuble vasque et raccordements) nécessite entre 5 et 8 jours ouvrés selon l'ampleur des travaux de carrelage."
+  },
+  {
+    q: "Proposez-vous le remplacement d'une baignoire par une douche à l'italienne ?",
+    a: "Oui, c'est l'une de nos interventions les plus courantes à Wavre. Nous déposons votre ancienne baignoire et installons un receveur extra-plat antidérapant avec parois vitrées sécurit et mitigeur thermostatique."
+  },
+  {
+    q: "Vos installations sanitaires bénéficient-elles d'une garantie ?",
+    a: "Oui, toutes nos installations sanitaires bénéficient d'une garantie légale de parfait achèvement et de la garantie fabricant sur les équipements sanitaires de premier choix (jusqu'à 10 ans sur les bâtis Geberit)."
+  }
+];
+---
+
+<Layout
+  title="Installation Sanitaire & Salle de Bain à Wavre (1300) | WC Geberit"
+  description="Installation sanitaire et rénovation de salle de bain à Wavre (1300). Pose WC suspendu Geberit, douches italiennes, robinetterie Grohe. Tél : 010 39 50 10."
+>
+
+  <!-- Hero Section -->
+  <section class="bg-[#123470] text-white py-16 lg:py-20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
+      
+      <div class="flex items-center gap-2 text-xs font-bold text-white/70">
+        <a href="/" class="hover:text-white">Accueil</a>
+        <span>/</span>
+        <a href="/services" class="hover:text-white">Services</a>
+        <span>/</span>
+        <span class="text-[#fcd400]">Installations Sanitaires</span>
+      </div>
+
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#fcd400] text-[#101d29] text-xs font-bold uppercase tracking-wider">
+        <Icon name="sparkles" class="w-4 h-4 text-[#00327d]" />
+        <span>Spécialiste Sanitaire & Partenaire Geberit</span>
+      </div>
+
+      <h1 class="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight max-w-4xl">
+        Installations Sanitaires et Rénovation de Salle de Bain à Wavre
+      </h1>
+
+      <p class="text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed">
+        Du remplacement d'un mécanisme de WC jusqu'à la création complète d'une salle de bain moderne avec douche à l'italienne, profitez du savoir-faire d'artisans plombiers minutieux et reconnus.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+        <a
+          href="tel:010395010"
+          class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#fcd400] hover:bg-[#e9c400] text-[#101d29] font-display font-extrabold text-base shadow-lg transition-transform active:scale-95"
+        >
+          <Icon name="phone" class="w-5 h-5 text-[#00327d]" />
+          <span>Appeler notre atelier : 010 39 50 10</span>
+        </a>
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-display font-bold text-sm shadow-sm transition-all"
+        >
+          Demander un devis sanitaire gratuit
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- What's Included -->
+  <section class="py-16 sm:py-24 bg-white border-b border-[#e4eaf1]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Prestations Clé en Main
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Ce Qui Est Inclus dans Nos Travaux Sanitaires
+        </h2>
+        <p class="text-base text-[#434653]">
+          Nous combinons esthétisme, sécurité des réseaux et durabilité des matériaux pour sublimer vos espaces d'eau.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {includes.map((item) => (
+          <div class="flex items-start gap-3 p-4 rounded-xl bg-[#f7f9ff] border border-[#e4eaf1]">
+            <div class="w-6 h-6 rounded-full bg-[#059669]/10 text-[#059669] flex items-center justify-center shrink-0 mt-0.5">
+              <Icon name="check" class="w-4 h-4 text-[#059669]" />
+            </div>
+            <span class="text-sm text-[#101d29] font-medium leading-relaxed">{item}</span>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Common Problems Solved -->
+  <section class="py-16 sm:py-24 bg-[#f7f9ff]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#705d00] bg-[#fcd400]/20 px-3.5 py-1.5 rounded-full inline-block">
+          Pannes & Rénovations
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Les Pannes Sanitaires et Projets Que Nous Réalisons
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {problems.map((p) => (
+          <div class="bg-white p-6 rounded-2xl border border-[#e4eaf1] shadow-xs space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-[#edf4ff] text-[#0047ab] flex items-center justify-center">
+              <Icon name="wrench" class="w-5 h-5 text-[#0047ab]" />
+            </div>
+            <h3 class="font-display font-bold text-base text-[#101d29]">
+              {p.title}
+            </h3>
+            <p class="text-xs sm:text-sm text-[#434653] leading-relaxed">
+              {p.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Our Step-by-Step Process -->
+  <section class="py-16 sm:py-24 bg-white border-t border-[#e4eaf1]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Démarche Rénovation
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Comment Organisons-Nous Vos Travaux Sanitaires ?
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        {steps.map((s) => (
+          <div class="bg-[#f7f9ff] p-6 rounded-2xl border border-[#e4eaf1] space-y-3">
+            <span class="font-display font-extrabold text-3xl text-[#00327d] block tabular-nums">
+              0{s.num}
+            </span>
+            <h3 class="font-display font-bold text-base text-[#101d29]">
+              {s.title}
+            </h3>
+            <p class="text-xs text-[#434653] leading-relaxed">
+              {s.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Why Choose Us & Service Area Details -->
+  <section class="py-16 sm:py-24 bg-[#123470] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-[#fcd400] bg-white/10 px-3.5 py-1.5 rounded-full inline-block">
+            Finitions de Qualité
+          </span>
+          <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight">
+            Pourquoi Choisir Notre Équipe pour Vos Sanitaires ?
+          </h2>
+          <div class="space-y-4 text-sm text-white/80 leading-relaxed font-normal">
+            <p>
+              Nous privilégions les marques professionnelles qui garantissent la disponibilité des pièces de rechange pendant 20 ans, vous assurant une tranquillité totale.
+            </p>
+            <ul class="space-y-3 pt-2">
+              <li class="flex items-center gap-3">
+                <Icon name="check" class="w-5 h-5 text-[#fcd400] shrink-0" />
+                <span>Spécialiste officiel des bâtis-supports et mécanismes Geberit</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Icon name="check" class="w-5 h-5 text-[#fcd400] shrink-0" />
+                <span>Tuyauteries en multiskin certifié étanches et garanties sans soudure risquée</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Icon name="check" class="w-5 h-5 text-[#fcd400] shrink-0" />
+                <span>Protection totale de vos sols et nettoyage rigoureux du chantier</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Icon name="check" class="w-5 h-5 text-[#fcd400] shrink-0" />
+                <span>Devis détaillé poste par poste avec prix ferme et définitif</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 bg-white/10 rounded-3xl p-8 border border-white/10 space-y-5">
+          <h3 class="font-display font-bold text-xl text-white">
+            Intervention Sanitaire en Brabant Wallon
+          </h3>
+          <p class="text-xs sm:text-sm text-white/80 leading-relaxed">
+            Dépannage sous 30 minutes ou visite de devis sous 48 heures :
+          </p>
+          <div class="grid grid-cols-2 gap-2 text-xs font-semibold">
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Wavre Centre (1300)</span>
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Limal (1300)</span>
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Bierges (1301)</span>
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Basse-Wavre</span>
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Ottignies-LLN (1348)</span>
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Rixensart & Lasne</span>
+          </div>
+          <div class="pt-2">
+            <a
+              href="tel:010395010"
+              class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-[#fcd400] text-[#101d29] font-display font-bold text-sm hover:bg-[#e9c400] shadow-sm transition-all"
+            >
+              <Icon name="phone" class="w-4 h-4 text-[#00327d]" />
+              <span>Contacter un installateur sanitaire</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="py-16 sm:py-24 bg-[#f7f9ff]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="text-center space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Vos Questions
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Questions Fréquentes sur les Installations Sanitaires
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((f) => (
+          <div class="bg-white p-6 rounded-2xl border border-[#e4eaf1] shadow-xs space-y-2">
+            <h3 class="font-display font-bold text-base text-[#00327d]">
+              {f.q}
+            </h3>
+            <p class="text-sm text-[#434653] leading-relaxed">
+              {f.a}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+</Layout>

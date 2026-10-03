@@ -1,0 +1,325 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
+
+const includes = [
+  "Débouchage mécanique d'urgence pour WC classiques et cuvettes suspendues Geberit",
+  "Débouchage d'éviers de cuisine, lavabos, baignoires et receveurs de douche",
+  "Curage hydrodynamique haute pression (jusqu'à 150 bars) des conduites d'évacuation",
+  "Inspection caméra vidéo endoscopique haute définition avec repérage centimétrique",
+  "Nettoyage et débouchage de sterputs extérieurs, avaloirs et chambres de visite",
+  "Vidange et curage de fosses septiques, dégraisseurs et puits perdus",
+  "Remplacement de clapets anti-retour pour empêcher les remontées d'eaux usées",
+  "Remise d'un rapport technique avec enregistrement vidéo pour assurance ou syndic"
+];
+
+const problems = [
+  {
+    title: "WC bouché avec eau qui remonte à ras bord",
+    desc: "Papier toilette accumulé, lingettes non biodégradables ou objet tombé dans la cuvette créant un refoulement immédiat."
+  },
+  {
+    title: "Évier de cuisine bloqué par les graisses et résidus",
+    desc: "Graisses de cuisson durcies mélangées au calcaire bouchant le siphon et la colonne d'évacuation sous l'évier."
+  },
+  {
+    title: "Douche ou baignoire qui ne s'évacue plus",
+    desc: "Accumulation de cheveux, savon et calcaire formant un bouchon compact inaccessible avec une simple ventouse."
+  },
+  {
+    title: "Sterput extérieur ou chambre de visite qui déborde",
+    desc: "Terres, feuilles mortes ou racines d'arbres obstruant la canalisation principale vers le tout-à-l'égout communal."
+  },
+  {
+    title: "Odeurs nauséabondes d'égout dans la maison",
+    desc: "Dépôts de boues en décomposition ou siphons désamorcés par un manque de ventilation de colonne (mise à l'air libre)."
+  },
+  {
+    title: "Refoulement d'eaux usées lors de fortes pluies",
+    desc: "Absence de clapet anti-retour ou colonne d'immeuble saturée refoulant les eaux chez les habitants du rez-de-chaussée."
+  }
+];
+
+const steps = [
+  {
+    num: "1",
+    title: "Diagnostic & Localisation",
+    desc: "Nous identifions si le bouchon est localisé (siphon, cuvette) ou situé dans la canalisation principale d'égouttage."
+  },
+  {
+    num: "2",
+    title: "Inspection Caméra si Nécessaire",
+    desc: "Pour les bouchons récurrents, nous introduisons une sonde optique pour visualiser l'état exact de la canalisation et la cause du blocage."
+  },
+  {
+    num: "3",
+    title: "Hydrocurage Haute Pression",
+    desc: "Introduction d'un flexible muni d'une buse rétro-propulsée propulsant de l'eau à haute pression pour désagréger le bouchon et récurer les parois."
+  },
+  {
+    num: "4",
+    title: "Test de Débit & Contrôle Final",
+    desc: "Vérification de l'écoulement sous grand débit d'eau pour garantir l'absence totale de résidus et remise du rapport d'intervention."
+  }
+];
+
+const faqs = [
+  {
+    q: "Pourquoi les produits chimiques du commerce (Destop) sont-ils déconseillés ?",
+    a: "Les déboucheurs chimiques liquides créent des vapeurs toxiques dangereuses, risquent de faire fondre les tuyaux en PVC sous l'effet de la chaleur chimique et s'avèrent inefficaces contre les bouchons de calcaire ou de lingettes."
+  },
+  {
+    q: "Quel est le prix d'un débouchage de WC ou d'évier à Wavre ?",
+    a: "Notre forfait de débouchage mécanique express commence à 120 € tout compris. Pour un hydrocurage de canalisation principale ou un passage caméra, le devis est établi clairement avant le début des travaux."
+  },
+  {
+    q: "Fournissez-vous un enregistrement vidéo de l'inspection caméra ?",
+    a: "Oui. L'inspection vidéo fait l'objet d'un rapport numérique horodaté avec photos et vidéos, indispensable pour engager la garantie décennale du constructeur ou se faire rembourser par votre assurance."
+  },
+  {
+    q: "Proposez-vous la vidange de fosse septique à Wavre et alentours ?",
+    a: "Oui, nous assurons la vidange, le curage des boues résiduelles et la remise en eau de votre fosse septique à Wavre, Limal, Bierges et dans tout le Brabant Wallon avec attestation de dépôt en station agréée."
+  }
+];
+---
+
+<Layout
+  title="Débouchage Canalisation & WC à Wavre (1300) | Curage Haute Pression"
+  description="Débouchage d'urgence à Wavre (1300) : WC, évier, sterput, égouts, curage haute pression et inspection caméra. Arrivée en 30 min. Tél : 010 39 50 10."
+>
+
+  <!-- Hero Section -->
+  <section class="bg-[#123470] text-white py-16 lg:py-20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
+      
+      <div class="flex items-center gap-2 text-xs font-bold text-white/70">
+        <a href="/" class="hover:text-white">Accueil</a>
+        <span>/</span>
+        <a href="/services" class="hover:text-white">Services</a>
+        <span>/</span>
+        <span class="text-[#fcd400]">Débouchage & Curage</span>
+      </div>
+
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#fcd400] text-[#101d29] text-xs font-bold uppercase tracking-wider">
+        <Icon name="droplet" class="w-4 h-4 text-[#00327d]" />
+        <span>Débouchage d'Urgence 24h/24 - Matériel Professionnel</span>
+      </div>
+
+      <h1 class="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight max-w-4xl">
+        Débouchage de Canalisations, WC et Égouts à Wavre (1300)
+      </h1>
+
+      <p class="text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed">
+        WC engorgé, évier bloqué ou sterput qui refoule ? Nous intervenons en 30 minutes avec des hydrocureuses haute pression et caméras vidéo pour un débouchage radical et propre de vos évacuations.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+        <a
+          href="tel:010395010"
+          class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#fcd400] hover:bg-[#e9c400] text-[#101d29] font-display font-extrabold text-base shadow-lg transition-transform active:scale-95"
+        >
+          <Icon name="phone" class="w-5 h-5 text-[#00327d]" />
+          <span>Urgence Débouchage : 010 39 50 10</span>
+        </a>
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-display font-bold text-sm shadow-sm transition-all"
+        >
+          Demander un devis en ligne
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- What's Included -->
+  <section class="py-16 sm:py-24 bg-white border-b border-[#e4eaf1]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Prestations Incluses
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Ce Qui Est Inclus dans Notre Service de Débouchage
+        </h2>
+        <p class="text-base text-[#434653]">
+          Du simple bouchon de siphon jusqu'aux collecteurs d'immeubles bloqués, nos équipements rétablissent un écoulement parfait sans détériorer vos tuyaux.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {includes.map((item) => (
+          <div class="flex items-start gap-3 p-4 rounded-xl bg-[#f7f9ff] border border-[#e4eaf1]">
+            <div class="w-6 h-6 rounded-full bg-[#059669]/10 text-[#059669] flex items-center justify-center shrink-0 mt-0.5">
+              <Icon name="check" class="w-4 h-4 text-[#059669]" />
+            </div>
+            <span class="text-sm text-[#101d29] font-medium leading-relaxed">{item}</span>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Common Problems Solved -->
+  <section class="py-16 sm:py-24 bg-[#f7f9ff]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#705d00] bg-[#fcd400]/20 px-3.5 py-1.5 rounded-full inline-block">
+          Blocages Fréquents
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Les Problèmes d'Évacuation Que Nous Traitons
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {problems.map((p) => (
+          <div class="bg-white p-6 rounded-2xl border border-[#e4eaf1] shadow-xs space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-[#edf4ff] text-[#0047ab] flex items-center justify-center">
+              <Icon name="droplet" class="w-5 h-5 text-[#0047ab]" />
+            </div>
+            <h3 class="font-display font-bold text-base text-[#101d29]">
+              {p.title}
+            </h3>
+            <p class="text-xs sm:text-sm text-[#434653] leading-relaxed">
+              {p.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Our Step-by-Step Process -->
+  <section class="py-16 sm:py-24 bg-white border-t border-[#e4eaf1]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Méthode Haute Pression
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Notre Processus de Débouchage Professionnel
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        {steps.map((s) => (
+          <div class="bg-[#f7f9ff] p-6 rounded-2xl border border-[#e4eaf1] space-y-3">
+            <span class="font-display font-extrabold text-3xl text-[#00327d] block tabular-nums">
+              0{s.num}
+            </span>
+            <h3 class="font-display font-bold text-base text-[#101d29]">
+              {s.title}
+            </h3>
+            <p class="text-xs text-[#434653] leading-relaxed">
+              {s.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Why Choose Us & Service Area Details -->
+  <section class="py-16 sm:py-24 bg-[#123470] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-[#fcd400] bg-white/10 px-3.5 py-1.5 rounded-full inline-block">
+            Avantage Technique
+          </span>
+          <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight">
+            Pourquoi Confier Votre Débouchage à Notre Entreprise ?
+          </h2>
+          <div class="space-y-4 text-sm text-white/80 leading-relaxed font-normal">
+            <p>
+              Contrairement aux bricoleurs ou aux produits chimiques qui ne font que percer un petit trou temporaire dans le bouchon, notre curage haute pression décape l'intégralité du diamètre du tuyau.
+            </p>
+            <ul class="space-y-3 pt-2">
+              <li class="flex items-center gap-3">
+                <Icon name="check" class="w-5 h-5 text-[#fcd400] shrink-0" />
+                <span>Véhicule hydrocureur autonome équipé de réservoir d'eau embarqué</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Icon name="check" class="w-5 h-5 text-[#fcd400] shrink-0" />
+                <span>Caméra d'inspection avec tête rotative à 360 degrés et sonde émettrice</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Icon name="check" class="w-5 h-5 text-[#fcd400] shrink-0" />
+                <span>Forfaits de débouchage fixes sans surprise à la facture</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Icon name="check" class="w-5 h-5 text-[#fcd400] shrink-0" />
+                <span>Intervention d'urgence 24h/24 le week-end et les jours fériés</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 bg-white/10 rounded-3xl p-8 border border-white/10 space-y-5">
+          <h3 class="font-display font-bold text-xl text-white">
+            Secteurs Desservis pour Débouchage Express
+          </h3>
+          <p class="text-xs sm:text-sm text-white/80 leading-relaxed">
+            Intervention rapide avec notre hydrocureuse dans toutes les entités :
+          </p>
+          <div class="grid grid-cols-2 gap-2 text-xs font-semibold">
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Wavre Centre (1300)</span>
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Limal (1300)</span>
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Bierges (1301)</span>
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Basse-Wavre</span>
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Ottignies-LLN (1348)</span>
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Rixensart & Genval</span>
+          </div>
+          <div class="pt-2">
+            <a
+              href="tel:010395010"
+              class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-[#fcd400] text-[#101d29] font-display font-bold text-sm hover:bg-[#e9c400] shadow-sm transition-all"
+            >
+              <Icon name="phone" class="w-4 h-4 text-[#00327d]" />
+              <span>Commander un débouchage d'urgence</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="py-16 sm:py-24 bg-[#f7f9ff]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="text-center space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Vos Questions
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Questions Fréquentes sur le Débouchage
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((f) => (
+          <div class="bg-white p-6 rounded-2xl border border-[#e4eaf1] shadow-xs space-y-2">
+            <h3 class="font-display font-bold text-base text-[#00327d]">
+              {f.q}
+            </h3>
+            <p class="text-sm text-[#434653] leading-relaxed">
+              {f.a}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+</Layout>

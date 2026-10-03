@@ -1,0 +1,325 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
+
+const includes = [
+  "Dépannage d'urgence 24h/24 pour panne de chauffage ou absence d'eau chaude",
+  "Entretien annuel obligatoire avec délivrance de l'attestation légale Région Wallonne",
+  "Agrément officiel Cerga Gaz pour toute mise en conformité et sécurité gaz",
+  "Détartrage complet de chauffe-eau électrique (cumulus) et échangeurs de chaleur",
+  "Remplacement sous 24h de boilers électriques (Atlantic, Ariston, ACV)",
+  "Installation de chaudières gaz à condensation haute performance (Vaillant, Bulex)",
+  "Désembouage hydrodynamique des circuits de radiateurs et planchers chauffants",
+  "Remplacement de vannes thermostatiques, purge et équilibrage des radiateurs"
+];
+
+const problems = [
+  {
+    title: "Chaudière qui se met en sécurité ou affiche un code erreur",
+    desc: "Brûleur qui ne s'allume plus, flamme qui s'éteint ou problème de tirage laissant votre logement dans le froid glacial."
+  },
+  {
+    title: "Plus d'eau chaude ou eau sanitaire à peine tiède",
+    desc: "Thermostat déréglé, échangeur à plaques entartré ou résistance de boiler électrique rongée par le calcaire de Wavre."
+  },
+  {
+    title: "Boiler électrique qui fait disjoncter le compteur",
+    desc: "Court-circuit provoqué par une résistance stéatite ou blindée en contact direct avec l'eau suite à un entartrage sévère."
+  },
+  {
+    title: "Radiateurs froids en haut ou qui font des bruits d'air",
+    desc: "Présence d'air dans le réseau, boues ferreuses obstruant le bas du radiateur ou tige de vanne thermostatique grippée."
+  },
+  {
+    title: "Chute de pression constante sur le manomètre",
+    desc: "Vase d'expansion dégonflé ou percé, soupape de sécurité 3 bars qui coule ou micro-fuite sous dalle."
+  },
+  {
+    title: "Groupe de sécurité qui coule en continu",
+    desc: "Surpression du réseau de distribution d'eau ou clapet anti-retour usé gaspillant plusieurs centaines de litres d'eau potable."
+  }
+];
+
+const steps = [
+  {
+    num: "1",
+    title: "Contrôle Préliminaire & Sécurité",
+    desc: "Vérification des sécurités gaz, de la ventilation du local chaufferie et mesure du monoxyde de carbone (CO)."
+  },
+  {
+    num: "2",
+    title: "Nettoyage & Détartrage",
+    desc: "Démontage du brûleur, dépoussiérage des échangeurs, extraction du calcaire de la cuve et contrôle de l'anode magnésium."
+  },
+  {
+    num: "3",
+    title: "Analyse de Combustion",
+    desc: "Test électronique des fumées et réglage du ratio air/gaz pour garantir le rendement énergétique maximal et réduire vos factures."
+  },
+  {
+    num: "4",
+    title: "Attestation Légale Wallonie",
+    desc: "Délivrance de l'attestation de contrôle périodique Cerga requise par votre bailleur et votre compagnie d'assurance."
+  }
+];
+
+const faqs = [
+  {
+    q: "L'entretien de chaudière au gaz est-il obligatoire en Wallonie ?",
+    a: "Oui. En Région Wallonne, le contrôle périodique d'une chaudière au gaz est légalement obligatoire tous les 2 ans (et annuel pour le mazout). Notre technicien agréé Cerga vous délivre le certificat officiel indispensable pour votre assureur et votre propriétaire."
+  },
+  {
+    q: "Pourquoi mon chauffe-eau électrique s'entartre-t-il si vite à Wavre ?",
+    a: "L'eau de Wavre et du Brabant Wallon présente une dureté calcaire très forte (plus de 32 degrés français). La chaleur de la résistance précipite le calcaire au fond du ballon, formant un bloc de tartre qui étouffe la chauffe et surconsomme l'électricité."
+  },
+  {
+    q: "Dans quel délai pouvez-vous remplacer un boiler percé ?",
+    a: "Nous disposons d'un stock permanent de boilers électriques de 50 à 200 litres dans nos dépôts. Nous remplaçons votre ballon d'eau chaude percé sous 24 heures maximum, avec raccordement et reprise de l'ancien appareil."
+  },
+  {
+    q: "Quelles sont les marques de chaudières que vous dépannez ?",
+    a: "Nous intervenons sur toutes les grandes marques installées en Belgique : Vaillant, Bulex, Viessmann, Junkers, Bosch, De Dietrich, Remeha et ACV, avec accès direct aux pièces de rechange d'origine."
+  }
+];
+---
+
+<Layout
+  title="Chauffage & Chaudières à Wavre (1300) | Dépannage & Entretien Agréé"
+  description="Dépannage d'urgence chaudière et boiler à Wavre (1300). Entretien annuel agréé Cerga Wallonie, détartrage, remplacement rapide. Tél : 010 39 50 10."
+>
+
+  <!-- Hero Section -->
+  <section class="bg-[#123470] text-white py-16 lg:py-20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
+      
+      <div class="flex items-center gap-2 text-xs font-bold text-white/70">
+        <a href="/" class="hover:text-white">Accueil</a>
+        <span>/</span>
+        <a href="/services" class="hover:text-white">Services</a>
+        <span>/</span>
+        <span class="text-[#fcd400]">Chauffage & Chaudières</span>
+      </div>
+
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#fcd400] text-[#101d29] text-xs font-bold uppercase tracking-wider">
+        <Icon name="flame" class="w-4 h-4 text-[#00327d]" />
+        <span>Chauffagiste Habilité Cerga Wallonie</span>
+      </div>
+
+      <h1 class="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight max-w-4xl">
+        Installation, Entretien et Dépannage Chaudière & Boiler à Wavre
+      </h1>
+
+      <p class="text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed">
+        Panne de chauffage en plein hiver ou boiler électrique qui ne produit plus d'eau chaude ? Nos techniciens certifiés interviennent en urgence 24h/24 et réalisent vos entretiens légaux avec attestation officielle.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+        <a
+          href="tel:010395010"
+          class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#fcd400] hover:bg-[#e9c400] text-[#101d29] font-display font-extrabold text-base shadow-lg transition-transform active:scale-95"
+        >
+          <Icon name="phone" class="w-5 h-5 text-[#00327d]" />
+          <span>Urgence Chauffage : 010 39 50 10</span>
+        </a>
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-display font-bold text-sm shadow-sm transition-all"
+        >
+          Planifier un entretien chaudière
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- What's Included -->
+  <section class="py-16 sm:py-24 bg-white border-b border-[#e4eaf1]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Prestations Complètes
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Ce Qui Est Inclus dans Nos Services Chauffage & Boiler
+        </h2>
+        <p class="text-base text-[#434653]">
+          Du simple dépannage de veilleuse jusqu'au remplacement complet d'une chaufferie, nous vous garantissons confort thermique et sécurité gaz.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {includes.map((item) => (
+          <div class="flex items-start gap-3 p-4 rounded-xl bg-[#f7f9ff] border border-[#e4eaf1]">
+            <div class="w-6 h-6 rounded-full bg-[#059669]/10 text-[#059669] flex items-center justify-center shrink-0 mt-0.5">
+              <Icon name="check" class="w-4 h-4 text-[#059669]" />
+            </div>
+            <span class="text-sm text-[#101d29] font-medium leading-relaxed">{item}</span>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Common Problems Solved -->
+  <section class="py-16 sm:py-24 bg-[#f7f9ff]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#705d00] bg-[#fcd400]/20 px-3.5 py-1.5 rounded-full inline-block">
+          Pannes Thermiques Courantes
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Les Problèmes de Chauffage et d'Eau Chaude Que Nous Réparons
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {problems.map((p) => (
+          <div class="bg-white p-6 rounded-2xl border border-[#e4eaf1] shadow-xs space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-[#edf4ff] text-[#0047ab] flex items-center justify-center">
+              <Icon name="flame" class="w-5 h-5 text-[#ba1a1a]" />
+            </div>
+            <h3 class="font-display font-bold text-base text-[#101d29]">
+              {p.title}
+            </h3>
+            <p class="text-xs sm:text-sm text-[#434653] leading-relaxed">
+              {p.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Our Step-by-Step Process -->
+  <section class="py-16 sm:py-24 bg-white border-t border-[#e4eaf1]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Réglementation Cerga
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Notre Méthode d'Entretien et de Contrôle Périodique
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        {steps.map((s) => (
+          <div class="bg-[#f7f9ff] p-6 rounded-2xl border border-[#e4eaf1] space-y-3">
+            <span class="font-display font-extrabold text-3xl text-[#00327d] block tabular-nums">
+              0{s.num}
+            </span>
+            <h3 class="font-display font-bold text-base text-[#101d29]">
+              {s.title}
+            </h3>
+            <p class="text-xs text-[#434653] leading-relaxed">
+              {s.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Why Choose Us & Service Area Details -->
+  <section class="py-16 sm:py-24 bg-[#123470] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-[#fcd400] bg-white/10 px-3.5 py-1.5 rounded-full inline-block">
+            Chauffagistes Agréés
+          </span>
+          <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight">
+            Pourquoi Nous Confier Votre Chaufferie ?
+          </h2>
+          <div class="space-y-4 text-sm text-white/80 leading-relaxed font-normal">
+            <p>
+              Le chauffage et les installations gaz ne tolèrent aucun compromis sur la sécurité. Nous mettons un point d'honneur à appliquer rigoureusement les normes de sécurité wallonnes les plus strictes.
+            </p>
+            <ul class="space-y-3 pt-2">
+              <li class="flex items-center gap-3">
+                <Icon name="check" class="w-5 h-5 text-[#fcd400] shrink-0" />
+                <span>Techniciens titulaires de l'habilitation gaz Cerga Wallonie</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Icon name="check" class="w-5 h-5 text-[#fcd400] shrink-0" />
+                <span>Partenaires agréés Vaillant, Bulex, Viessmann et Bosch</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Icon name="check" class="w-5 h-5 text-[#fcd400] shrink-0" />
+                <span>Remplacement de boiler d'urgence garanti en moins de 24h</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Icon name="check" class="w-5 h-5 text-[#fcd400] shrink-0" />
+                <span>Attestations officielles valables pour toutes les assurances</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 bg-white/10 rounded-3xl p-8 border border-white/10 space-y-5">
+          <h3 class="font-display font-bold text-xl text-white">
+            Rayon d'Intervention Chauffage & Boiler
+          </h3>
+          <p class="text-xs sm:text-sm text-white/80 leading-relaxed">
+            Dépannage rapide en 30 minutes sur l'ensemble des localités :
+          </p>
+          <div class="grid grid-cols-2 gap-2 text-xs font-semibold">
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Wavre Centre (1300)</span>
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Limal (1300)</span>
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Bierges (1301)</span>
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Basse-Wavre</span>
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Ottignies-LLN (1348)</span>
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Chaumont-Gistoux</span>
+          </div>
+          <div class="pt-2">
+            <a
+              href="tel:010395010"
+              class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-[#fcd400] text-[#101d29] font-display font-bold text-sm hover:bg-[#e9c400] shadow-sm transition-all"
+            >
+              <Icon name="phone" class="w-4 h-4 text-[#00327d]" />
+              <span>Demander un dépannage chaudière</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="py-16 sm:py-24 bg-[#f7f9ff]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="text-center space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Vos Questions
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Questions Fréquentes sur le Chauffage & les Boilers
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((f) => (
+          <div class="bg-white p-6 rounded-2xl border border-[#e4eaf1] shadow-xs space-y-2">
+            <h3 class="font-display font-bold text-base text-[#00327d]">
+              {f.q}
+            </h3>
+            <p class="text-sm text-[#434653] leading-relaxed">
+              {f.a}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+</Layout>

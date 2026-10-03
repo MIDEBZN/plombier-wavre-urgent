@@ -1,0 +1,325 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
+
+const includes = [
+  "Test précis et gratuit de la dureté de votre eau sur place (titre hydrotimétrique en degrés français)",
+  "Installation d'adoucisseurs d'eau volumétriques intelligents de marques leaders (BWT, Durlem, EcoWater)",
+  "Pose d'un filtre anti-sédiments et impuretés en amont pour protéger la tête de commande",
+  "Installation d'un réducteur de pression réglé à 3 bars pour préserver vos équipements",
+  "Raccordement d'un bypass technique permettant d'isoler l'adoucisseur sans couper l'eau de la maison",
+  "Réglage minutieux du calcaire résiduel (7 à 10 degrés français) pour ne pas corroder vos tuyaux",
+  "Systèmes de filtration sous évier et purificateurs à charbon actif pour une eau de boisson pure",
+  "Contrat d'entretien annuel avec désinfection des résines et contrôle des cycles de régénération"
+];
+
+const problems = [
+  {
+    title: "Traces de calcaire blanches permanentes sur la robinetterie et les vitres",
+    desc: "Vous passez des heures à frotter avec du vinaigre ou des produits agressifs sans venir à bout des dépôts blanchâtres."
+  },
+  {
+    title: "Résistances de boiler et lave-linge qui claquent après 3 ou 4 ans",
+    desc: "Le calcaire étouffe la résistance électrique et fait exploser votre consommation d'énergie de 10% par millimètre de tartre."
+  },
+  {
+    title: "Baisse progressive de pression sur l'eau chaude sanitaire",
+    desc: "Les canalisations internes et les brise-jets de robinets s'obstruent lentement sous une gangue de carbonate de calcium."
+  },
+  {
+    title: "Peau sèche, rougeurs et cheveux rêches après la douche",
+    desc: "L'eau très dure du Brabant Wallon agresse le film hydrolipidique de la peau, particulièrement chez les enfants et peaux sensibles."
+  },
+  {
+    title: "Surconsommation de lessive, savon et produits d'entretien",
+    desc: "Le calcaire neutralise l'action moussante des détergents, obligeant à doubler les doses de poudre et d'adoucissant textile."
+  },
+  {
+    title: "Goût désagréable ou odeur de chlore dans l'eau de boisson",
+    desc: "L'eau du robinet est potable mais présente un goût chloré ou métallique qui pousse à acheter des bouteilles en plastique."
+  }
+];
+
+const steps = [
+  {
+    num: "1",
+    title: "Analyse d'Eau & Débit",
+    desc: "Mesure de la dureté exacte à votre robinet et évaluation de la consommation annuelle de votre foyer en mètres cubes."
+  },
+  {
+    num: "2",
+    title: "Dimensionnement Idéal",
+    desc: "Calcul précis du volume de résine nécessaire (15L, 20L, 25L) pour éviter les régénérations trop fréquentes ou le gaspillage d'eau."
+  },
+  {
+    num: "3",
+    title: "Pose & Raccordements",
+    desc: "Installation propre sur l'arrivée générale avec filtre protecteur, clapet anti-pollution et évacuation des saumures aux normes."
+  },
+  {
+    num: "4",
+    title: "Mise en Service & Mesure",
+    desc: "Réglage de la dureté de sortie, programmation électronique du contrôleur et fourniture du premier sac de sel de qualité alimentaire."
+  }
+];
+
+const faqs = [
+  {
+    q: "Quelle est la dureté de l'eau à Wavre et en Brabant Wallon ?",
+    a: "L'eau distribuée à Wavre (1300), Limal et Bierges par la SWDE et inBW provient de nappes phréatiques calcaires et affiche généralement une dureté comprise entre 30 et 35 degrés français (très dure). Un adoucisseur est vivement recommandé dès 20 degrés français."
+  },
+  {
+    q: "L'eau adoucie est-elle potable et sans danger pour la santé ?",
+    a: "Oui, parfaitement. L'adoucisseur remplace les ions calcium et magnésium par des ions sodium en quantité infime, strictement conforme aux normes sanitaires européennes de potabilité. L'eau reste d'excellente qualité pour la boisson et la cuisine."
+  },
+  {
+    q: "Combien d'argent peut-on économiser avec un adoucisseur d'eau ?",
+    a: "Pour une famille de 4 personnes à Wavre, un adoucisseur génère jusqu'à 650 € d'économies par an en prolongeant la durée de vie du boiler et des appareils (lave-linge, lave-vaisselle), en réduisant de 50% l'achat de produits lessiviels et en éliminant les détartrages coûteux."
+  },
+  {
+    q: "Quelle est la fréquence de réapprovisionnement en sel ?",
+    a: "En moyenne, un adoucisseur volumétrique moderne ne consomme que 2 à 3 sacs de sel de 25 kg par an pour une utilisation familiale normale. Nous proposons des contrats d'entretien avec contrôle et livraison directe de sel purifié."
+  }
+];
+---
+
+<Layout
+  title="Adoucisseur d'Eau à Wavre (1300) | Traitement Anti-Calcaire BWT"
+  description="Installation et entretien d'adoucisseurs d'eau à Wavre (1300). Spécialiste anti-calcaire Brabant Wallon, marques BWT et Durlem. Devis gratuit. Tél : 010 39 50 10."
+>
+
+  <!-- Hero Section -->
+  <section class="bg-[#123470] text-white py-16 lg:py-20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
+      
+      <div class="flex items-center gap-2 text-xs font-bold text-white/70">
+        <a href="/" class="hover:text-white">Accueil</a>
+        <span>/</span>
+        <a href="/services" class="hover:text-white">Services</a>
+        <span>/</span>
+        <span class="text-[#fcd400]">Traitement de l'Eau</span>
+      </div>
+
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#fcd400] text-[#101d29] text-xs font-bold uppercase tracking-wider">
+        <Icon name="filter" class="w-4 h-4 text-[#00327d]" />
+        <span>Spécialiste Calcaire Brabant Wallon</span>
+      </div>
+
+      <h1 class="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight max-w-4xl">
+        Installation et Entretien d'Adoucisseurs d'Eau à Wavre (1300)
+      </h1>
+
+      <p class="text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed">
+        L'eau de Wavre est l'une des plus calcaires de Belgique (>32 °fH). Protégez définitivement vos canalisations, prolongez la vie de vos électroménagers et retrouvez une peau douce grâce à nos adoucisseurs nouvelle génération.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+        <a
+          href="tel:010395010"
+          class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#fcd400] hover:bg-[#e9c400] text-[#101d29] font-display font-extrabold text-base shadow-lg transition-transform active:scale-95"
+        >
+          <Icon name="phone" class="w-5 h-5 text-[#00327d]" />
+          <span>Conseil Anti-Calcaire : 010 39 50 10</span>
+        </a>
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-display font-bold text-sm shadow-sm transition-all"
+        >
+          Demander un test de dureté gratuit
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- What's Included -->
+  <section class="py-16 sm:py-24 bg-white border-b border-[#e4eaf1]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Prestations Anti-Calcaire
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Ce Qui Est Inclus dans Notre Installation d'Adoucisseur
+        </h2>
+        <p class="text-base text-[#434653]">
+          Une mise en œuvre complète et professionnelle pour éliminer le tartre à la source sans risque de corrosion pour votre plomberie.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {includes.map((item) => (
+          <div class="flex items-start gap-3 p-4 rounded-xl bg-[#f7f9ff] border border-[#e4eaf1]">
+            <div class="w-6 h-6 rounded-full bg-[#059669]/10 text-[#059669] flex items-center justify-center shrink-0 mt-0.5">
+              <Icon name="check" class="w-4 h-4 text-[#059669]" />
+            </div>
+            <span class="text-sm text-[#101d29] font-medium leading-relaxed">{item}</span>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Common Problems Solved -->
+  <section class="py-16 sm:py-24 bg-[#f7f9ff]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#705d00] bg-[#fcd400]/20 px-3.5 py-1.5 rounded-full inline-block">
+          Dégâts du Calcaire
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Les Dommages Causés par l'Eau Dure à Wavre
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {problems.map((p) => (
+          <div class="bg-white p-6 rounded-2xl border border-[#e4eaf1] shadow-xs space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-[#edf4ff] text-[#0047ab] flex items-center justify-center">
+              <Icon name="filter" class="w-5 h-5 text-[#0047ab]" />
+            </div>
+            <h3 class="font-display font-bold text-base text-[#101d29]">
+              {p.title}
+            </h3>
+            <p class="text-xs sm:text-sm text-[#434653] leading-relaxed">
+              {p.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Our Step-by-Step Process -->
+  <section class="py-16 sm:py-24 bg-white border-t border-[#e4eaf1]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Installation Certifiée
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Notre Méthode d'Installation & Réglage
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        {steps.map((s) => (
+          <div class="bg-[#f7f9ff] p-6 rounded-2xl border border-[#e4eaf1] space-y-3">
+            <span class="font-display font-extrabold text-3xl text-[#00327d] block tabular-nums">
+              0{s.num}
+            </span>
+            <h3 class="font-display font-bold text-base text-[#101d29]">
+              {s.title}
+            </h3>
+            <p class="text-xs text-[#434653] leading-relaxed">
+              {s.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Why Choose Us & Service Area Details -->
+  <section class="py-16 sm:py-24 bg-[#123470] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-[#fcd400] bg-white/10 px-3.5 py-1.5 rounded-full inline-block">
+            Expertise Locale
+          </span>
+          <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight">
+            Pourquoi Nous Choisir pour Votre Traitement d'Eau ?
+          </h2>
+          <div class="space-y-4 text-sm text-white/80 leading-relaxed font-normal">
+            <p>
+              Installer un adoucisseur ne se résume pas à poser un bac de sel. Un mauvais réglage peut corroder les canalisations en cuivre ou gaspiller de l'eau en régénérations superflues.
+            </p>
+            <ul class="space-y-3 pt-2">
+              <li class="flex items-center gap-3">
+                <Icon name="check" class="w-5 h-5 text-[#fcd400] shrink-0" />
+                <span>Installateur certifié BWT, Durlem et EcoWater en Belgique</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Icon name="check" class="w-5 h-5 text-[#fcd400] shrink-0" />
+                <span>Étalonnage précis de la dureté de sortie pour protéger vos installations</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Icon name="check" class="w-5 h-5 text-[#fcd400] shrink-0" />
+                <span>Garantie constructeur jusqu'à 10 ans sur la cuve et les résines</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Icon name="check" class="w-5 h-5 text-[#fcd400] shrink-0" />
+                <span>Service après-vente réactif avec approvisionnement en sel purifié</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 bg-white/10 rounded-3xl p-8 border border-white/10 space-y-5">
+          <h3 class="font-display font-bold text-xl text-white">
+            Périmètre de Pose Adoucisseur en Brabant Wallon
+          </h3>
+          <p class="text-xs sm:text-sm text-white/80 leading-relaxed">
+            Visite technique gratuite pour tester votre eau dans toutes les communes :
+          </p>
+          <div class="grid grid-cols-2 gap-2 text-xs font-semibold">
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Wavre Centre (1300)</span>
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Limal (1300)</span>
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Bierges (1301)</span>
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Basse-Wavre</span>
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Ottignies-LLN (1348)</span>
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Grez-Doiceau (1390)</span>
+          </div>
+          <div class="pt-2">
+            <a
+              href="tel:010395010"
+              class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-[#fcd400] text-[#101d29] font-display font-bold text-sm hover:bg-[#e9c400] shadow-sm transition-all"
+            >
+              <Icon name="phone" class="w-4 h-4 text-[#00327d]" />
+              <span>Demander un diagnostic anti-calcaire</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="py-16 sm:py-24 bg-[#f7f9ff]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="text-center space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Vos Questions
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Questions Fréquentes sur le Traitement de l'Eau
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((f) => (
+          <div class="bg-white p-6 rounded-2xl border border-[#e4eaf1] shadow-xs space-y-2">
+            <h3 class="font-display font-bold text-base text-[#00327d]">
+              {f.q}
+            </h3>
+            <p class="text-sm text-[#434653] leading-relaxed">
+              {f.a}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+</Layout>

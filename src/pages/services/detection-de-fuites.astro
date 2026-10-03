@@ -1,0 +1,325 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
+
+const includes = [
+  "Localisation 100% non destructive sans casser cloisons, sols ni carrelages",
+  "Inspection thermographique par caméra infrarouge haute résolution",
+  "Détection électroacoustique par amplificateur de sol pour canalisations sous pression",
+  "Test au gaz traceur inoffensif (azote/hydrogène) pour micro-fuites invisibles",
+  "Inspection endoscopique des gaines techniques et descentes pluviales",
+  "Contrôle de pression manométrique sur les circuits sanitaires et de chauffage",
+  "Rapport d'expertise technique officiel avec photos pour votre compagnie d'assurance",
+  "Proposition de réparation immédiate ciblée au centimètre près"
+];
+
+const problems = [
+  {
+    title: "Compteur d'eau qui tourne en continu robinets fermés",
+    desc: "Votre facture d'eau explose sans explication. Une fuite invisible est présente après compteur dans la dalle ou le vide ventilé."
+  },
+  {
+    title: "Taches d'humidité, cloquage de peinture ou salpêtre",
+    desc: "Moisissures apparaissant sur une plinthe, un mur mitoyen ou dans un placard sans trace d'eau apparente en surface."
+  },
+  {
+    title: "Gouttes d'eau traversant le plafond à l'étage inférieur",
+    desc: "Infiltration provenant d'un siphon de douche, d'une évacuation encastrée ou d'une tuyauterie d'alimentation percée."
+  },
+  {
+    title: "Baisse de pression constante sur la chaudière",
+    desc: "Vous devez rajouter de l'eau chaque semaine dans votre circuit de chauffage. Une fuite lente est présente sous chape."
+  },
+  {
+    title: "Parquet gondolé ou carrelage qui sonne creux",
+    desc: "Humidité stagnante sous la chape isolante provoquant la déformation des revêtements de sol de votre salon ou couloir."
+  },
+  {
+    title: "Fuite enterrée entre le compteur de rue et l'habitation",
+    desc: "Affaissement de terre dans le jardin ou flaque persistante au-dessus de la conduite principale d'arrivée d'eau."
+  }
+];
+
+const steps = [
+  {
+    num: "1",
+    title: "Mise sous Pression & Test",
+    desc: "Isolation des réseaux sanitaires et de chauffage pour mesurer la vitesse de chute de pression et identifier le circuit touché."
+  },
+  {
+    num: "2",
+    title: "Balayage Thermique Infrarouge",
+    desc: "Visualisation immédiate des gradients de chaleur pour cartographier le tracé exact des tuyauteries chaudes et froides dans les murs."
+  },
+  {
+    num: "3",
+    title: "Confirmation Acoustique & Gaz",
+    desc: "Écoute amplifiée du sifflement de fuite ou détection de gaz traceur pour verrouiller l'emplacement exact au millimètre près."
+  },
+  {
+    num: "4",
+    title: "Rapport d'Expertise Assurance",
+    desc: "Remise d'un dossier complet avec clichés thermiques horodatés et devis de réparation conforme aux barèmes des assurances belges."
+  }
+];
+
+const faqs = [
+  {
+    q: "La recherche de fuite non destructive est-elle remboursée par l'assurance en Belgique ?",
+    a: "Oui. En Belgique, la garantie Dégât des Eaux de votre contrat d'assurance habitation prend en charge les frais de recherche de fuite dès lors qu'il y a un dommage constaté (tache, humidité). Notre rapport officiel est validé par AG Insurance, AXA, Ethias, Baloise, Allianz et P&V."
+  },
+  {
+    q: "Faut-il casser mes sols ou mes murs pour trouver la fuite ?",
+    a: "Non. Grâce à nos instruments de haute précision (caméra thermique, détection acoustique, gaz traceur), nous repérons la fuite à travers le carrelage, le béton et le plâtre sans faire aucun trou destructeur."
+  },
+  {
+    q: "Combien de temps dure une intervention de recherche de fuite ?",
+    a: "En moyenne, l'inspection complète d'une maison ou d'un appartement dure entre 1 heure et 2 heures selon la complexité et la superficie du réseau."
+  },
+  {
+    q: "Pouvez-vous réparer la fuite tout de suite après l'avoir localisée ?",
+    a: "Oui. Une fois le point de fuite précisément localisé, notre artisan peut ouvrir de manière chirurgicale sur quelques centimètres seulement et procéder à la réparation le jour même pour remettre votre eau en service."
+  }
+];
+---
+
+<Layout
+  title="Recherche de Fuite d'Eau à Wavre (1300) | Détection Non Destructive"
+  description="Recherche de fuite d'eau sans casser à Wavre (1300). Caméra thermique, gaz traceur, acoustique. Rapport officiel 100% agréé assurances. Tél : 010 39 50 10."
+>
+
+  <!-- Hero Section -->
+  <section class="bg-[#123470] text-white py-16 lg:py-20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
+      
+      <div class="flex items-center gap-2 text-xs font-bold text-white/70">
+        <a href="/" class="hover:text-white">Accueil</a>
+        <span>/</span>
+        <a href="/services" class="hover:text-white">Services</a>
+        <span>/</span>
+        <span class="text-[#fcd400]">Détection de Fuites</span>
+      </div>
+
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#fcd400] text-[#101d29] text-xs font-bold uppercase tracking-wider">
+        <Icon name="search" class="w-4 h-4 text-[#00327d]" />
+        <span>Rapport Officiel Agréé Compagnies d'Assurance</span>
+      </div>
+
+      <h1 class="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight max-w-4xl">
+        Détection et Recherche de Fuite d'Eau Non Destructive à Wavre
+      </h1>
+
+      <p class="text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed">
+        Tache d'humidité suspecte ou compteur qui tourne sans arrêt ? Nous localisons avec une précision chirurgicale toute fuite invisible sous chape ou dans les cloisons sans casser vos sols ni vos carrelages.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+        <a
+          href="tel:010395010"
+          class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#fcd400] hover:bg-[#e9c400] text-[#101d29] font-display font-extrabold text-base shadow-lg transition-transform active:scale-95"
+        >
+          <Icon name="phone" class="w-5 h-5 text-[#00327d]" />
+          <span>Appeler un expert fuite : 010 39 50 10</span>
+        </a>
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-display font-bold text-sm shadow-sm transition-all"
+        >
+          Demander une recherche de fuite
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- What's Included -->
+  <section class="py-16 sm:py-24 bg-white border-b border-[#e4eaf1]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Méthodes Non Destructives
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Ce Qui Est Inclus dans Notre Détection de Fuite
+        </h2>
+        <p class="text-base text-[#434653]">
+          Nous déployons les 4 technologies reconnues par les experts d'assurance pour trouver l'origine exacte du sinistre sans dégrader votre bien.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {includes.map((item) => (
+          <div class="flex items-start gap-3 p-4 rounded-xl bg-[#f7f9ff] border border-[#e4eaf1]">
+            <div class="w-6 h-6 rounded-full bg-[#059669]/10 text-[#059669] flex items-center justify-center shrink-0 mt-0.5">
+              <Icon name="check" class="w-4 h-4 text-[#059669]" />
+            </div>
+            <span class="text-sm text-[#101d29] font-medium leading-relaxed">{item}</span>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Common Problems Solved -->
+  <section class="py-16 sm:py-24 bg-[#f7f9ff]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#705d00] bg-[#fcd400]/20 px-3.5 py-1.5 rounded-full inline-block">
+          Indices de Fuite Invisible
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Quand Devez-Vous Faire Détecter une Fuite ?
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {problems.map((p) => (
+          <div class="bg-white p-6 rounded-2xl border border-[#e4eaf1] shadow-xs space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-[#edf4ff] text-[#0047ab] flex items-center justify-center">
+              <Icon name="search" class="w-5 h-5 text-[#0047ab]" />
+            </div>
+            <h3 class="font-display font-bold text-base text-[#101d29]">
+              {p.title}
+            </h3>
+            <p class="text-xs sm:text-sm text-[#434653] leading-relaxed">
+              {p.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Our Step-by-Step Process -->
+  <section class="py-16 sm:py-24 bg-white border-t border-[#e4eaf1]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Protocole Certifié
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Comment Déroulons-Nous la Recherche de Fuite ?
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        {steps.map((s) => (
+          <div class="bg-[#f7f9ff] p-6 rounded-2xl border border-[#e4eaf1] space-y-3">
+            <span class="font-display font-extrabold text-3xl text-[#00327d] block tabular-nums">
+              0{s.num}
+            </span>
+            <h3 class="font-display font-bold text-base text-[#101d29]">
+              {s.title}
+            </h3>
+            <p class="text-xs text-[#434653] leading-relaxed">
+              {s.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Why Choose Us & Service Area Details -->
+  <section class="py-16 sm:py-24 bg-[#123470] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-[#fcd400] bg-white/10 px-3.5 py-1.5 rounded-full inline-block">
+            Zéro Casse & Sérénité
+          </span>
+          <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight">
+            Pourquoi Choisir Notre Service de Détection de Fuite ?
+          </h2>
+          <div class="space-y-4 text-sm text-white/80 leading-relaxed font-normal">
+            <p>
+              Un dégât des eaux est une source importante de stress. Notre équipe intervient avec respect pour votre habitat et vous décharge de la complexité technique auprès de votre assurance.
+            </p>
+            <ul class="space-y-3 pt-2">
+              <li class="flex items-center gap-3">
+                <Icon name="check" class="w-5 h-5 text-[#fcd400] shrink-0" />
+                <span>Rapport d'expertise technique officiel remis sous 24 heures</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Icon name="check" class="w-5 h-5 text-[#fcd400] shrink-0" />
+                <span>Équipement de marque allemande et américaine (FLIR, Sewerin) de dernière génération</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Icon name="check" class="w-5 h-5 text-[#fcd400] shrink-0" />
+                <span>Aucune destruction inutile de vos cloisons ni de votre faïence</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Icon name="check" class="w-5 h-5 text-[#fcd400] shrink-0" />
+                <span>Facture 100% admissible au remboursement par votre contrat habitation</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 bg-white/10 rounded-3xl p-8 border border-white/10 space-y-5">
+          <h3 class="font-display font-bold text-xl text-white">
+            Déplacements Détection de Fuites en Brabant Wallon
+          </h3>
+          <p class="text-xs sm:text-sm text-white/80 leading-relaxed">
+            Intervention rapide sur simple appel dans toutes les entités :
+          </p>
+          <div class="grid grid-cols-2 gap-2 text-xs font-semibold">
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Wavre Centre (1300)</span>
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Limal (1300)</span>
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Bierges (1301)</span>
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Basse-Wavre</span>
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Ottignies-LLN (1348)</span>
+            <span class="bg-white/10 p-2.5 rounded-lg text-white">Rixensart & Lasne</span>
+          </div>
+          <div class="pt-2">
+            <a
+              href="tel:010395010"
+              class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-[#fcd400] text-[#101d29] font-display font-bold text-sm hover:bg-[#e9c400] shadow-sm transition-all"
+            >
+              <Icon name="phone" class="w-4 h-4 text-[#00327d]" />
+              <span>Prendre rendez-vous avec un technicien</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="py-16 sm:py-24 bg-[#f7f9ff]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="text-center space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Vos Questions
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Questions Fréquentes sur la Recherche de Fuite
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((f) => (
+          <div class="bg-white p-6 rounded-2xl border border-[#e4eaf1] shadow-xs space-y-2">
+            <h3 class="font-display font-bold text-base text-[#00327d]">
+              {f.q}
+            </h3>
+            <p class="text-sm text-[#434653] leading-relaxed">
+              {f.a}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+</Layout>

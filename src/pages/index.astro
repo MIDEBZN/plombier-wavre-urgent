@@ -8,42 +8,48 @@ const services = [
     title: "Dépannage d'Urgence 24/7",
     desc: "Fuite d'eau abondante, vanne d'arrêt cassée, tuyau percé ou inondation sous évier. Intervention immédiate sur tout Wavre.",
     time: "Arrivée sous 30 min",
-    icon: "bolt"
+    icon: "bolt",
+    href: "/services/depannage-urgence"
   },
   {
     id: "debouchage",
     title: "Débouchage & Curage Haute Pression",
     desc: "WC bouché, sterput refoulant, évier bloqué et inspection caméra vidéo endoscopique pour identifier le bouchon exact.",
     time: "Matériel professionnel",
-    icon: "droplet"
+    icon: "droplet",
+    href: "/services/debouchage"
   },
   {
     id: "boiler",
-    title: "Dépannage & Remplacement Boiler",
-    desc: "Chauffe-eau électrique ou gaz en panne, groupe de sécurité qui coule, détartrage de cuve et remplacement sous 24h.",
+    title: "Chauffage, Boilers & Chaudières",
+    desc: "Chauffe-eau électrique ou gaz en panne, groupe de sécurité qui coule, détartrage de cuve et entretien légal Cerga.",
     time: "Spécialiste calcaire",
-    icon: "flame"
+    icon: "flame",
+    href: "/services/chauffage-chaudieres"
   },
   {
     id: "adoucisseur",
     title: "Adoucisseurs d'Eau Anti-Calcaire",
     desc: "Installation et réglage d'adoucisseurs BWT et Durlem adaptés à la forte dureté de l'eau à Wavre (supérieure à 30 degrés français).",
     time: "Protection tuyauterie",
-    icon: "shield"
+    icon: "shield",
+    href: "/services/traitement-de-leau"
   },
   {
     id: "fuite",
     title: "Recherche de Fuite Non Destructive",
     desc: "Localisation de fuites encastrées sans casser : thermographie infrarouge, écoute acoustique et gaz traceur agréés assurances.",
     time: "Rapport pour assureur",
-    icon: "camera"
+    icon: "camera",
+    href: "/services/detection-de-fuites"
   },
   {
     id: "sanitaire",
     title: "Sanitaires & WC Suspendus Geberit",
     desc: "Remplacement de mécanismes de chasse, pose de cuvettes suspendues Geberit, robinetterie Grohe et rénovation de salle de bain.",
     time: "Finition soignée",
-    icon: "wrench"
+    icon: "wrench",
+    href: "/services/installations-sanitaires"
   }
 ];
 
@@ -296,8 +302,8 @@ const faqs = [
               <span class="text-xs font-semibold text-[#0047ab] bg-[#edf4ff] px-2.5 py-1 rounded-md">
                 {service.time}
               </span>
-              <a href="/services" class="text-xs font-bold text-[#00327d] hover:text-[#0047ab] inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
-                <span>Détails</span>
+              <a href={service.href} class="text-xs font-bold text-[#00327d] hover:text-[#0047ab] inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                <span>Détails & Tarifs</span>
                 <Icon name="arrow-right" class="w-3.5 h-3.5" />
               </a>
             </div>
