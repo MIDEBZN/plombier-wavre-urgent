@@ -1,0 +1,544 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+
+const services = [
+  {
+    id: "urgence",
+    title: "Dépannage d'Urgence 24/7",
+    desc: "Fuite d'eau abondante, vanne d'arrêt cassée, tuyau percé ou inondation sous évier. Intervention immédiate sur tout Wavre.",
+    time: "Arrivée sous 30 min",
+    icon: "bolt"
+  },
+  {
+    id: "debouchage",
+    title: "Débouchage & Curage Haute Pression",
+    desc: "WC bouché, sterput refoulant, évier bloqué et inspection caméra vidéo endoscopique pour identifier le bouchon exact.",
+    time: "Matériel professionnel",
+    icon: "droplet"
+  },
+  {
+    id: "boiler",
+    title: "Dépannage & Remplacement Boiler",
+    desc: "Chauffe-eau électrique ou gaz en panne, groupe de sécurité qui coule, détartrage de cuve et remplacement sous 24h.",
+    time: "Spécialiste calcaire",
+    icon: "flame"
+  },
+  {
+    id: "adoucisseur",
+    title: "Adoucisseurs d'Eau Anti-Calcaire",
+    desc: "Installation et réglage d'adoucisseurs BWT et Durlem adaptés à la forte dureté de l'eau à Wavre (supérieure à 30 degrés français).",
+    time: "Protection tuyauterie",
+    icon: "shield"
+  },
+  {
+    id: "fuite",
+    title: "Recherche de Fuite Non Destructive",
+    desc: "Localisation de fuites encastrées sans casser : thermographie infrarouge, écoute acoustique et gaz traceur agréés assurances.",
+    time: "Rapport pour assureur",
+    icon: "camera"
+  },
+  {
+    id: "sanitaire",
+    title: "Sanitaires & WC Suspendus Geberit",
+    desc: "Remplacement de mécanismes de chasse, pose de cuvettes suspendues Geberit, robinetterie Grohe et rénovation de salle de bain.",
+    time: "Finition soignée",
+    icon: "wrench"
+  }
+];
+
+const pricingItems = [
+  {
+    title: "Déplacement & Diagnostic Wavre 1300",
+    price: "65 €",
+    detail: "Comprend le déplacement à Wavre, Limal ou Bierges et le diagnostic complet de la panne.",
+    popular: false
+  },
+  {
+    title: "Forfait Débouchage Sanitaire Express",
+    price: "120 €",
+    detail: "Débouchage mécanique ou pompe à vide pour WC, évier, lavabo ou douche avec vérification d'écoulement.",
+    popular: true
+  },
+  {
+    title: "Détartrage & Contrôle Boiler Électrique",
+    price: "185 €",
+    detail: "Nettoyage résistance, remplacement de l'anode magnésium, contrôle thermostat et vidange des boues de calcaire.",
+    popular: false
+  },
+  {
+    title: "Recherche de Fuite avec Rapport Assurance",
+    price: "240 €",
+    detail: "Détection acoustique et caméra thermique avec rédaction du rapport technique officiel pour votre assurance habitation.",
+    popular: false
+  }
+];
+
+const reviews = [
+  {
+    author: "Marc V. (Bierges)",
+    text: "Canalisation principale totalement refoulée un dimanche matin. L'artisan est arrivé en 25 minutes avec la caméra et a réglé le problème proprement. Tarif annoncé avant intervention.",
+    service: "Débouchage d'urgence"
+  },
+  {
+    author: "Sophie D. (Wavre Centre)",
+    text: "Fuite importante après compteur sous l'évier. Très professionnel, rassurant et travail impeccable. Fourniture immédiate de la facture détaillée pour mon assurance.",
+    service: "Réparation fuite d'eau"
+  },
+  {
+    author: "Laurent B. (Limal)",
+    text: "Remplacement d'un vieux chauffe-eau percé en moins de 24h. Devis respecté au centime près et installation d'un adoucisseur d'eau BWT très efficace.",
+    service: "Installation boiler & adoucisseur"
+  }
+];
+
+const faqs = [
+  {
+    q: "Quel est le délai d'arrivée pour une urgence plomberie à Wavre ?",
+    a: "Nos techniciens d'astreinte sont basés directement dans l'entité de Wavre. Le délai moyen de déplacement constaté est de 20 à 35 minutes pour Wavre Centre (1300), Limal (1300) et Bierges (1301)."
+  },
+  {
+    q: "Vos tarifs sont-ils annoncés avant le début des travaux ?",
+    a: "Oui. Dès notre arrivée sur place et après diagnostic de la situation, notre artisan vous remet un devis transparent et détaillé. Aucun travail n'est exécuté sans votre accord écrit."
+  },
+  {
+    q: "Êtes-vous agréés par les compagnies d'assurance belges en cas de sinistre ?",
+    a: "Absolument. Nous fournissons des rapports d'intervention techniques conformes pour AXA, AG Insurance, Ethias, Baloise et toutes les assurances opérant en Belgique pour la prise en charge des dégâts des eaux."
+  },
+  {
+    q: "Pourquoi l'eau de Wavre abîme-t-elle les boilers et la robinetterie ?",
+    a: "L'eau distribuée en Brabant Wallon présente une dureté élevée (souvent entre 30 et 35 degrés français). Sans entretien régulier ou adoucisseur, le tartre s'accumule sur les résistances et obstrue les canalisations."
+  }
+];
+---
+
+<Layout
+  title="Plombier Wavre Urgent (1300) | Dépannage 24/7 en 30 Minutes"
+  description="Plombier à Wavre disponible 24h/24 et 7j/7 pour dépannage d'urgence en 30 min. Fuite d'eau, débouchage canalisation, réparation boiler. Devis clair et sans surprise. Tél : 010 39 50 10."
+>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden pt-8 pb-16 lg:pt-16 lg:pb-24 bg-gradient-to-b from-[#edf4ff] via-[#f7f9ff] to-[#f7f9ff]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Hero Content -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- Urgent Live Badge -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-2 bg-[#fcd400] text-[#101d29] rounded-full shadow-xs">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#059669] opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-[#059669]"></span>
+            </span>
+            <span class="font-display font-bold text-xs uppercase tracking-wider">
+              Plombier d'astreinte disponible 24h/24 et 7j/7
+            </span>
+          </div>
+
+          <!-- Main H1 Heading -->
+          <h1 class="font-display font-extrabold text-3xl sm:text-5xl lg:text-5xl text-[#00327d] tracking-tight leading-tight">
+            Plombier à Wavre (1300) : Dépannage d'Urgence en 30 Minutes
+          </h1>
+
+          <!-- Value Proposition -->
+          <p class="text-lg text-[#434653] leading-relaxed max-w-2xl font-normal">
+            Fuite d'eau abondante, canalisation bouchée, WC suspendu en panne ou boiler qui disjoncte ? Nos artisans plombiers qualifiés interviennent en urgence à Wavre, Limal, Bierges et partout en Brabant Wallon.
+          </p>
+
+          <!-- Action CTAs -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+            <a
+              href="tel:010395010"
+              class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#fcd400] hover:bg-[#e9c400] text-[#101d29] font-display font-extrabold text-base shadow-md transition-all active:scale-95"
+            >
+              <Icon name="phone" class="w-5 h-5 text-[#00327d]" />
+              <span>Appel Urgence : 010 39 50 10</span>
+            </a>
+            <a
+              href="/contact"
+              class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white hover:bg-[#edf4ff] text-[#00327d] border border-[#0047ab]/30 font-display font-bold text-sm shadow-xs transition-all"
+            >
+              Demander un devis en ligne
+            </a>
+          </div>
+
+          <!-- Trust Micro-Strip -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-[#dce9fb]">
+            <div class="flex items-center gap-2 text-xs font-semibold text-[#101d29]">
+              <Icon name="check" class="w-4 h-4 text-[#059669]" />
+              <span>Arrivée 30 min</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs font-semibold text-[#101d29]">
+              <Icon name="check" class="w-4 h-4 text-[#059669]" />
+              <span>Tarif annoncé avant</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs font-semibold text-[#101d29]">
+              <Icon name="check" class="w-4 h-4 text-[#059669]" />
+              <span>Agrément Cerga</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs font-semibold text-[#101d29]">
+              <Icon name="check" class="w-4 h-4 text-[#059669]" />
+              <span>Agréé Assurances</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Hero Visual Card -->
+        <div class="lg:col-span-5 relative">
+          <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl border border-[#e4eaf1] relative z-10 space-y-6">
+            
+            <div class="flex items-center justify-between border-b border-[#e4eaf1] pb-4">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-[#705d00] block">
+                  Centre d'appel d'urgence
+                </span>
+                <span class="font-display font-bold text-lg text-[#00327d]">
+                  Statut des interventions à Wavre
+                </span>
+              </div>
+              <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-[#ecfdf5] text-[#059669]">
+                Actif
+              </span>
+            </div>
+
+            <!-- Estimated Arrival Box -->
+            <div class="bg-[#edf4ff] rounded-xl p-4 border border-[#0047ab]/20 flex items-center justify-between">
+              <div class="space-y-1">
+                <span class="text-xs text-[#434653] font-medium block">Délai d'arrivée estimé :</span>
+                <span class="font-display font-extrabold text-2xl text-[#00327d] tabular-nums">
+                  20 à 35 minutes
+                </span>
+              </div>
+              <div class="w-12 h-12 rounded-xl bg-[#0047ab] text-white flex items-center justify-center">
+                <Icon name="clock" class="w-6 h-6 text-[#fcd400]" />
+              </div>
+            </div>
+
+            <!-- Triage problem list -->
+            <div class="space-y-2.5">
+              <span class="text-xs font-bold text-[#434653] uppercase tracking-wider block">
+                Sélectionnez votre type d'urgence :
+              </span>
+              <div class="grid grid-cols-2 gap-2">
+                <a href="tel:010395010" class="p-3 rounded-lg border border-[#e4eaf1] hover:border-[#0047ab] hover:bg-[#f7f9ff] text-left transition-all">
+                  <span class="text-xs font-bold text-[#101d29] block">Fuite d'eau</span>
+                  <span class="text-[11px] text-[#434653]">Tuyau ou vanne</span>
+                </a>
+                <a href="tel:010395010" class="p-3 rounded-lg border border-[#e4eaf1] hover:border-[#0047ab] hover:bg-[#f7f9ff] text-left transition-all">
+                  <span class="text-xs font-bold text-[#101d29] block">WC bouché</span>
+                  <span class="text-[11px] text-[#434653]">Refoulement eau</span>
+                </a>
+                <a href="tel:010395010" class="p-3 rounded-lg border border-[#e4eaf1] hover:border-[#0047ab] hover:bg-[#f7f9ff] text-left transition-all">
+                  <span class="text-xs font-bold text-[#101d29] block">Boiler en panne</span>
+                  <span class="text-[11px] text-[#434653]">Plus d'eau chaude</span>
+                </a>
+                <a href="tel:010395010" class="p-3 rounded-lg border border-[#e4eaf1] hover:border-[#0047ab] hover:bg-[#f7f9ff] text-left transition-all">
+                  <span class="text-xs font-bold text-[#101d29] block">Égout / Sterput</span>
+                  <span class="text-[11px] text-[#434653]">Mauvaise odeur</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Direct Assistance CTA -->
+            <div class="pt-2">
+              <a
+                href="tel:010395010"
+                class="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#0047ab] hover:bg-[#00327d] text-white font-display font-bold text-sm shadow-sm transition-all"
+              >
+                <Icon name="phone" class="w-4 h-4 text-[#fcd400]" />
+                <span>Joindre le technicien de garde</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid Section -->
+  <section class="py-16 sm:py-24 bg-white border-y border-[#e4eaf1]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Nos Expertises Locales
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Services de Plomberie Professionnelle à Wavre
+        </h2>
+        <p class="text-base text-[#434653]">
+          Intervention d'artisans diplômés et équipés du matériel le plus récent pour résoudre durablement vos problèmes sanitaires.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((service) => (
+          <div class="bg-[#f7f9ff] rounded-2xl p-7 border border-[#e4eaf1] hover:border-[#0047ab]/40 hover:shadow-lg transition-all group flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="w-12 h-12 rounded-xl bg-[#0047ab] text-white flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
+                <Icon name={service.icon} class="w-6 h-6 text-[#fcd400]" />
+              </div>
+              <div class="flex items-center justify-between">
+                <h3 class="font-display font-bold text-lg text-[#00327d]">
+                  {service.title}
+                </h3>
+              </div>
+              <p class="text-sm text-[#434653] leading-relaxed">
+                {service.desc}
+              </p>
+            </div>
+            
+            <div class="pt-6 mt-6 border-t border-[#e4eaf1] flex items-center justify-between">
+              <span class="text-xs font-semibold text-[#0047ab] bg-[#edf4ff] px-2.5 py-1 rounded-md">
+                {service.time}
+              </span>
+              <a href="/services" class="text-xs font-bold text-[#00327d] hover:text-[#0047ab] inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                <span>Détails</span>
+                <Icon name="arrow-right" class="w-3.5 h-3.5" />
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-12">
+        <a
+          href="/services"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0047ab] text-white font-display font-bold text-sm hover:bg-[#00327d] shadow-sm transition-all"
+        >
+          <span>Consulter toutes nos prestations sanitaires</span>
+          <Icon name="arrow-right" class="w-4 h-4" />
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Transparent Pricing Section -->
+  <section class="py-16 sm:py-24 bg-[#f7f9ff]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#705d00] bg-[#fcd400]/20 px-3.5 py-1.5 rounded-full inline-block">
+          Tarification Honnête
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Tarifs Plomberie Clairs et Sans Mauvaise Surprise
+        </h2>
+        <p class="text-base text-[#434653]">
+          Contrairement aux plateformes opaques, nous appliquons des forfaits transparents validés avec vous avant tout début d'intervention.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {pricingItems.map((item) => (
+          <div class={`rounded-2xl p-6 bg-white border ${item.popular ? 'border-[#0047ab] shadow-md ring-2 ring-[#0047ab]/20' : 'border-[#e4eaf1] shadow-xs'} flex flex-col justify-between`}>
+            <div class="space-y-4">
+              {item.popular && (
+                <span class="text-[11px] font-extrabold uppercase tracking-wider text-white bg-[#0047ab] px-2.5 py-0.5 rounded-full inline-block">
+                  Le plus demandé
+                </span>
+              )}
+              <h3 class="font-display font-bold text-base text-[#101d29] min-h-[48px]">
+                {item.title}
+              </h3>
+              <div class="pt-2 pb-1">
+                <span class="text-xs text-[#434653] block">A partir de</span>
+                <span class="font-display font-extrabold text-3xl text-[#00327d] tabular-nums">
+                  {item.price}
+                </span>
+              </div>
+              <p class="text-xs text-[#434653] leading-relaxed">
+                {item.detail}
+              </p>
+            </div>
+
+            <div class="pt-6 mt-6 border-t border-[#e4eaf1]">
+              <a
+                href="tel:010395010"
+                class="w-full inline-flex items-center justify-center py-2.5 px-3 rounded-lg bg-[#edf4ff] hover:bg-[#0047ab] text-[#00327d] hover:text-white font-display font-bold text-xs transition-colors"
+              >
+                Réserver cette intervention
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Local Coverage Section -->
+  <section class="py-16 sm:py-24 bg-[#123470] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-6 space-y-6">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-[#fcd400] bg-white/10 px-3 py-1.5 rounded-full inline-block">
+            Proximité Brabant Wallon
+          </span>
+          <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight">
+            Intervention Rapide dans Tous les Quartiers de Wavre
+          </h2>
+          <p class="text-base text-white/80 leading-relaxed font-normal">
+            Nos camionnettes d'intervention sillonnent constamment le secteur pour garantir une arrivée en 30 minutes maximum. Nous connaissons chaque quartier et la configuration des réseaux de distribution d'eau locaux.
+          </p>
+
+          <div class="grid grid-cols-2 gap-4 pt-2">
+            <div class="bg-white/10 p-4 rounded-xl border border-white/10">
+              <span class="font-display font-bold text-base text-[#fcd400] block">Wavre Centre (1300)</span>
+              <span class="text-xs text-white/70">Place Cardinal Mercier, Gare, Basse-Wavre</span>
+            </div>
+            <div class="bg-white/10 p-4 rounded-xl border border-white/10">
+              <span class="font-display font-bold text-base text-[#fcd400] block">Bierges (1301)</span>
+              <span class="text-xs text-white/70">Accès immédiat E411 et N4</span>
+            </div>
+            <div class="bg-white/10 p-4 rounded-xl border border-white/10">
+              <span class="font-display font-bold text-base text-[#fcd400] block">Limal (1300)</span>
+              <span class="text-xs text-white/70">Secteur résidentiel et vallonné</span>
+            </div>
+            <div class="bg-white/10 p-4 rounded-xl border border-white/10">
+              <span class="font-display font-bold text-base text-[#fcd400] block">Ottignies-LLN (1348)</span>
+              <span class="text-xs text-white/70">Zone universitaire et banlieue</span>
+            </div>
+          </div>
+
+          <div class="pt-4">
+            <a
+              href="/locations"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#fcd400] text-[#101d29] font-display font-bold text-sm hover:bg-[#e9c400] shadow-sm transition-all"
+            >
+              <span>Vérifier votre commune d'intervention</span>
+              <Icon name="arrow-right" class="w-4 h-4 text-[#00327d]" />
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="bg-white/5 border border-white/10 rounded-3xl p-8 space-y-6">
+            <h3 class="font-display font-bold text-xl text-white">
+              Pourquoi notre ancrage local fait la différence ?
+            </h3>
+            <ul class="space-y-4 text-sm text-white/80">
+              <li class="flex items-start gap-3">
+                <Icon name="check" class="w-5 h-5 text-[#fcd400] shrink-0 mt-0.5" />
+                <span><strong>Zéro frais kilométrique abusif :</strong> nous sommes domiciliés à Wavre même, pas à Bruxelles ou en France comme certains intermédiaires.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" class="w-5 h-5 text-[#fcd400] shrink-0 mt-0.5" />
+                <span><strong>Pièces de rechange en stock immédiat :</strong> vannes, raccords multiskin, mécanismes Geberit et groupes de sécurité disponibles dans le véhicule.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" class="w-5 h-5 text-[#fcd400] shrink-0 mt-0.5" />
+                <span><strong>Agrément Cerga Gaz et conformité wallonne :</strong> techniciens habilités pour toute mise en sécurité de chauffe-eau ou chaudière gaz.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-16 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Retours d'Expérience
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Ce Que Disent les Habitants de Wavre
+        </h2>
+        <div class="flex items-center justify-center gap-1 text-[#fcd400]">
+          <Icon name="star" class="w-5 h-5 text-[#705d00]" />
+          <Icon name="star" class="w-5 h-5 text-[#705d00]" />
+          <Icon name="star" class="w-5 h-5 text-[#705d00]" />
+          <Icon name="star" class="w-5 h-5 text-[#705d00]" />
+          <Icon name="star" class="w-5 h-5 text-[#705d00]" />
+          <span class="ml-2 text-sm font-bold text-[#101d29]">4.9 / 5 (Plus de 140 avis clients)</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {reviews.map((r) => (
+          <div class="bg-[#f7f9ff] rounded-2xl p-7 border border-[#e4eaf1] flex flex-col justify-between shadow-xs">
+            <div class="space-y-4">
+              <div class="flex items-center gap-1 text-[#705d00]">
+                <Icon name="star" class="w-4 h-4" />
+                <Icon name="star" class="w-4 h-4" />
+                <Icon name="star" class="w-4 h-4" />
+                <Icon name="star" class="w-4 h-4" />
+                <Icon name="star" class="w-4 h-4" />
+              </div>
+              <p class="text-sm text-[#434653] italic leading-relaxed">
+                "{r.text}"
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-[#e4eaf1]">
+              <span class="font-display font-bold text-sm text-[#101d29] block">{r.author}</span>
+              <span class="text-xs text-[#0047ab] font-medium">{r.service}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 sm:py-24 bg-[#f7f9ff] border-t border-[#e4eaf1]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="text-center space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Foire Aux Questions
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Questions Fréquentes sur Nos Dépannages
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((f) => (
+          <div class="bg-white rounded-xl p-6 border border-[#e4eaf1] shadow-xs space-y-2">
+            <h3 class="font-display font-bold text-base text-[#00327d] flex items-center justify-between">
+              <span>{f.q}</span>
+            </h3>
+            <p class="text-sm text-[#434653] leading-relaxed">
+              {f.a}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Bottom Emergency Box -->
+      <div class="bg-[#0047ab] rounded-2xl p-8 text-center text-white space-y-4 shadow-xl">
+        <h3 class="font-display font-extrabold text-2xl text-white">
+          Une urgence plomberie immédiate à Wavre ?
+        </h3>
+        <p class="text-sm text-white/80 max-w-xl mx-auto">
+          Ne laissez pas une fuite ou un bouchon aggraver les dégâts des eaux. Notre permanence téléphonique est active en continu.
+        </p>
+        <div class="pt-2">
+          <a
+            href="tel:010395010"
+            class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#fcd400] text-[#101d29] font-display font-extrabold text-base hover:bg-[#e9c400] shadow-md transition-all active:scale-95"
+          >
+            <Icon name="phone" class="w-5 h-5 text-[#00327d]" />
+            <span>Appelez le 010 39 50 10 maintenant</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>

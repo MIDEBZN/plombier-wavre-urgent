@@ -1,0 +1,251 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+
+const serviceDetails = [
+  {
+    id: "urgence",
+    title: "Dépannage Plomberie d'Urgence 24/7",
+    subtitle: "Fuites d'eau, inondations, vannes d'arrêt bloquées et tuyaux percés",
+    keywords: ["plombier wavre urgence", "plombier wavre 24 24", "depannage sanitaire urgent wavre"],
+    description: "Une fuite d'eau non maîtrisée peut causer plusieurs milliers d'euros de sinistre en quelques minutes. Notre service d'intervention d'urgence est sur le qui-vive 24 heures sur 24 et 7 jours sur 7 à Wavre (1300), Limal et Bierges pour couper l'eau, sécuriser l'installation et remplacer les tronçons de tuyauterie endommagés.",
+    features: [
+      "Arrivée moyenne en 30 minutes sur tout le code postal 1300",
+      "Détection et colmatage immédiat de fuite après compteur",
+      "Remplacement de vannes d'arrêt principales grippées",
+      "Facturation claire et agréée par les compagnies d'assurance belges"
+    ],
+    priceFrom: "65 € (Déplacement & diagnostic inclus)"
+  },
+  {
+    id: "debouchage",
+    title: "Débouchage & Curage Haute Pression",
+    subtitle: "WC bouché, éviers, douches, colonnes générales et sterputs extérieurs",
+    keywords: ["debouchage urgence wavre", "curage canalisation haute pression wavre", "inspection camera canalisation wavre"],
+    description: "Les méthodes artisanales (ventouses, produits chimiques) sont souvent inefficaces contre les bouchons profonds ou les dépôts de calcaire durci. Nous utilisons des furets mécaniques professionnels, des caméras d'inspection endoscopiques et des hydrocureuses haute pression pour déboucher et nettoyer vos canalisations en profondeur sans rien abîmer.",
+    features: [
+      "Débouchage mécanique d'urgence pour WC suspendu et classique",
+      "Hydrocurage haute pression pour égouts et sterputs",
+      "Inspection vidéo avec rapport digital pour déceler racines ou affaissements",
+      "Élimination garantie des remontées d'odeurs d'égout"
+    ],
+    priceFrom: "120 € (Forfait débouchage mécanique)"
+  },
+  {
+    id: "recherche-fuite",
+    title: "Recherche de Fuite d'Eau Non Destructive",
+    subtitle: "Infiltrations, murs humides, fuites encastrées et après compteur",
+    keywords: ["recherche de fuite non destructive wavre", "fuite d eau apres compteur wavre", "degat des eaux assurance wavre"],
+    description: "Fini l'époque où l'on devait casser des cloisons ou détruire un carrelage à l'aveugle. Grâce à nos caméras thermographiques infrarouges, nos détecteurs acoustiques électroacoustiques et l'injection de gaz traceur, nous localisons la fuite au millimètre près à travers les dalles, plafonds et cloisons.",
+    features: [
+      "Zéro casse destructrice inutile dans votre habitation",
+      "Détection thermique des déperditions d'eau chaude encastrée",
+      "Écoute acoustique des vibrations de canalisations sous pression",
+      "Rapport technique d'expertise agréé pour remboursement assurance à 100%"
+    ],
+    priceFrom: "240 € (Rapport d'expertise assurance inclus)"
+  },
+  {
+    id: "boiler",
+    title: "Dépannage, Détartrage & Remplacement Boiler",
+    subtitle: "Chauffe-eau électrique, cumulus et boilers sanitaires gaz",
+    keywords: ["remplacement chauffe eau electrique wavre", "detartrage boiler gaz electrique wavre", "boiler electrique qui coule wavre"],
+    description: "L'eau de Wavre est particulièrement calcaire (souvent plus de 32 degrés français). Ce calcaire se dépose sur la résistance thermoplongeuse de votre boiler, réduisant son rendement énergétique et causant des pannes répétées. Nous réalisons le détartrage préventif, le remplacement des anodes magnésium et l'installation de ballons neufs haute performance sous 24h.",
+    features: [
+      "Dépannage le jour même pour panne de thermostat ou résistance",
+      "Détartrage complet de la cuve et changement des joints d'étanchéité",
+      "Remplacement sous 24h de boilers 50L, 100L, 150L, 200L (Atlantic, Ariston)",
+      "Évacuation et recyclage de votre ancien chauffe-eau inclus"
+    ],
+    priceFrom: "185 € (Forfait détartrage complet)"
+  },
+  {
+    id: "adoucisseur",
+    title: "Installation & Entretien d'Adoucisseurs d'Eau",
+    subtitle: "Protection définitive contre le calcaire pour toute votre maison",
+    keywords: ["installation adoucisseur d eau wavre", "traitement calcaire eau dure wavre", "entretien adoucisseur d eau brabant wallon"],
+    description: "Le Brabant Wallon est l'une des régions de Belgique où l'eau est la plus dure. L'installation d'un adoucisseur d'eau volumétrique protège vos canalisations, prolonge la durée de vie de vos électroménagers (lave-linge, lave-vaisselle, boiler) et permet d'économiser jusqu'à 650 € par an en produits détartrants et consommation électrique.",
+    features: [
+      "Analyse de la dureté de votre eau sur place (titre hydrotimétrique)",
+      "Installation certifiée de marques leaders : BWT, Durlem, EcoWater",
+      "Réglage précis et pose d'un réducteur de pression si nécessaire",
+      "Contrat d'entretien annuel avec fourniture de sel purifié"
+    ],
+    priceFrom: "Sur devis gratuit après visite technique"
+  },
+  {
+    id: "sanitaire",
+    title: "Installation Sanitaire & Rénovation de Salle de Bain",
+    subtitle: "WC suspendus Geberit, robinetterie Grohe et douches à l'italienne",
+    keywords: ["pose wc suspendu geberit wavre", "renovation salle de bain complete wavre", "remplacement robinetterie mitigeur wavre"],
+    description: "Du simple remplacement de mitigeur de cuisine qui goutte jusqu'à la réfection complète de votre salle de bain, nous assurons des finitions impeccables. Nous remplaçons les vieilles tuyauteries en plomb par du cuivre brasé ou du multiskin certifié, et installons des bâtis-supports suspendus Geberit robustes.",
+    features: [
+      "Pose et raccordement de cuvettes suspendues Geberit autoportantes",
+      "Remplacement de mitigeurs thermostatiques Grohe et Hansgrohe",
+      "Création de douches à l'italienne avec étanchéité sous carrelage",
+      "Suppression des anciens tuyaux en plomb pour une eau saine"
+    ],
+    priceFrom: "Sur devis gratuit et personnalisé"
+  }
+];
+---
+
+<Layout
+  title="Services de Plomberie à Wavre | Dépannage, Débouchage & Boiler"
+  description="Découvrez tous nos services de plomberie à Wavre (1300) : dépannage d'urgence 24h/24, débouchage haute pression, réparation boiler, recherche de fuite et adoucisseurs."
+>
+
+  <!-- Page Header -->
+  <section class="bg-[#123470] text-white py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <span class="text-xs font-extrabold uppercase tracking-widest text-[#fcd400] bg-white/10 px-3.5 py-1.5 rounded-full inline-block">
+        Prestations & Interventions Sanitaires
+      </span>
+      <h1 class="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight">
+        Services de Plomberie et Dépannage à Wavre (1300)
+      </h1>
+      <p class="text-base sm:text-lg text-white/80 max-w-2xl mx-auto font-normal">
+        Une gamme complète d'interventions professionnelles réalisées par des artisans qualifiés en Brabant Wallon. Transparence des prix et réactivité maximale.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Detailed List -->
+  <section class="py-16 sm:py-24 bg-[#f7f9ff]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      
+      {serviceDetails.map((service, index) => (
+        <div id={service.id} class={`bg-white rounded-3xl p-8 sm:p-10 border border-[#e4eaf1] shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-10 items-center scroll-mt-28`}>
+          
+          <div class="lg:col-span-7 space-y-5">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-xl bg-[#0047ab] text-white flex items-center justify-center shrink-0">
+                <Icon name="wrench" class="w-6 h-6 text-[#fcd400]" />
+              </div>
+              <div>
+                <span class="text-xs font-bold text-[#0047ab] uppercase tracking-wider block">
+                  {service.subtitle}
+                </span>
+                <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-[#101d29]">
+                  {service.title}
+                </h2>
+              </div>
+            </div>
+
+            <p class="text-sm sm:text-base text-[#434653] leading-relaxed">
+              {service.description}
+            </p>
+
+            <div class="space-y-2.5 pt-2">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-[#101d29] block">
+                Ce qui est compris dans l'intervention :
+              </span>
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-[#434653]">
+                {service.features.map((f) => (
+                  <li class="flex items-start gap-2">
+                    <Icon name="check" class="w-4 h-4 text-[#059669] shrink-0 mt-0.5" />
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 bg-[#edf4ff] rounded-2xl p-6 sm:p-8 border border-[#0047ab]/20 space-y-6 flex flex-col justify-between h-full">
+            <div class="space-y-2">
+              <span class="text-xs font-bold uppercase tracking-wider text-[#705d00] block">
+                Estimation tarifaire
+              </span>
+              <span class="font-display font-extrabold text-xl text-[#00327d] block">
+                {service.priceFrom}
+              </span>
+              <p class="text-xs text-[#434653] leading-relaxed">
+                Devis préalable sans engagement. Facture officielle fournie pour les assurances et déductions fiscales éventuelles.
+              </p>
+            </div>
+
+            <div class="space-y-3 pt-4 border-t border-[#0047ab]/10">
+              <a
+                href="tel:010395010"
+                class="w-full inline-flex items-center justify-center gap-2.5 py-3.5 px-4 rounded-xl bg-[#fcd400] hover:bg-[#e9c400] text-[#101d29] font-display font-bold text-sm shadow-sm transition-all"
+              >
+                <Icon name="phone" class="w-4 h-4 text-[#00327d]" />
+                <span>Appeler pour cette prestation</span>
+              </a>
+              <a
+                href="/contact"
+                class="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-white hover:bg-[#f7f9ff] text-[#00327d] border border-[#0047ab]/30 font-semibold text-xs transition-colors"
+              >
+                Demander un devis détaillé
+              </a>
+            </div>
+          </div>
+
+        </div>
+      ))}
+
+    </div>
+  </section>
+
+  <!-- Process Steps Section -->
+  <section class="py-16 sm:py-24 bg-white border-t border-[#e4eaf1]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Méthodologie Artisanale
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Comment se Déroule une Intervention ?
+        </h2>
+        <p class="text-base text-[#434653]">
+          Quatre étapes simples pour vous assurer une tranquillité d'esprit totale du premier appel à la fin du chantier.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="bg-[#f7f9ff] p-6 rounded-2xl border border-[#e4eaf1] space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-[#0047ab] text-white flex items-center justify-center font-display font-bold text-lg">
+            1
+          </div>
+          <h3 class="font-display font-bold text-base text-[#101d29]">Appel & Diagnostic</h3>
+          <p class="text-xs text-[#434653] leading-relaxed">
+            Vous nous décrivez le problème par téléphone. Nous vous donnons les premiers conseils d'urgence (fermeture de vanne) et dépêchons le technicien le plus proche.
+          </p>
+        </div>
+
+        <div class="bg-[#f7f9ff] p-6 rounded-2xl border border-[#e4eaf1] space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-[#0047ab] text-white flex items-center justify-center font-display font-bold text-lg">
+            2
+          </div>
+          <h3 class="font-display font-bold text-base text-[#101d29]">Devis Transparent</h3>
+          <p class="text-xs text-[#434653] leading-relaxed">
+            Arrivé sur place à Wavre en moins de 30 minutes, l'artisan examine l'installation et vous remet un prix ferme et définitif avant de toucher au matériel.
+          </p>
+        </div>
+
+        <div class="bg-[#f7f9ff] p-6 rounded-2xl border border-[#e4eaf1] space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-[#0047ab] text-white flex items-center justify-center font-display font-bold text-lg">
+            3
+          </div>
+          <h3 class="font-display font-bold text-base text-[#101d29]">Réparation Propre</h3>
+          <p class="text-xs text-[#434653] leading-relaxed">
+            Travaux effectués dans les règles de l'art avec des pièces de qualité d'origine. Les lieux sont nettoyés et remis en état à la fin de l'intervention.
+          </p>
+        </div>
+
+        <div class="bg-[#f7f9ff] p-6 rounded-2xl border border-[#e4eaf1] space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-[#0047ab] text-white flex items-center justify-center font-display font-bold text-lg">
+            4
+          </div>
+          <h3 class="font-display font-bold text-base text-[#101d29]">Garantie & Facture</h3>
+          <p class="text-xs text-[#434653] leading-relaxed">
+            Règlement sécurisé sur place (Bancontact ou virement). Remise immédiate d'une facture détaillée conforme pour votre assurance habitation.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>

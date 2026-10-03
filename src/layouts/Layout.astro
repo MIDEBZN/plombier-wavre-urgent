@@ -1,0 +1,392 @@
+---
+import '../styles/global.css';
+import Icon from '../components/Icon.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  schemaType?: string;
+}
+
+const {
+  title,
+  description,
+  canonical = Astro.url.href,
+  schemaType = "Plumber"
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { href: "/", label: "Accueil" },
+  { href: "/services", label: "Services" },
+  { href: "/locations", label: "Zones d'intervention" },
+  { href: "/about", label: "A propos" },
+  { href: "/contact", label: "Contact & Devis" },
+];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Plumber", "EmergencyService", "LocalBusiness"],
+      "@id": "https://plombier-wavre-urgent.be/#business",
+      "name": "Plombier Wavre Urgent",
+      "image": "https://plombier-wavre-urgent.be/images/og-plombier-wavre.jpg",
+      "telephone": "+3210395010",
+      "email": "contact@plombier-wavre-urgent.be",
+      "url": "https://plombier-wavre-urgent.be",
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Chaussée de Bruxelles 84",
+        "addressLocality": "Wavre",
+        "postalCode": "1300",
+        "addressRegion": "Brabant Wallon",
+        "addressCountry": "BE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 50.7174,
+        "longitude": 4.6092
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      ],
+      "areaServed": [
+        { "@type": "City", "name": "Wavre", "postalCode": "1300" },
+        { "@type": "City", "name": "Limal", "postalCode": "1300" },
+        { "@type": "City", "name": "Bierges", "postalCode": "1301" },
+        { "@type": "City", "name": "Ottignies-Louvain-la-Neuve", "postalCode": "1348" },
+        { "@type": "City", "name": "Rixensart", "postalCode": "1330" },
+        { "@type": "City", "name": "Grez-Doiceau", "postalCode": "1390" },
+        { "@type": "City", "name": "Chaumont-Gistoux", "postalCode": "1325" },
+        { "@type": "City", "name": "La Hulpe", "postalCode": "1310" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services de plomberie et dépannage Wavre",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Dépannage plomberie urgence 24h/24"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Débouchage canalisation et WC haute pression"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Recherche de fuite non destructive agréée assurances"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Réparation et remplacement de boiler ou chauffe-eau"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Installation et entretien adoucisseur d'eau anti-calcaire"
+            }
+          }
+        ]
+      }
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="fr_BE" />
+    <meta property="og:site_name" content="Plombier Wavre Urgent" />
+
+    <!-- Google Fonts Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body class="bg-[#f7f9ff] text-[#101d29] antialiased selection:bg-[#0047ab] selection:text-white pb-24 md:pb-0">
+    
+    <!-- Top Announcement Bar -->
+    <div class="bg-[#123470] text-white text-xs sm:text-sm py-2 px-4 border-b border-white/10">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+        <div class="flex items-center gap-2">
+          <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-[#059669] text-white animate-pulse">
+            En astreinte
+          </span>
+          <span class="font-medium">Wavre (1300), Limal, Bierges : intervention moyenne en 30 minutes</span>
+        </div>
+        <div class="flex items-center gap-4 text-xs text-white/80">
+          <span class="flex items-center gap-1">
+            <Icon name="shield" class="w-3.5 h-3.5 text-[#fcd400]" /> Agrément Cerga & VCA
+          </span>
+          <span class="hidden md:flex items-center gap-1">
+            <Icon name="check" class="w-3.5 h-3.5 text-[#fcd400]" /> Devis clair avant travaux
+          </span>
+          <a href="tel:010395010" class="text-[#fcd400] font-bold hover:underline">
+            010 39 50 10
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#e4eaf1] shadow-xs">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-xl bg-[#0047ab] text-white flex items-center justify-center shadow-sm group-hover:bg-[#00327d] transition-colors">
+            <Icon name="wrench" class="w-6 h-6 text-[#fcd400]" />
+          </div>
+          <div class="flex flex-col">
+            <span class="font-display font-extrabold text-xl text-[#00327d] tracking-tight leading-none">
+              Plombier Wavre Urgent
+            </span>
+            <span class="text-xs text-[#434653] font-medium tracking-wide">
+              Artisan Sanitaire Brabant Wallon
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-1 xl:gap-2">
+          {navItems.map((item) => {
+            const isActive = currentPath === item.href || (item.href !== "/" && currentPath.startsWith(item.href));
+            return (
+              <a
+                href={item.href}
+                class={`px-3.5 py-2 rounded-lg text-sm font-semibold transition-all ${
+                  isActive
+                    ? "bg-[#edf4ff] text-[#00327d] font-bold"
+                    : "text-[#434653] hover:text-[#00327d] hover:bg-[#f7f9ff]"
+                }`}
+              >
+                {item.label}
+              </a>
+            );
+          })}
+        </nav>
+
+        <!-- CTA Header Action -->
+        <div class="hidden sm:flex items-center gap-3">
+          <a
+            href="tel:010395010"
+            class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl bg-[#fcd400] hover:bg-[#e9c400] text-[#101d29] font-display font-bold text-sm shadow-sm transition-transform active:scale-95"
+          >
+            <Icon name="phone" class="w-4 h-4 text-[#00327d]" />
+            <span class="tabular-nums">010 39 50 10</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Trigger -->
+        <div class="lg:hidden flex items-center gap-2">
+          <a
+            href="tel:010395010"
+            class="sm:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg bg-[#fcd400] text-[#101d29]"
+            aria-label="Appeler le plombier"
+          >
+            <Icon name="phone" class="w-5 h-5 text-[#00327d]" />
+          </a>
+          <button
+            id="mobile-menu-btn"
+            type="button"
+            class="p-2 rounded-lg text-[#434653] hover:bg-[#edf4ff] focus:outline-none"
+            aria-label="Menu"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-[#e4eaf1] bg-white px-4 py-4 space-y-2 shadow-lg">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class="block px-3 py-2.5 rounded-lg text-base font-semibold text-[#101d29] hover:bg-[#edf4ff] hover:text-[#00327d]"
+          >
+            {item.label}
+          </a>
+        ))}
+        <div class="pt-3 border-t border-[#e4eaf1] flex flex-col gap-2">
+          <a
+            href="tel:010395010"
+            class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-[#fcd400] text-[#101d29] font-bold text-base shadow-sm"
+          >
+            <Icon name="phone" class="w-5 h-5 text-[#00327d]" />
+            <span>Appel Urgence : 010 39 50 10</span>
+          </a>
+          <a
+            href="/contact"
+            class="w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-xl bg-[#edf4ff] text-[#00327d] font-semibold text-sm"
+          >
+            Demander un devis gratuit
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Slot -->
+    <main>
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#123470] text-white pt-16 pb-28 md:pb-12 border-t border-white/10 mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+          
+          <!-- Column 1: Identity & Credentials -->
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-[#0047ab] text-white flex items-center justify-center">
+                <Icon name="wrench" class="w-5 h-5 text-[#fcd400]" />
+              </div>
+              <span class="font-display font-extrabold text-lg text-white">Plombier Wavre Urgent</span>
+            </div>
+            <p class="text-sm text-white/80 leading-relaxed">
+              Entreprise locale spécialisée dans le dépannage plomberie d'urgence 24h/24, le débouchage haute pression et les installations sanitaires à Wavre et en Brabant Wallon.
+            </p>
+            <div class="text-xs text-white/70 space-y-1">
+              <p>Chaussée de Bruxelles 84, 1300 Wavre</p>
+              <p>Numéro d'entreprise BCE : BE 0849.281.930</p>
+              <p>Agrément Cerga Gaz Wallonie : H-39184</p>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Links to Services -->
+          <div>
+            <h3 class="font-display font-bold text-base text-white uppercase tracking-wider mb-4">
+              Prestations Spécialisées
+            </h3>
+            <ul class="space-y-2 text-sm text-white/80">
+              <li><a href="/services#urgence" class="hover:text-[#fcd400] transition-colors">Dépannage plomberie 24h/24</a></li>
+              <li><a href="/services#debouchage" class="hover:text-[#fcd400] transition-colors">Débouchage canalisation & WC</a></li>
+              <li><a href="/services#recherche-fuite" class="hover:text-[#fcd400] transition-colors">Recherche de fuite non destructive</a></li>
+              <li><a href="/services#boiler" class="hover:text-[#fcd400] transition-colors">Détartrage & remplacement boiler</a></li>
+              <li><a href="/services#adoucisseur" class="hover:text-[#fcd400] transition-colors">Adoucisseur d'eau anti-calcaire</a></li>
+              <li><a href="/services#sanitaire" class="hover:text-[#fcd400] transition-colors">Pose WC suspendu Geberit</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Local Interventions -->
+          <div>
+            <h3 class="font-display font-bold text-base text-white uppercase tracking-wider mb-4">
+              Secteurs d'Intervention
+            </h3>
+            <ul class="space-y-2 text-sm text-white/80">
+              <li><a href="/locations#wavre" class="hover:text-[#fcd400] transition-colors">Wavre Centre (1300)</a></li>
+              <li><a href="/locations#limal" class="hover:text-[#fcd400] transition-colors">Limal (1300)</a></li>
+              <li><a href="/locations#bierges" class="hover:text-[#fcd400] transition-colors">Bierges (1301)</a></li>
+              <li><a href="/locations#basse-wavre" class="hover:text-[#fcd400] transition-colors">Basse-Wavre & Louvrange</a></li>
+              <li><a href="/locations#ottignies-lln" class="hover:text-[#fcd400] transition-colors">Ottignies-Louvain-la-Neuve (1348)</a></li>
+              <li><a href="/locations#autres-communes" class="hover:text-[#fcd400] transition-colors">Rixensart, Grez-Doiceau, La Hulpe</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Contact & Emergency -->
+          <div class="space-y-4">
+            <h3 class="font-display font-bold text-base text-white uppercase tracking-wider mb-2">
+              Ligne Directe Dépannage
+            </h3>
+            <div class="bg-white/10 rounded-xl p-4 border border-white/10">
+              <span class="text-xs text-[#fcd400] uppercase font-bold tracking-wider block mb-1">
+                Disponible 7 jours sur 7
+              </span>
+              <a href="tel:010395010" class="font-display font-extrabold text-2xl text-white block hover:text-[#fcd400] transition-colors tabular-nums">
+                010 39 50 10
+              </a>
+              <p class="text-xs text-white/70 mt-1">
+                Intervention moyenne garantie en 30 minutes sur l'entité de Wavre.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-white/70">
+              <Icon name="shield" class="w-4 h-4 text-[#059669]" />
+              <span>Assurances belges 100% prises en charge</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bottom Copyright -->
+        <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-white/60">
+          <p>© 2026 Plombier Wavre Urgent. Tous droits réservés.</p>
+          <div class="flex gap-6">
+            <a href="/about" class="hover:text-white">Mentions légales</a>
+            <a href="/about" class="hover:text-white">Confidentialité</a>
+            <a href="/contact" class="hover:text-white">Plan d'accès</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Fixed Emergency Bottom Bar for Mobile -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-t border-[#e4eaf1] p-3 shadow-2xl">
+      <div class="grid grid-cols-2 gap-2">
+        <a
+          href="tel:010395010"
+          class="inline-flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-[#fcd400] active:bg-[#e9c400] text-[#101d29] font-display font-bold text-sm shadow-md"
+        >
+          <Icon name="phone" class="w-4 h-4 text-[#00327d]" />
+          <span>Appel 24/7 (30 min)</span>
+        </a>
+        <a
+          href="https://wa.me/3210395010?text=Bonjour,%20j%27ai%20une%20urgence%20plomberie%20%C3%A0%20Wavre"
+          class="inline-flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-[#059669] active:bg-[#047857] text-white font-display font-bold text-sm shadow-md"
+        >
+          <Icon name="whatsapp" class="w-4 h-4 text-white" />
+          <span>Photo Fuite</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Toggle script for mobile menu -->
+    <script>
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+        });
+      }
+    </script>
+  </body>
+</html>

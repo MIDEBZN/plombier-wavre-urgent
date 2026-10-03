@@ -1,0 +1,194 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+
+const values = [
+  {
+    title: "Artisans Diplômés & Certifiés",
+    desc: "Tous nos plombiers sont titulaires des diplômes belges officiels en plomberie sanitaire et génie thermique, avec les habilitations gaz Cerga obligatoires en Wallonie.",
+    icon: "shield"
+  },
+  {
+    title: "Transparence Totale des Prix",
+    desc: "Nous luttons activement contre les pratiques douteuses de certains dépanneurs itinérants. Nos forfaits sont annoncés et acceptés avant tout coup de clé.",
+    icon: "check"
+  },
+  {
+    title: "Équipement Technologique de Pointe",
+    desc: "Caméras thermiques d'inspection, matériel de détection acoustique, gaz traceur et hydrocureuses haute pression pour résoudre vos pannes sans destruction.",
+    icon: "wrench"
+  },
+  {
+    title: "Partenaire des Assurances Belges",
+    desc: "Nos devis et factures détaillées respectent scrupuleusement la nomenclature des compagnies d'assurance pour un remboursement sans délai de vos dégâts des eaux.",
+    icon: "file-text"
+  }
+];
+
+const stats = [
+  { value: "14+", label: "Années d'expérience en Brabant Wallon" },
+  { value: "30 min", label: "Délai moyen d'intervention d'urgence" },
+  { value: "100%", label: "Pièces d'origine garanties (Geberit, Grohe)" },
+  { value: "4.9/5", label: "Note de satisfaction clients vérifiée" }
+];
+---
+
+<Layout
+  title="A Propos de Plombier Wavre Urgent | Artisan Plombier Agréé"
+  description="Découvrez l'histoire, les engagements et les agréments de Plombier Wavre Urgent. Artisans qualifiés Cerga et partenaires des assurances en Brabant Wallon."
+>
+
+  <!-- Page Header -->
+  <section class="bg-[#123470] text-white py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <span class="text-xs font-extrabold uppercase tracking-widest text-[#fcd400] bg-white/10 px-3.5 py-1.5 rounded-full inline-block">
+        Notre Entreprise Locale
+      </span>
+      <h1 class="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight">
+        L'Artisanat Plombier d'Excellence à Wavre
+      </h1>
+      <p class="text-base sm:text-lg text-white/80 max-w-2xl mx-auto font-normal">
+        Une équipe de professionnels passionnés par le métier, engagés pour la protection de votre logement et le respect des normes sanitaires en Wallonie.
+      </p>
+    </div>
+  </section>
+
+  <!-- Story & Vision -->
+  <section class="py-16 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+            Notre Philosophie
+          </span>
+          <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+            Pourquoi avons-nous fondé Plombier Wavre Urgent ?
+          </h2>
+          <div class="space-y-4 text-sm sm:text-base text-[#434653] leading-relaxed">
+            <p>
+              Face à la prolifération de plateformes d'intermédiation opaques et de centres d'appels délocalisés qui facturent des tarifs exorbitants aux ménages en situation de détresse, nous avons fait le choix de la proximité et de la rigueur artisanale.
+            </p>
+            <p>
+              Installés au cœur de Wavre, nous mettons un point d'honneur à offrir un service de dépannage sanitaire d'urgence irréprochable. Lorsque vous nous contactez, vous parlez directement avec un technicien d'expérience qui évalue la situation et vous oriente avec calme et précision.
+            </p>
+            <p>
+              Qu'il s'agisse de stopper une fuite d'eau en pleine nuit à Limal, de déboucher les canalisations d'un restaurant à Basse-Wavre ou d'installer un adoucisseur haut de gamme à Bierges, notre exigence reste la même : un travail propre, durable et garanti.
+            </p>
+          </div>
+
+          <div class="pt-2 flex flex-wrap gap-4">
+            <div class="flex items-center gap-2 text-xs font-bold text-[#00327d] bg-[#f7f9ff] px-3.5 py-2 rounded-lg border border-[#e4eaf1]">
+              <Icon name="shield" class="w-4 h-4 text-[#0047ab]" />
+              <span>Agrément Cerga Gaz Wallonie</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs font-bold text-[#00327d] bg-[#f7f9ff] px-3.5 py-2 rounded-lg border border-[#e4eaf1]">
+              <Icon name="check" class="w-4 h-4 text-[#059669]" />
+              <span>Agrément Compagnies d'Assurance</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs font-bold text-[#00327d] bg-[#f7f9ff] px-3.5 py-2 rounded-lg border border-[#e4eaf1]">
+              <Icon name="wrench" class="w-4 h-4 text-[#705d00]" />
+              <span>Certification Sécurité VCA</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 bg-[#edf4ff] rounded-3xl p-8 border border-[#0047ab]/20 space-y-6">
+          <h3 class="font-display font-bold text-xl text-[#00327d]">
+            Informations Légales & Enregistrement
+          </h3>
+          <div class="space-y-3 text-xs sm:text-sm text-[#434653]">
+            <div class="flex justify-between border-b border-[#0047ab]/10 pb-2">
+              <span class="font-semibold text-[#101d29]">Dénomination commerciale :</span>
+              <span>Plombier Wavre Urgent</span>
+            </div>
+            <div class="flex justify-between border-b border-[#0047ab]/10 pb-2">
+              <span class="font-semibold text-[#101d29]">Siège d'activité :</span>
+              <span>Chaussée de Bruxelles 84, 1300 Wavre</span>
+            </div>
+            <div class="flex justify-between border-b border-[#0047ab]/10 pb-2">
+              <span class="font-semibold text-[#101d29]">Numéro d'entreprise BCE :</span>
+              <span class="tabular-nums">BE 0849.281.930</span>
+            </div>
+            <div class="flex justify-between border-b border-[#0047ab]/10 pb-2">
+              <span class="font-semibold text-[#101d29]">Habilitation Gaz Wallonne :</span>
+              <span>Cerga H-39184</span>
+            </div>
+            <div class="flex justify-between border-b border-[#0047ab]/10 pb-2">
+              <span class="font-semibold text-[#101d29]">Assurance Responsabilité Civile :</span>
+              <span>Police AXA Belgium N° 730.491.201</span>
+            </div>
+            <div class="flex justify-between pt-1">
+              <span class="font-semibold text-[#101d29]">Couverture géographique :</span>
+              <span>Wavre & Brabant Wallon</span>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <a
+              href="tel:010395010"
+              class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-[#0047ab] text-white font-display font-bold text-sm hover:bg-[#00327d] transition-colors"
+            >
+              <Icon name="phone" class="w-4 h-4 text-[#fcd400]" />
+              <span>Contacter notre service technique</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Figures Bar -->
+  <section class="py-12 bg-[#123470] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        {stats.map((s) => (
+          <div class="space-y-1">
+            <span class="font-display font-extrabold text-3xl sm:text-4xl text-[#fcd400] block tabular-nums">
+              {s.value}
+            </span>
+            <span class="text-xs sm:text-sm text-white/80 font-medium">
+              {s.label}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Grid -->
+  <section class="py-16 sm:py-24 bg-[#f7f9ff]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+          Nos Engagements
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+          Ce Qui Fait Notre Réputation à Wavre
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {values.map((v) => (
+          <div class="bg-white rounded-2xl p-8 border border-[#e4eaf1] shadow-xs flex items-start gap-5">
+            <div class="w-12 h-12 rounded-xl bg-[#edf4ff] text-[#0047ab] flex items-center justify-center shrink-0">
+              <Icon name={v.icon} class="w-6 h-6" />
+            </div>
+            <div class="space-y-2">
+              <h3 class="font-display font-bold text-lg text-[#00327d]">
+                {v.title}
+              </h3>
+              <p class="text-sm text-[#434653] leading-relaxed">
+                {v.desc}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
