@@ -1,0 +1,157 @@
+---
+import Icon from './Icon.astro';
+
+const pillars = [
+  {
+    icon: "shield",
+    tag: "Assurances & Couverture",
+    title: "Assurance AXA RC Pro & Décennale",
+    highlight: "Couverture jusqu'à 2 500 000 €",
+    desc: "Police n° 730.492.180 souscrite auprès d'AXA Belgium. Nous intervenons en conformité totale avec les normes belges. En cas de dégât des eaux, nous fournissons un rapport technique avec photos horodatées directement accepté par toutes les compagnies (AG Insurance, AXA, Baloise, Ethias, DKV, Belfius) pour un remboursement rapide sans franchise à votre charge."
+  },
+  {
+    icon: "calendar",
+    tag: "Expérience & Ancrage",
+    title: "15 Ans d'Expérience sur le Terrain",
+    highlight: "Plus de 4 800 interventions",
+    desc: "Artisan plombier-chauffagiste établi à Wavre depuis 2011 (n° BCE : BE 0849.281.930). Plus de quinze ans de pratique quotidienne des réseaux d'eau et de chauffage du Brabant Wallon nous permettent de diagnostiquer et résoudre immédiatement les pannes les plus complexes, sans tâtonnement ni pertes de temps."
+  },
+  {
+    icon: "award",
+    tag: "Agréments Reconnus",
+    title: "100% des Certifications Officielles",
+    highlight: "Cerga Gaz, G1/G2, VCA, BWT & Durlem",
+    desc: "Titulaires de l'ensemble des agréments légaux en Région Wallonne : Habilitation Cerga Gaz Wallonie (n° H-39184 pour gaz naturel et propane), Technicien Chauffage Gazeux G1 et G2, certificat sécurité VCA Chantiers (n° VCA-BW-84920), et installateur partenaire officiel BWT, Durlem, Geberit, Grohe, Vaillant et Bulex."
+  },
+  {
+    icon: "check",
+    tag: "Garanties d'Exécution",
+    title: "Garantie Pièces & Main d'Œuvre 2 Ans",
+    highlight: "Satisfait ou réintervention offerte",
+    desc: "Toutes nos réparations et installations neuves bénéficient d'une garantie ferme de 2 ans. Si un problème persiste après notre passage, nous revenons gratuitement sous 24 heures. Chaque intervention fait l'objet d'un devis préalable clair et validé avant le début des travaux : aucun supplément imprévu sur votre facture."
+  },
+  {
+    icon: "bolt",
+    tag: "Promesse de Réactivité",
+    title: "Arrivée en Moins de 30 Minutes Chrono",
+    highlight: "Astreinte réelle 24h/24 et 7j/7",
+    desc: "Départ immédiat de notre technicien d'astreinte dès réception de votre appel. Nous garantissons une arrivée sur place en moins de 30 minutes sur Wavre (1300), Limal et Bierges (1301), et en moins de 35 minutes sur Ottignies-LLN, Rixensart, Grez-Doiceau et Chaumont-Gistoux. Disponible 365 jours par an, nuits, week-ends et jours fériés inclus."
+  }
+];
+---
+
+<section class="py-16 sm:py-24 bg-white border-t border-[#e4eaf1]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-4 py-1.5 rounded-full inline-block">
+        Engagements, Agréments & Sécurité
+      </span>
+      <h2 class="font-display font-black text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+        Nos Garanties Officielles et Engagements Clients
+      </h2>
+      <p class="text-base text-[#434653] leading-relaxed">
+        Choisir Plombier Wavre Urgent, c'est exiger l'excellence d'un artisan local certifié, couvert par les plus solides garanties d'assurance et de réactivité.
+      </p>
+    </div>
+
+    <!-- 5 Pillars Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {pillars.slice(0, 3).map((item) => (
+        <div class="bg-[#f7f9ff] rounded-3xl p-8 border border-[#e4eaf1] shadow-xs flex flex-col justify-between hover:border-[#0047ab]/30 hover:shadow-md transition-all">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-2xl bg-[#0047ab] text-white flex items-center justify-center shadow-xs">
+                <Icon name={item.icon} class="w-6 h-6 text-[#fcd400]" />
+              </div>
+              <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#705d00] bg-[#fcd400]/20 px-3 py-1 rounded-full">
+                {item.tag}
+              </span>
+            </div>
+
+            <div>
+              <h3 class="font-display font-bold text-lg text-[#101d29]">
+                {item.title}
+              </h3>
+              <p class="text-xs font-extrabold text-[#0047ab] mt-1">
+                {item.highlight}
+              </p>
+            </div>
+
+            <p class="text-xs sm:text-sm text-[#434653] leading-relaxed">
+              {item.desc}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom 2 Pillars (Wide Grid) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {pillars.slice(3, 5).map((item) => (
+        <div class="bg-[#f7f9ff] rounded-3xl p-8 border border-[#e4eaf1] shadow-xs flex flex-col justify-between hover:border-[#0047ab]/30 hover:shadow-md transition-all">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-2xl bg-[#0047ab] text-white flex items-center justify-center shadow-xs">
+                <Icon name={item.icon} class="w-6 h-6 text-[#fcd400]" />
+              </div>
+              <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#705d00] bg-[#fcd400]/20 px-3 py-1 rounded-full">
+                {item.tag}
+              </span>
+            </div>
+
+            <div>
+              <h3 class="font-display font-bold text-lg text-[#101d29]">
+                {item.title}
+              </h3>
+              <p class="text-xs font-extrabold text-[#0047ab] mt-1">
+                {item.highlight}
+              </p>
+            </div>
+
+            <p class="text-xs sm:text-sm text-[#434653] leading-relaxed">
+              {item.desc}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Badges Row -->
+    <div class="bg-[#123470] rounded-3xl p-6 sm:p-8 text-white flex flex-wrap items-center justify-around gap-6 text-center">
+      <div class="flex items-center gap-3">
+        <Icon name="shield" class="w-6 h-6 text-[#fcd400]" />
+        <div class="text-left">
+          <span class="block text-xs font-bold uppercase tracking-wider text-[#fcd400]">Assurance Décennale</span>
+          <span class="text-sm font-extrabold">AXA Police 730.492.180</span>
+        </div>
+      </div>
+      <div class="w-px h-10 bg-white/10 hidden sm:block"></div>
+      <div class="flex items-center gap-3">
+        <Icon name="award" class="w-6 h-6 text-[#fcd400]" />
+        <div class="text-left">
+          <span class="block text-xs font-bold uppercase tracking-wider text-[#fcd400]">Certifié Cerga Gaz</span>
+          <span class="text-sm font-extrabold">Habilitation H-39184</span>
+        </div>
+      </div>
+      <div class="w-px h-10 bg-white/10 hidden sm:block"></div>
+      <div class="flex items-center gap-3">
+        <Icon name="calendar" class="w-6 h-6 text-[#fcd400]" />
+        <div class="text-left">
+          <span class="block text-xs font-bold uppercase tracking-wider text-[#fcd400]">Expérience Établie</span>
+          <span class="text-sm font-extrabold">Depuis 2011 (15+ ans)</span>
+        </div>
+      </div>
+      <div class="w-px h-10 bg-white/10 hidden sm:block"></div>
+      <div class="flex items-center gap-3">
+        <Icon name="clock" class="w-6 h-6 text-[#fcd400]" />
+        <div class="text-left">
+          <span class="block text-xs font-bold uppercase tracking-wider text-[#fcd400]">Délai Garanti</span>
+          <span class="text-sm font-extrabold">Arrivée sous 30 minutes</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Icon from '../components/Icon.astro';
+import TrustGuarantees from '../components/TrustGuarantees.astro';
 
 interface Props {
   title: string;
@@ -146,18 +147,21 @@ const structuredData = {
     <!-- Top Announcement Bar -->
     <div class="bg-[#123470] text-white text-xs sm:text-sm py-2 px-4 border-b border-white/10">
       <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-        <div class="flex items-center gap-2">
+        <div class="flex items-center flex-wrap gap-2">
           <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-[#059669] text-white animate-pulse">
-            En astreinte
+            En astreinte 24/7
           </span>
-          <span class="font-medium">Wavre (1300), Limal, Bierges : intervention moyenne en 30 minutes</span>
+          <span class="font-medium">Wavre, Limal, Bierges : Arrivée garantie en moins de 30 minutes</span>
         </div>
-        <div class="flex items-center gap-4 text-xs text-white/80">
+        <div class="flex items-center flex-wrap gap-3 text-xs text-white/80">
           <span class="flex items-center gap-1">
-            <Icon name="shield" class="w-3.5 h-3.5 text-[#fcd400]" /> Agrément Cerga & VCA
+            <Icon name="shield" class="w-3.5 h-3.5 text-[#fcd400]" /> Assurance AXA RC 2.5M€
+          </span>
+          <span class="flex items-center gap-1">
+            <Icon name="award" class="w-3.5 h-3.5 text-[#fcd400]" /> 15+ ans d'expérience
           </span>
           <span class="hidden md:flex items-center gap-1">
-            <Icon name="check" class="w-3.5 h-3.5 text-[#fcd400]" /> Devis clair avant travaux
+            <Icon name="check" class="w-3.5 h-3.5 text-[#fcd400]" /> Certifié Cerga Gaz H-39184
           </span>
           <a href="tel:010395010" class="text-[#fcd400] font-bold hover:underline">
             010 39 50 10
@@ -269,8 +273,11 @@ const structuredData = {
       <slot />
     </main>
 
+    <!-- Global Trust, Guarantees & Certifications Section on Every Page -->
+    <TrustGuarantees />
+
     <!-- Footer -->
-    <footer class="bg-[#123470] text-white pt-16 pb-28 md:pb-12 border-t border-white/10 mt-20">
+    <footer class="bg-[#123470] text-white pt-16 pb-28 md:pb-12 border-t border-white/10 mt-12">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
           
@@ -283,12 +290,12 @@ const structuredData = {
               <span class="font-display font-extrabold text-lg text-white">Plombier Wavre Urgent</span>
             </div>
             <p class="text-sm text-white/80 leading-relaxed">
-              Entreprise locale spécialisée dans le dépannage plomberie d'urgence 24h/24, le débouchage haute pression et les installations sanitaires à Wavre et en Brabant Wallon.
+              Artisan de confiance avec plus de 15 ans d'activité continue à Wavre. Dépannage urgent 24h/24, débouchage haute pression et rénovation sanitaire avec garantie de 2 ans.
             </p>
-            <div class="text-xs text-white/70 space-y-1">
-              <p>Chaussée de Bruxelles 84, 1300 Wavre</p>
-              <p>Numéro d'entreprise BCE : BE 0849.281.930</p>
-              <p>Agrément Cerga Gaz Wallonie : H-39184</p>
+            <div class="text-xs text-white/70 space-y-1 pt-1">
+              <p><strong class="text-white">Assurance :</strong> AXA RC Pro & Décennale (Police n° 730.492.180 - Couverture 2.5M€)</p>
+              <p><strong class="text-white">BCE :</strong> BE 0849.281.930 | Chaussée de Bruxelles 84, 1300 Wavre</p>
+              <p><strong class="text-white">Agréments :</strong> Cerga Gaz H-39184, Chauffage G1/G2, VCA, BWT & Durlem</p>
             </div>
           </div>
 
@@ -298,27 +305,27 @@ const structuredData = {
               Prestations Spécialisées
             </h3>
             <ul class="space-y-2 text-sm text-white/80">
-              <li><a href="/services#urgence" class="hover:text-[#fcd400] transition-colors">Dépannage plomberie 24h/24</a></li>
-              <li><a href="/services#debouchage" class="hover:text-[#fcd400] transition-colors">Débouchage canalisation & WC</a></li>
-              <li><a href="/services#recherche-fuite" class="hover:text-[#fcd400] transition-colors">Recherche de fuite non destructive</a></li>
-              <li><a href="/services#boiler" class="hover:text-[#fcd400] transition-colors">Détartrage & remplacement boiler</a></li>
-              <li><a href="/services#adoucisseur" class="hover:text-[#fcd400] transition-colors">Adoucisseur d'eau anti-calcaire</a></li>
-              <li><a href="/services#sanitaire" class="hover:text-[#fcd400] transition-colors">Pose WC suspendu Geberit</a></li>
+              <li><a href="/services/depannage-urgence" class="hover:text-[#fcd400] transition-colors">Dépannage plomberie d'urgence 24h/24</a></li>
+              <li><a href="/services/debouchage" class="hover:text-[#fcd400] transition-colors">Débouchage canalisation & WC haute pression</a></li>
+              <li><a href="/services/detection-de-fuites" class="hover:text-[#fcd400] transition-colors">Recherche de fuite non destructive</a></li>
+              <li><a href="/services/chauffage-chaudieres" class="hover:text-[#fcd400] transition-colors">Entretien & réparation chaudières</a></li>
+              <li><a href="/services/traitement-de-leau" class="hover:text-[#fcd400] transition-colors">Adoucisseur d'eau BWT & Durlem</a></li>
+              <li><a href="/services/installations-sanitaires" class="hover:text-[#fcd400] transition-colors">Rénovation salle de bain & WC suspendu</a></li>
             </ul>
           </div>
 
           <!-- Column 3: Local Interventions -->
           <div>
             <h3 class="font-display font-bold text-base text-white uppercase tracking-wider mb-4">
-              Secteurs d'Intervention
+              Zones Couvertes sous 30 min
             </h3>
             <ul class="space-y-2 text-sm text-white/80">
-              <li><a href="/locations#wavre" class="hover:text-[#fcd400] transition-colors">Wavre Centre (1300)</a></li>
-              <li><a href="/locations#limal" class="hover:text-[#fcd400] transition-colors">Limal (1300)</a></li>
-              <li><a href="/locations#bierges" class="hover:text-[#fcd400] transition-colors">Bierges (1301)</a></li>
-              <li><a href="/locations#basse-wavre" class="hover:text-[#fcd400] transition-colors">Basse-Wavre & Louvrange</a></li>
-              <li><a href="/locations#ottignies-lln" class="hover:text-[#fcd400] transition-colors">Ottignies-Louvain-la-Neuve (1348)</a></li>
-              <li><a href="/locations#autres-communes" class="hover:text-[#fcd400] transition-colors">Rixensart, Grez-Doiceau, La Hulpe</a></li>
+              <li><a href="/locations/limal" class="hover:text-[#fcd400] transition-colors">Limal (1300) - Arrivée en 25 min</a></li>
+              <li><a href="/locations/bierges" class="hover:text-[#fcd400] transition-colors">Bierges (1301) - Arrivée en 20 min</a></li>
+              <li><a href="/locations/ottignies-louvain-la-neuve" class="hover:text-[#fcd400] transition-colors">Ottignies-LLN (1340/1348) - 25 min</a></li>
+              <li><a href="/locations/rixensart" class="hover:text-[#fcd400] transition-colors">Rixensart & Genval (1330/1332) - 25 min</a></li>
+              <li><a href="/locations/grez-doiceau" class="hover:text-[#fcd400] transition-colors">Grez-Doiceau (1390) - 25 min</a></li>
+              <li><a href="/locations/chaumont-gistoux" class="hover:text-[#fcd400] transition-colors">Chaumont-Gistoux (1325) - 25 min</a></li>
             </ul>
           </div>
 
@@ -329,18 +336,24 @@ const structuredData = {
             </h3>
             <div class="bg-white/10 rounded-xl p-4 border border-white/10">
               <span class="text-xs text-[#fcd400] uppercase font-bold tracking-wider block mb-1">
-                Disponible 7 jours sur 7
+                Astreinte 24h/24 et 7j/7
               </span>
               <a href="tel:010395010" class="font-display font-extrabold text-2xl text-white block hover:text-[#fcd400] transition-colors tabular-nums">
                 010 39 50 10
               </a>
               <p class="text-xs text-white/70 mt-1">
-                Intervention moyenne garantie en 30 minutes sur l'entité de Wavre.
+                Intervention garantie en moins de 30 minutes. Devis gratuit avant travaux.
               </p>
             </div>
-            <div class="flex items-center gap-2 text-xs text-white/70">
-              <Icon name="shield" class="w-4 h-4 text-[#059669]" />
-              <span>Assurances belges 100% prises en charge</span>
+            <div class="space-y-1.5 text-xs text-white/70">
+              <div class="flex items-center gap-2">
+                <Icon name="shield" class="w-4 h-4 text-[#059669] shrink-0" />
+                <span>100% accepté par toutes assurances belges</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <Icon name="check" class="w-4 h-4 text-[#fcd400] shrink-0" />
+                <span>Garantie 2 ans pièces et main d'œuvre</span>
+              </div>
             </div>
           </div>
 
