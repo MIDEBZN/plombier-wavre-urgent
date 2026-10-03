@@ -1,0 +1,54 @@
+{
+  "id": 30,
+  "slug": "comment-raccorder-une-nouvelle-maison-au-reseau-d-eau-ou-a-l-egout-a-wavre",
+  "topic": "Comment raccorder une nouvelle maison au réseau d’eau ou à l’égout à Wavre ?",
+  "primaryKeyword": "raccordement eau egout Wavre",
+  "secondaryKeywords": [
+    "démarche raccordement SWDE inBW",
+    "pose compteur eau maison neuve",
+    "raccordement tout à l'égout Wavre",
+    "devis tranchée plomberie extérieure 1300",
+    "séparation eaux usées eaux pluviales Wallonie"
+  ],
+  "title": "Raccordement Eau & Égout à Wavre : Démarches (010 39 50 10)",
+  "metaDescription": "Comment raccorder une maison neuve à l'eau potable et à l'égout à Wavre ? Démarches SWDE, inBW, tranchées et conformité. Guide complet au 010 39 50 10.",
+  "h1": "Comment Raccorder une Nouvelle Maison au Réseau d'Eau ou à l'Égout à Wavre ?",
+  "category": "Réglementation & Droit",
+  "datePublished": "2026-04-13",
+  "readingTime": "9 min",
+  "aiSnippet": "Pour raccorder une maison neuve à Wavre, déposez une demande de branchement auprès de la SWDE pour l'eau potable et auprès d'inBW ou de la Ville de Wavre pour l'égouttage. Les travaux intérieurs et les tranchées sur votre parcelle privée doivent être réalisés par un plombier agréé conformément aux règles séparatives wallonnes.",
+  "intro": "Vous construisez ou rénovez lourdement une maison à Wavre (1300), Bierges ou Limal ? Le raccordement aux réseaux publics d'eau potable et d'assainissement collectif constitue une étape administrative et technique cruciale. Entre les normes régionales wallonnes, la séparation obligatoire des eaux usées et pluviales et les formalités avec la SWDE et inBW, voici le protocole officiel complet.",
+  "contentMarkdown": "\n## Les deux volets du raccordement d'une maison à Wavre\n\nUn raccordement complet comporte deux démarches distinctes et coordonnées :\n\n### 1. Le raccordement à l'eau potable (SWDE)\n- **La partie publique :** la SWDE réalise le forage sous voirie, la pose du robinet de prise de branchement et l'amenée de la conduite jusqu'à la limite de votre propriété avec mise en place du compteur d'eau dans une logette agréée ou dans votre sous-sol.\n- **La partie privée :** notre entreprise réalise la tranchée technique sur votre terrain, pose le tuyau en polyéthylène haute densité (PEHD diamètre 32 mm avec bande bleue de signalisation) et installe le clapet anti-pollution Belgaqua obligatoire.\n\n### 2. Le raccordement au tout-à-l'égout communal (inBW et Ville de Wavre)\nEn Région Wallonne, le Règlement Général d'Assainissement impose la **séparation stricte des réseaux sur votre propriété privée** :\n- **Réseau eaux usées domestiques (eaux vannes WC + eaux ménagères) :** dirigé vers le collecteur communal d'égouttage.\n- **Réseau eaux pluviales (toitures, allées) :** obligation d'installer une citerne de récupération d'eau de pluie de minimum 5 000 litres avec trop-plein raccordé soit à un système d'infiltration sur parcelle (puits perdu ou tranchée drainante), soit au réseau d'égout pluvial si autorisé.\n\nPour les travaux de terrassement et raccordements intérieurs, appelez notre équipe au [010 39 50 10](tel:010395010) ou découvrez nos services sur [/services/installations-sanitaires](/services/installations-sanitaires).\n\n## Les pièces obligatoires à installer selon les normes Belgaqua\n\nLors de la mise en service du compteur par la SWDE, l'inspecteur contrôle impérativement la présence des organes réglementaires suivants :\n1. Un robinet d'arrêt d'amont plombé par la SWDE.\n2. Le compteur d'eau divisionnaire homologué.\n3. Un clapet anti-retour contrôlable de type EA certifié Belgaqua (qui empêche tout retour d'eau polluée de votre maison vers le réseau de distribution public).\n4. Un robinet de purge et de prélèvement.\n5. Un réducteur de pression réglé à 3 bars.\n        ",
+  "faqs": [
+    {
+      "q": "Combien coûte le raccordement complet d'une maison neuve à Wavre ?",
+      "a": "Le raccordement public SWDE coûte entre 1 200 € et 2 500 € selon la largeur de voirie à traverser. La partie privée (tranchées, pose de gaines, tuyauterie PEHD et raccordements égouts) réalisée par nos soins s'élève entre 1 500 € et 3 200 € selon la distance du bâtiment."
+    },
+    {
+      "q": "Quel est le délai administratif pour obtenir l'eau de la SWDE ?",
+      "a": "Il faut compter entre 6 et 10 semaines entre le dépôt du dossier de demande de raccordement et l'ouverture effective du compteur d'eau, d'où l'importance d'anticiper dès le début du gros œuvre."
+    },
+    {
+      "q": "La citerne d'eau de pluie est-elle obligatoire à Wavre ?",
+      "a": "Oui, le permis d'urbanisme délivré par la Ville de Wavre impose une citerne de récupération d'eau de pluie d'au moins 5 000 litres équipée d'un groupe hydrophore pour alimenter les WC et robinets de jardin."
+    },
+    {
+      "q": "Qui valide la conformité de l'installation sanitaire ?",
+      "a": "Un organisme de contrôle agréé Belgaqua ou le certificateur de la SWDE effectue un contrôle de conformité (contrôle CertIBEau) avant la mise en service définitive de l'alimentation en eau."
+    }
+  ],
+  "internalLinks": [
+    {
+      "anchor": "Installations sanitaires neuves",
+      "url": "/services/installations-sanitaires"
+    },
+    {
+      "anchor": "Adoucisseurs d'eau anti-calcaire",
+      "url": "/services/traitement-de-leau"
+    },
+    {
+      "anchor": "Tarifs plomberie Wavre",
+      "url": "/blog/combien-coute-un-plombier-a-wavre"
+    }
+  ]
+}

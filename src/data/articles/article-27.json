@@ -1,0 +1,54 @@
+{
+  "id": 27,
+  "slug": "que-faire-si-mon-chauffe-eau-est-en-panne-a-wavre",
+  "topic": "Que faire si mon chauffe-eau est en panne à Wavre ?",
+  "primaryKeyword": "chauffe eau en panne Wavre",
+  "secondaryKeywords": [
+    "plus eau chaude boiler électrique",
+    "groupe sécurité chauffe eau coule",
+    "disjoncteur boiler saute calcaire",
+    "dépannage boiler urgence 1300",
+    "réparation chauffe-eau gaz Cerga"
+  ],
+  "title": "Chauffe-Eau en Panne à Wavre : Dépannage Rapide (010 39 50 10)",
+  "metaDescription": "Plus d'eau chaude à Wavre ? Boiler électrique qui disjoncte ou fuit ? Diagnostic express et réparation d'urgence par artisan agréé au 010 39 50 10.",
+  "h1": "Que Faire si Votre Chauffe-Eau est en Panne à Wavre ? Diagnostic & Réparation",
+  "category": "Chauffage & Chaudières",
+  "datePublished": "2026-04-10",
+  "readingTime": "9 min",
+  "aiSnippet": "Si votre chauffe-eau est en panne à Wavre, vérifiez d'abord le disjoncteur au tableau électrique et le thermostat de sécurité du boiler. Si le groupe de sécurité fuit en continu ou si l'eau reste tiède, la cuve est probablement saturée de calcaire (>30 °fH). Appelez le 010 39 50 10 pour un dépannage en 30 minutes.",
+  "intro": "Prendre sa douche sous une eau glacée au réveil est une expérience brutale que personne ne souhaite revivre. En Brabant Wallon, les pannes de chauffe-eau et de boilers électriques sont particulièrement fréquentes en raison de la dureté extrême de l'eau. Avant de paniquer, suivez ce guide méthodique pour identifier l'origine exacte du dysfonctionnement.",
+  "contentMarkdown": "\n## Les 4 pannes de chauffe-eau les plus courantes à Wavre\n\n### 1. Le disjoncteur du boiler a sauté au tableau électrique\nSi le fusible ou le disjoncteur différentiel saute dès que le chauffe-eau s'enclenche (souvent lors du passage au tarif de nuit) :\n- **Cause :** la résistance électrique blindée est percée par le calcaire. L'eau entre en contact direct avec le filament électrique, créant un court-circuit franc vers la terre.\n- **Solution :** remplacement de la résistance par un modèle stéatite (protégée dans un fourreau sans contact direct avec l'eau).\n\n### 2. Le thermostat de sécurité s'est déclenché\nSi le disjoncteur est armé mais que l'eau reste désespérément froide :\n- **Cause :** une surchauffe s'est produite (résistance isolée par une couche de 10 cm de tartre). Le thermostat s'est mis en sécurité thermique mécanique pour empêcher l'explosion de la cuve.\n- **Solution :** réarmement manuel du petit bouton rouge de sécurité après coupure du courant, puis détartrage complet obligatoire.\n\n### 3. Le groupe de sécurité fuit ou coule à plein débit\nLe groupe de sécurité situé sous le chauffe-eau évacue normalement quelques gouttes d'eau lors de la montée en chauffe (dilatation naturelle). En revanche, s'il coule en continu 24h/24 :\n- **Cause :** le clapet est bloqué par des cailloux de tartre ou la pression du réseau SWDE dépasse les 5 bars dans votre rue.\n- **Solution :** manœuvrez la molette de vidange pour chasser les débris. Si l'écoulement persiste, nous remplaçons le groupe de sécurité et installons un réducteur de pression.\n\n### 4. L'eau est tiède ou s'épuise en quelques minutes\n- **Cause :** la cuve est remplie de calcaire solide. Au lieu d'avoir 200 litres d'eau chaude disponibles, le volume effectif d'eau est réduit à 80 litres, le reste étant occupé par les boues calcaires.\n\nPour une remise en route d'urgence de votre eau chaude, appelez notre service dépannage au [010 39 50 10](tel:010395010) ou consultez [/services/chauffage-chaudieres](/services/chauffage-chaudieres).\n        ",
+  "faqs": [
+    {
+      "q": "Combien coûte le dépannage d'un chauffe-eau électrique à Wavre ?",
+      "a": "Un dépannage standard (remplacement de groupe de sécurité, thermostat ou réarmement) coûte entre 95 € et 160 € HTVA pièces et main-d'œuvre. Un détartrage complet avec changement d'anode est facturé dès 160 €."
+    },
+    {
+      "q": "Quelle est la durée de vie moyenne d'un chauffe-eau à Wavre ?",
+      "a": "Sans adoucisseur d'eau et sans entretien régulier, un boiler dure entre 6 et 8 ans à Wavre avant de percer. Avec un entretien biennal et une eau adoucie, sa durée de vie dépasse 15 à 18 ans."
+    },
+    {
+      "q": "Êtes-vous agréés pour réparer les chauffe-eau au gaz ?",
+      "a": "Oui, notre société dispose de la certification Cerga Gaz H-39184 et des habilitations Région Wallonne G1/G2 requises pour toute intervention sécurisée sur appareils au gaz."
+    },
+    {
+      "q": "Peut-on remplacer un chauffe-eau le jour même en cas d'urgence ?",
+      "a": "Oui, nos camionnettes d'astreinte disposent de boilers électriques neufs standards (100 L, 150 L, 200 L) disponibles immédiatement pour un remplacement dans la journée."
+    }
+  ],
+  "internalLinks": [
+    {
+      "anchor": "Dépannage chauffe-eau et chaudières",
+      "url": "/services/chauffage-chaudieres"
+    },
+    {
+      "anchor": "Adoucisseurs d'eau anti-calcaire",
+      "url": "/services/traitement-de-leau"
+    },
+    {
+      "anchor": "Plombier chauffagiste à Bierges",
+      "url": "/locations/bierges"
+    }
+  ]
+}

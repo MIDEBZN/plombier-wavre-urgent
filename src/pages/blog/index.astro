@@ -1,0 +1,170 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
+import { articles } from '../../data/articles';
+
+const categories = [
+  "Tous",
+  "Tarifs & Devis",
+  "Urgence 24/7",
+  "Débouchage & Égouts",
+  "Fuites d'eau",
+  "Chauffage & Chaudières",
+  "Traitement de l'Eau",
+  "Installations Sanitaires",
+  "Diagnostics & Conseils",
+  "Réglementation & Droit"
+];
+
+const featuredArticle = articles[0]; // Article 1 (Tarifs 2026)
+const regularArticles = articles.slice(1);
+---
+
+<Layout
+  title="Guides & Tarifs Plomberie Wavre (1300) | 30 Articles & Conseils Pro"
+  description="Consultez nos 30 guides pratiques de plomberie à Wavre : prix officiels, dépannage d'urgence 24h/24, débouchage, adoucisseur calcaire et démarches assurance."
+>
+
+  <!-- Hero Header -->
+  <section class="bg-[#123470] text-white py-16 lg:py-20 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <span class="text-xs font-extrabold uppercase tracking-widest text-[#fcd400] bg-white/10 px-3.5 py-1.5 rounded-full inline-block">
+        Centre de Ressources & Guides Pratiques
+      </span>
+      <h1 class="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight">
+        Guides & Conseils Plomberie à Wavre
+      </h1>
+      <p class="text-base sm:text-lg text-white/80 max-w-2xl mx-auto font-normal">
+        Tarifs réels, réflexes d'urgence, réglementation wallonne et solutions concrètes pour entretenir et dépanner vos installations sanitaires.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content Hub -->
+  <section class="py-12 sm:py-16 bg-[#f7f9ff]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <!-- Featured Guide Card -->
+      <div class="bg-white rounded-3xl p-8 sm:p-10 border border-[#0047ab]/20 shadow-md hover:shadow-xl transition-all relative overflow-hidden group">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-8 space-y-4">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-white bg-[#0047ab] px-3 py-1 rounded-full">
+                Guide Phare 2026
+              </span>
+              <span class="text-xs text-[#434653] flex items-center gap-1 font-medium">
+                <Icon name="clock" class="w-3.5 h-3.5 text-[#0047ab]" />
+                {featuredArticle.readingTime} de lecture
+              </span>
+            </div>
+            
+            <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-[#101d29] group-hover:text-[#0047ab] transition-colors">
+              <a href={`/blog/${featuredArticle.slug}`}>
+                {featuredArticle.h1}
+              </a>
+            </h2>
+
+            <p class="text-sm sm:text-base text-[#434653] leading-relaxed">
+              {featuredArticle.aiSnippet}
+            </p>
+
+            <div class="pt-2">
+              <a
+                href={`/blog/${featuredArticle.slug}`}
+                class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0047ab] text-white font-display font-bold text-sm hover:bg-[#00327d] shadow-sm transition-all"
+              >
+                <span>Lire le guide complet des tarifs</span>
+                <Icon name="arrow-right" class="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-4 bg-[#edf4ff] rounded-2xl p-6 border border-[#0047ab]/10 text-center space-y-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-[#00327d] block">Urgence Sanitaire Wavre</span>
+            <p class="text-xs text-[#434653]">Une fuite ou un bouchon à traiter maintenant ?</p>
+            <a
+              href="tel:010395010"
+              class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-[#fcd400] text-[#101d29] font-display font-extrabold text-sm hover:bg-[#e9c400] shadow-sm transition-all"
+            >
+              <Icon name="phone" class="w-4 h-4 text-[#00327d]" />
+              <span>010 39 50 10</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Articles Grid Header -->
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-[#e4eaf1] pb-4">
+        <div>
+          <h2 class="font-display font-bold text-xl sm:text-2xl text-[#101d29]">
+            Tous Nos Guides Thématiques ({articles.length} Articles)
+          </h2>
+          <p class="text-xs sm:text-sm text-[#434653]">Classés par intention de recherche et expertise locale.</p>
+        </div>
+      </div>
+
+      <!-- 29 Other Articles Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {regularArticles.map((art) => (
+          <article class="bg-white rounded-2xl p-6 sm:p-7 border border-[#e4eaf1] shadow-xs hover:border-[#0047ab]/30 hover:shadow-lg transition-all flex flex-col justify-between group">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-[#0047ab] bg-[#edf4ff] px-2.5 py-1 rounded-md">
+                  {art.category}
+                </span>
+                <span class="text-[11px] text-[#434653] flex items-center gap-1 font-medium">
+                  <Icon name="clock" class="w-3 h-3 text-[#705d00]" />
+                  {art.readingTime}
+                </span>
+              </div>
+
+              <h3 class="font-display font-bold text-lg text-[#101d29] group-hover:text-[#0047ab] transition-colors leading-snug">
+                <a href={`/blog/${art.slug}`}>
+                  {art.topic}
+                </a>
+              </h3>
+
+              <p class="text-xs sm:text-sm text-[#434653] leading-relaxed line-clamp-3">
+                {art.aiSnippet}
+              </p>
+            </div>
+
+            <div class="pt-5 mt-5 border-t border-[#e4eaf1] flex items-center justify-between">
+              <a
+                href={`/blog/${art.slug}`}
+                class="inline-flex items-center gap-1.5 text-xs font-bold text-[#0047ab] group-hover:text-[#00327d] transition-colors"
+              >
+                <span>Consulter l'article</span>
+                <Icon name="arrow-right" class="w-3.5 h-3.5" />
+              </a>
+              <span class="text-[11px] text-[#705d00] font-semibold bg-[#fcd400]/20 px-2 py-0.5 rounded">
+                Wavre 1300
+              </span>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <!-- Bottom Emergency Box -->
+      <div class="bg-[#123470] rounded-3xl p-8 sm:p-10 text-white text-center space-y-4 shadow-xl">
+        <h3 class="font-display font-extrabold text-2xl text-white">
+          Vous n'avez pas le temps de lire et vous avez une urgence ?
+        </h3>
+        <p class="text-sm text-white/80 max-w-xl mx-auto">
+          Nos artisans de garde sont en camionnette d'astreinte et interviennent en moins de 30 minutes sur tout le Brabant Wallon.
+        </p>
+        <div class="pt-2">
+          <a
+            href="tel:010395010"
+            class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#fcd400] text-[#101d29] font-display font-extrabold text-base hover:bg-[#e9c400] shadow-md transition-all active:scale-95"
+          >
+            <Icon name="phone" class="w-5 h-5 text-[#00327d]" />
+            <span>010 39 50 10 : Départ immédiat</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
