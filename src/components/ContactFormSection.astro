@@ -1,0 +1,192 @@
+---
+import Icon from './Icon.astro';
+---
+
+<section id="contact-devis" class="py-16 sm:py-24 bg-[#f7f9ff] border-t border-[#e4eaf1]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white rounded-3xl p-8 sm:p-12 lg:p-14 border border-[#e4eaf1] shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      
+      <!-- Left Column: Context & Hotline -->
+      <div class="lg:col-span-5 space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#edf4ff] text-[#00327d] text-xs font-extrabold uppercase tracking-wider">
+          <Icon name="bolt" class="w-3.5 h-3.5 text-[#0047ab]" />
+          <span>Réponse sous 15 minutes</span>
+        </div>
+
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight leading-tight">
+          Demande d'Intervention ou Devis Gratuit
+        </h2>
+
+        <p class="text-sm text-[#434653] leading-relaxed">
+          Remplissez ce formulaire pour recevoir un devis clair et détaillé sans engagement, ou planifier le passage d'un technicien à Wavre et dans les communes avoisinantes.
+        </p>
+
+        <!-- Direct Emergency Box -->
+        <div class="bg-[#123470] text-white rounded-2xl p-6 space-y-3 shadow-md">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-[#fcd400] uppercase tracking-wider">
+              Une urgence plomberie en cours ?
+            </span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#059669] animate-pulse"></span>
+          </div>
+          <p class="text-xs text-white/80">
+            En cas de fuite d'eau importante ou de WC totalement bouché, appelez immédiatement notre dépanneur d'astreinte :
+          </p>
+          <a
+            href="tel:010395010"
+            class="inline-flex items-center justify-center gap-2.5 w-full py-3.5 rounded-xl bg-[#fcd400] text-[#101d29] font-display font-black text-lg hover:bg-[#e9c400] transition-colors tabular-nums shadow-sm"
+          >
+            <Icon name="phone" class="w-5 h-5 text-[#00327d]" />
+            <span>010 39 50 10</span>
+          </a>
+          <span class="block text-[11px] text-center text-white/70">
+            Arrivée garantie sous 30 minutes sur l'entité de Wavre
+          </span>
+        </div>
+
+        <div class="space-y-2 text-xs text-[#434653] pt-2">
+          <div class="flex items-center gap-2">
+            <Icon name="shield" class="w-4 h-4 text-[#059669] shrink-0" />
+            <span>Assurance AXA RC Pro & Décennale (Police 730.492.180)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <Icon name="check" class="w-4 h-4 text-[#059669] shrink-0" />
+            <span>Devis préalable gratuit et sans engagement</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <Icon name="award" class="w-4 h-4 text-[#0047ab] shrink-0" />
+            <span>Certifié Cerga Gaz Wallonie H-39184</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: FormSubmit Form -->
+      <div class="lg:col-span-7 bg-[#f7f9ff] p-6 sm:p-8 rounded-2xl border border-[#e4eaf1]">
+        <form
+          action="https://formsubmit.co/midebzn@gmail.com"
+          method="POST"
+          class="space-y-4"
+        >
+          <!-- FormSubmit Configuration Fields -->
+          <input type="hidden" name="_subject" value="Nouvelle Demande d'Intervention - Plombier Wavre Urgent" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" value="https://plombier-wavre-urgent.vercel.app/contact?succes=1" />
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="space-y-1">
+              <label for="form-name" class="text-xs font-bold text-[#101d29] uppercase tracking-wide">
+                Nom & Prénom *
+              </label>
+              <input
+                type="text"
+                id="form-name"
+                name="nom_prenom"
+                required
+                placeholder="Ex : Philippe Martin"
+                class="w-full h-11 px-3.5 rounded-xl border border-[#d2dbe5] bg-white text-sm text-[#101d29] focus:border-[#0047ab] focus:ring-2 focus:ring-[#0047ab]/20 focus:outline-none transition-all"
+              />
+            </div>
+
+            <div class="space-y-1">
+              <label for="form-phone" class="text-xs font-bold text-[#101d29] uppercase tracking-wide">
+                Numéro de Téléphone *
+              </label>
+              <input
+                type="tel"
+                id="form-phone"
+                name="telephone"
+                required
+                placeholder="Ex : 0470 12 34 56"
+                class="w-full h-11 px-3.5 rounded-xl border border-[#d2dbe5] bg-white text-sm text-[#101d29] focus:border-[#0047ab] focus:ring-2 focus:ring-[#0047ab]/20 focus:outline-none transition-all"
+              />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="space-y-1">
+              <label for="form-email" class="text-xs font-bold text-[#101d29] uppercase tracking-wide">
+                Adresse Email *
+              </label>
+              <input
+                type="email"
+                id="form-email"
+                name="email"
+                required
+                placeholder="Ex : p.martin@exemple.be"
+                class="w-full h-11 px-3.5 rounded-xl border border-[#d2dbe5] bg-white text-sm text-[#101d29] focus:border-[#0047ab] focus:ring-2 focus:ring-[#0047ab]/20 focus:outline-none transition-all"
+              />
+            </div>
+
+            <div class="space-y-1">
+              <label for="form-commune" class="text-xs font-bold text-[#101d29] uppercase tracking-wide">
+                Commune d'intervention *
+              </label>
+              <select
+                id="form-commune"
+                name="commune"
+                required
+                class="w-full h-11 px-3.5 rounded-xl border border-[#d2dbe5] bg-white text-sm text-[#101d29] focus:border-[#0047ab] focus:ring-2 focus:ring-[#0047ab]/20 focus:outline-none transition-all"
+              >
+                <option value="Wavre (1300)">Wavre Centre (1300)</option>
+                <option value="Limal (1300)">Limal (1300)</option>
+                <option value="Bierges (1301)">Bierges (1301)</option>
+                <option value="Ottignies-LLN (1340/1348)">Ottignies - Louvain-la-Neuve</option>
+                <option value="Rixensart-Genval (1330/1332)">Rixensart - Genval</option>
+                <option value="Grez-Doiceau (1390)">Grez-Doiceau</option>
+                <option value="Chaumont-Gistoux (1325)">Chaumont-Gistoux</option>
+                <option value="Autre commune BW">Autre commune Brabant Wallon</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="space-y-1">
+            <label for="form-service" class="text-xs font-bold text-[#101d29] uppercase tracking-wide">
+              Type de prestation souhaitée *
+            </label>
+            <select
+              id="form-service"
+              name="prestation"
+              required
+              class="w-full h-11 px-3.5 rounded-xl border border-[#d2dbe5] bg-white text-sm text-[#101d29] focus:border-[#0047ab] focus:ring-2 focus:ring-[#0047ab]/20 focus:outline-none transition-all"
+            >
+              <option value="Depannage plomberie urgent">Dépannage plomberie d'urgence 24/7</option>
+              <option value="Debouchage WC / canalisation">Débouchage WC, évier ou égout</option>
+              <option value="Detection de fuite deau">Détection de fuite non destructive</option>
+              <option value="Chauffage ou chaudiere">Chauffage, chaudière ou chauffe-eau</option>
+              <option value="Traitement eau ou adoucisseur">Adoucisseur d'eau anti-calcaire</option>
+              <option value="Installation sanitaire ou renovation">Installation sanitaire ou rénovation</option>
+              <option value="Autre demande">Autre demande</option>
+            </select>
+          </div>
+
+          <div class="space-y-1">
+            <label for="form-message" class="text-xs font-bold text-[#101d29] uppercase tracking-wide">
+              Description de votre besoin ou du problème
+            </label>
+            <textarea
+              id="form-message"
+              name="details_message"
+              rows="3"
+              placeholder="Précisez votre adresse exacte, l'état de la fuite ou le problème rencontré..."
+              class="w-full px-3.5 py-2.5 rounded-xl border border-[#d2dbe5] bg-white text-sm text-[#101d29] focus:border-[#0047ab] focus:ring-2 focus:ring-[#0047ab]/20 focus:outline-none transition-all"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full inline-flex items-center justify-center gap-2.5 py-3.5 px-6 rounded-xl bg-[#0047ab] hover:bg-[#00327d] text-white font-display font-extrabold text-sm shadow-md transition-all active:scale-[0.98]"
+          >
+            <span>Envoyer ma demande d'intervention</span>
+            <Icon name="arrow-right" class="w-4 h-4" />
+          </button>
+
+          <p class="text-[11px] text-center text-[#434653]">
+            Vos données personnelles sont strictement confidentielles et traitées dans le respect du RGPD pour l'établissement de votre devis.
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>

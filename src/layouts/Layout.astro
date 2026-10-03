@@ -2,6 +2,8 @@
 import '../styles/global.css';
 import Icon from '../components/Icon.astro';
 import TrustGuarantees from '../components/TrustGuarantees.astro';
+import ContactFormSection from '../components/ContactFormSection.astro';
+import WhatsAppChatWidget from '../components/WhatsAppChatWidget.astro';
 
 interface Props {
   title: string;
@@ -273,6 +275,11 @@ const structuredData = {
       <slot />
     </main>
 
+    <!-- Global Contact & Quote Form on Every Page -->
+    {currentPath !== '/contact' && currentPath !== '/contact/' && (
+      <ContactFormSection />
+    )}
+
     <!-- Global Trust, Guarantees & Certifications Section on Every Page -->
     <TrustGuarantees />
 
@@ -390,6 +397,9 @@ const structuredData = {
         </a>
       </div>
     </div>
+
+    <!-- Floating Sticky Widgets: WhatsApp Live Chat & Desktop Click-to-Call -->
+    <WhatsAppChatWidget />
 
     <!-- Toggle script for mobile menu -->
     <script>

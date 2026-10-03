@@ -131,7 +131,16 @@ import Icon from '../components/Icon.astro';
               </h2>
             </div>
 
-            <form id="contact-form" class="space-y-5">
+            <form
+              id="contact-form"
+              action="https://formsubmit.co/midebzn@gmail.com"
+              method="POST"
+              class="space-y-5"
+            >
+              <input type="hidden" name="_subject" value="Demande de Devis Contact - Plombier Wavre Urgent" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_next" value="https://plombier-wavre-urgent.vercel.app/contact?succes=1" />
               
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="space-y-1.5">
@@ -141,7 +150,7 @@ import Icon from '../components/Icon.astro';
                   <input
                     type="text"
                     id="name"
-                    name="name"
+                    name="nom_prenom"
                     required
                     placeholder="Jean Dupont"
                     class="w-full h-12 px-4 rounded-xl border border-[#e4eaf1] bg-[#f7f9ff] text-sm text-[#101d29] focus:bg-white focus:border-[#0047ab] focus:outline-none transition-colors"
@@ -155,7 +164,7 @@ import Icon from '../components/Icon.astro';
                   <input
                     type="tel"
                     id="phone"
-                    name="phone"
+                    name="telephone"
                     required
                     placeholder="0470 12 34 56"
                     class="w-full h-12 px-4 rounded-xl border border-[#e4eaf1] bg-[#f7f9ff] text-sm text-[#101d29] focus:bg-white focus:border-[#0047ab] focus:outline-none transition-colors"
@@ -165,12 +174,26 @@ import Icon from '../components/Icon.astro';
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="space-y-1.5">
+                  <label for="email" class="text-xs font-bold text-[#101d29] uppercase tracking-wide">
+                    Adresse Email *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="j.dupont@exemple.be"
+                    class="w-full h-12 px-4 rounded-xl border border-[#e4eaf1] bg-[#f7f9ff] text-sm text-[#101d29] focus:bg-white focus:border-[#0047ab] focus:outline-none transition-colors"
+                  />
+                </div>
+
+                <div class="space-y-1.5">
                   <label for="location" class="text-xs font-bold text-[#101d29] uppercase tracking-wide">
                     Localité d'intervention *
                   </label>
                   <select
                     id="location"
-                    name="location"
+                    name="commune"
                     required
                     class="w-full h-12 px-4 rounded-xl border border-[#e4eaf1] bg-[#f7f9ff] text-sm text-[#101d29] focus:bg-white focus:border-[#0047ab] focus:outline-none transition-colors"
                   >
@@ -185,14 +208,16 @@ import Icon from '../components/Icon.astro';
                     <option value="Autre commune">Autre commune en Brabant Wallon</option>
                   </select>
                 </div>
+              </div>
 
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="space-y-1.5">
                   <label for="urgency" class="text-xs font-bold text-[#101d29] uppercase tracking-wide">
                     Degré d'urgence *
                   </label>
                   <select
                     id="urgency"
-                    name="urgency"
+                    name="degre_urgence"
                     required
                     class="w-full h-12 px-4 rounded-xl border border-[#e4eaf1] bg-[#f7f9ff] text-sm text-[#101d29] focus:bg-white focus:border-[#0047ab] focus:outline-none transition-colors"
                   >
@@ -202,26 +227,26 @@ import Icon from '../components/Icon.astro';
                     <option value="Projet de rénovation">Projet planifié (devis travaux)</option>
                   </select>
                 </div>
-              </div>
 
-              <div class="space-y-1.5">
-                <label for="service-type" class="text-xs font-bold text-[#101d29] uppercase tracking-wide">
-                  Type de problème ou prestation
-                </label>
-                <select
-                  id="service-type"
-                  name="service-type"
-                  class="w-full h-12 px-4 rounded-xl border border-[#e4eaf1] bg-[#f7f9ff] text-sm text-[#101d29] focus:bg-white focus:border-[#0047ab] focus:outline-none transition-colors"
-                >
-                  <option value="Fuite d'eau">Fuite d'eau (tuyau, vanne, évier)</option>
-                  <option value="Débouchage WC ou évier">Débouchage WC, douche, sterput</option>
-                  <option value="Panne boiler / chauffe-eau">Panne boiler ou eau froide</option>
-                  <option value="Détartrage boiler">Détartrage cuve chauffe-eau</option>
-                  <option value="Adoucisseur d'eau">Installation ou entretien adoucisseur</option>
-                  <option value="Recherche de fuite">Recherche de fuite non destructive</option>
-                  <option value="Rénovation sanitaire">Rénovation salle de bain / WC suspendu</option>
-                  <option value="Autre">Autre demande</option>
-                </select>
+                <div class="space-y-1.5">
+                  <label for="service-type" class="text-xs font-bold text-[#101d29] uppercase tracking-wide">
+                    Type de problème ou prestation
+                  </label>
+                  <select
+                    id="service-type"
+                    name="prestation"
+                    class="w-full h-12 px-4 rounded-xl border border-[#e4eaf1] bg-[#f7f9ff] text-sm text-[#101d29] focus:bg-white focus:border-[#0047ab] focus:outline-none transition-colors"
+                  >
+                    <option value="Fuite d'eau">Fuite d'eau (tuyau, vanne, évier)</option>
+                    <option value="Débouchage WC ou évier">Débouchage WC, douche, sterput</option>
+                    <option value="Panne boiler / chauffe-eau">Panne boiler ou eau froide</option>
+                    <option value="Détartrage boiler">Détartrage cuve chauffe-eau</option>
+                    <option value="Adoucisseur d'eau">Installation ou entretien adoucisseur</option>
+                    <option value="Recherche de fuite">Recherche de fuite non destructive</option>
+                    <option value="Rénovation sanitaire">Rénovation salle de bain / WC suspendu</option>
+                    <option value="Autre">Autre demande</option>
+                  </select>
+                </div>
               </div>
 
               <div class="space-y-1.5">
@@ -230,7 +255,7 @@ import Icon from '../components/Icon.astro';
                 </label>
                 <textarea
                   id="message"
-                  name="message"
+                  name="message_details"
                   rows="4"
                   placeholder="Décrivez brièvement le problème (symptômes, pièce concernée, marque de l'appareil...)"
                   class="w-full p-4 rounded-xl border border-[#e4eaf1] bg-[#f7f9ff] text-sm text-[#101d29] focus:bg-white focus:border-[#0047ab] focus:outline-none transition-colors"
@@ -250,10 +275,6 @@ import Icon from '../components/Icon.astro';
                 Envoyer ma demande de devis gratuit
               </button>
 
-              <div id="form-feedback" class="hidden p-4 rounded-xl bg-[#ecfdf5] border border-[#059669]/30 text-[#059669] text-sm font-semibold text-center">
-                Merci ! Votre demande a été reçue. Un technicien vous recontacte dans les 15 minutes.
-              </div>
-
             </form>
 
           </div>
@@ -263,25 +284,5 @@ import Icon from '../components/Icon.astro';
 
     </div>
   </section>
-
-  <script>
-    const form = document.getElementById('contact-form') as HTMLFormElement;
-    const feedback = document.getElementById('form-feedback');
-    const submitBtn = document.getElementById('submit-btn');
-
-    if (form && feedback && submitBtn) {
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        submitBtn.setAttribute('disabled', 'true');
-        submitBtn.textContent = 'Transmission en cours...';
-        
-        setTimeout(() => {
-          form.reset();
-          submitBtn.classList.add('hidden');
-          feedback.classList.remove('hidden');
-        }, 800);
-      });
-    }
-  </script>
 
 </Layout>
