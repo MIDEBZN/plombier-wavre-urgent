@@ -4,6 +4,7 @@ import Icon from '../components/Icon.astro';
 import TrustGuarantees from '../components/TrustGuarantees.astro';
 import ContactFormSection from '../components/ContactFormSection.astro';
 import WhatsAppChatWidget from '../components/WhatsAppChatWidget.astro';
+import GoogleMapEmbed from '../components/GoogleMapEmbed.astro';
 
 interface Props {
   title: string;
@@ -281,6 +282,9 @@ const structuredData = {
 
     <!-- Global Trust, Guarantees & Certifications Section on Every Page -->
     <TrustGuarantees />
+
+    <!-- Global Google Maps Embed on Every Page -->
+    <GoogleMapEmbed />
 
     <!-- Footer -->
     <footer class="bg-[#123470] text-white pt-16 pb-28 md:pb-12 border-t border-white/10 mt-12">

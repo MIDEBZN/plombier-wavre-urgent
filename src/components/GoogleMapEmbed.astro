@@ -1,0 +1,92 @@
+---
+import Icon from './Icon.astro';
+---
+
+<section class="py-12 sm:py-16 bg-[#f7f9ff] border-t border-[#e4eaf1]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto space-y-3">
+      <span class="text-xs font-extrabold uppercase tracking-widest text-[#0047ab] bg-[#edf4ff] px-3.5 py-1.5 rounded-full inline-block">
+        Localisation Locale & Itinéraire
+      </span>
+      <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-[#101d29] tracking-tight">
+        Notre Atelier à Wavre (1300)
+      </h2>
+      <p class="text-sm sm:text-base text-[#434653] leading-relaxed">
+        Basés Rue Charles Jaumotte 76 à Wavre, nos véhicules d'astreinte rayonnent 24h/24 et 7j/7 pour intervenir à votre domicile en moins de 30 minutes.
+      </p>
+    </div>
+
+    <!-- Map & Information Card Container -->
+    <div class="bg-white rounded-3xl p-4 sm:p-6 border border-[#e4eaf1] shadow-md space-y-6">
+      
+      <!-- Responsive Google Maps Embed -->
+      <div class="w-full h-[340px] sm:h-[450px] rounded-2xl overflow-hidden shadow-inner border border-[#e4eaf1] relative bg-[#edf4ff]">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2721.3628915547056!2d4.577067299999999!3d50.69739699999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4fb5a4363b1245c1%3A0x82fc2e49b3b6a0fc!2sEcly%20Plombier%20Wavre%20Urgent!5e1!3m2!1sen!2sbe!4v1791032148704!5m2!1sen!2sbe"
+          class="w-full h-full border-0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          title="Plan d'accès Google Maps Ecly Plombier Wavre Urgent"
+        ></iframe>
+      </div>
+
+      <!-- Quick Action Details Bar -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+        
+        <!-- Address Block -->
+        <div class="flex items-start gap-3 p-4 rounded-xl bg-[#f7f9ff] border border-[#e4eaf1]">
+          <div class="w-10 h-10 rounded-lg bg-[#edf4ff] text-[#0047ab] flex items-center justify-center shrink-0">
+            <Icon name="map-pin" class="w-5 h-5 text-[#0047ab]" />
+          </div>
+          <div class="space-y-1">
+            <span class="text-xs font-bold uppercase tracking-wider text-[#101d29] block">Adresse de l'Atelier</span>
+            <a
+              href="https://maps.app.goo.gl/oCBeEPNkZFPVsKrB9"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-xs sm:text-sm font-semibold text-[#0047ab] hover:underline block"
+            >
+              Rue Charles Jaumotte 76, 1300 Wavre
+            </a>
+          </div>
+        </div>
+
+        <!-- Phone & Availability Block -->
+        <div class="flex items-start gap-3 p-4 rounded-xl bg-[#f7f9ff] border border-[#e4eaf1]">
+          <div class="w-10 h-10 rounded-lg bg-[#fcd400]/20 text-[#705d00] flex items-center justify-center shrink-0">
+            <Icon name="phone" class="w-5 h-5 text-[#705d00]" />
+          </div>
+          <div class="space-y-1">
+            <span class="text-xs font-bold uppercase tracking-wider text-[#101d29] block">Ligne d'Urgence 24/7</span>
+            <a
+              href="tel:0489865765"
+              class="text-xs sm:text-sm font-bold text-[#00327d] hover:text-[#0047ab] transition-colors block tabular-nums"
+            >
+              0489 86 57 65
+            </a>
+            <span class="text-[11px] text-[#059669] font-medium block">Technicien de garde disponible</span>
+          </div>
+        </div>
+
+        <!-- Direct Navigation CTA -->
+        <div class="flex items-center">
+          <a
+            href="https://maps.app.goo.gl/oCBeEPNkZFPVsKrB9"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full h-full min-h-[52px] inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#0047ab] hover:bg-[#00327d] text-white font-display font-bold text-sm shadow-sm transition-all"
+          >
+            <Icon name="arrow-right" class="w-4 h-4 text-[#fcd400]" />
+            <span>Ouvrir l'itinéraire Google Maps</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
